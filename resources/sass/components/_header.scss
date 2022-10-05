@@ -1,0 +1,32 @@
+header {
+    height: 80px;
+    .flex-container {
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
+
+    img {
+        max-height: 45px;
+    }
+
+    nav{
+        padding: 0 20px;
+        li {
+            font-weight: bold;
+            padding: 0 10px;
+        }
+    }
+
+    .cta_header {
+        .text-uppercase {
+            margin-right: 20px;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        li{
+            margin-right: 10px;
+        }
+    }
+}

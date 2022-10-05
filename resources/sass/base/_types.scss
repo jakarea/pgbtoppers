@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+p, li, a, span {
+    font-family: 'Roboto', sans-serif;
+    color: $fontcolor;
+}
+
+.btn {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+.h1, .h2, .h3, .h4, .h5 {
+    display: block;
+    margin: 0 0 10px 0;
+    font-family: 'Roboto', sans-serif;
+
+    color: $fontcolor;
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+}
+
+a{
+    text-decoration: none;
+}
+
+.is-centered {
+    text-align: center;
+}
+
+@include media-breakpoint-up(md) {
+    .h1 {
+        font-size: 3.4rem;
+    }
+
+    .h2 {
+        font-size: 2.8rem;
+    }
+
+    .h3 {
+        font-size: 2.4rem;
+    }
+    .h4 {
+        font-size: 2.2rem;
+    }
+}
+
+.is-bold {
+    font-weight: bold;
+}
+
+.is-secondary {
+    color: $secondarycolor;
+}
+
+.review {
+    p {
+        font-family: 'Arial black', sans-serif;
+    }
+}
+.text-uppercase {
+    text-transform: uppercase;
+}

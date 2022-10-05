@@ -1,0 +1,19 @@
+//mixins
+@import 'mixins/media-queries';
+
+//base
+@import 'base/vars';
+@import 'base/types';
+@import 'base/layout';
+
+@import 'components/buttons';
+@import 'components/header';
+@import 'components/footer';
+@import 'components/card';
+@import 'components/forms';
+@import 'components/review';
+@import 'components/checkbox';
+
+@import 'pages/home';
+@import 'pages/searchresults';
+@import 'pages/profile';

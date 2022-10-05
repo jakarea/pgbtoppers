@@ -1,0 +1,54 @@
+.search_result {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 20px 0;
+    .flex-container {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    .search_result_image {
+        max-width: 150px;
+        height: 150px;
+        img {
+            border-radius: 100%;
+            border: 3px solid $secondarycolor;
+        }
+    }
+    .search_result_profile_info {
+        span {
+            display: block;
+        }
+    }
+
+    .search_results_main {
+        flex: 1;
+    }
+    .search_results_additional {
+        justify-content: space-between;
+        align-items: flex-start;
+
+        flex: 2;
+        .search_result_bio{
+            flex: 1;
+            padding: 0 30px;
+        }
+        .search_result_profile_checklist {
+            padding: 0 10px;
+            ul{
+                padding-top: 15px;
+                li{
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 5px;
+                    i {
+                        color: $primarycolor;
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+}

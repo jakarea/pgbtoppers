@@ -1,0 +1,14 @@
+.card {
+    padding: 30px;
+    &.card-primary {
+        background: $primarycolor;
+        color: white;
+        a, p, span, li, .h2 {
+            color: white;
+        }
+    }
+
+    &.card-secondary {
+        background: $secondarycolor;
+    }
+}

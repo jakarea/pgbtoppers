@@ -1,0 +1,13 @@
+.btn {
+    display: inline-block;
+    border: none;
+    font-size: 1.6rem;
+    padding: 10px 20px;
+    &.btn-primary {
+        background: $primarycolor;
+    }
+
+    &.btn-secondary {
+        background: $secondarycolor;
+    }
+}

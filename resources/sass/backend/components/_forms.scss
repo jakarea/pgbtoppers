@@ -1,0 +1,25 @@
+form {
+    input {
+        margin-bottom: 10px;
+    }
+
+    label {
+        display: block;
+        padding-bottom: 5px;
+    }
+}
+
+.form-check {
+    display: flex;
+    padding: 5px 0;
+    input{
+        width: auto;
+        height: auto;
+        margin-right: 5px;
+    }
+}
+
+.form-control {
+    font-size: 1.6rem;
+    height: 50px;
+}

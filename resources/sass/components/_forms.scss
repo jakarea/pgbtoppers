@@ -1,0 +1,86 @@
+form {
+    .input_wrapper {
+        width: 100%;
+        align-items: center;
+
+        input{
+            margin-bottom: 10px;
+        }
+
+    }
+
+    @include media-breakpoint-up('md'){
+        .input_wrapper{
+            display: flex;
+        }
+
+        > div, input{
+            margin-right: 20px;
+        }
+
+    }
+}
+
+
+select {
+    width: 100%;
+}
+
+
+.input_wrapper_checkbox{
+    margin: 20px 0;
+    label{
+        user-select: none;
+    }
+}
+input, textarea, select {
+    width: 100%;
+    height: 45px;
+    padding: 0 20px;
+    font-size: 1.6rem;
+    border: 1px solid #e0e0e0;
+    transition: all .2s;
+    &::placeholder {
+        color: $fontcolor;
+    }
+
+
+    &:focus{
+        border: 1px solid $secondarycolor;
+        outline: none;
+        transition: all .2s;
+    }
+}
+
+
+.search_caregivers {
+    form {
+        align-items: center;
+
+        input{
+            margin: 0;
+        }
+        .btn {
+            height: 50px;
+            margin: 0;
+            border-radius: 30px;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        form {
+            > div, .input-wrapper{
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+
+//forms
+.intake_sign_up {
+    padding: 20px 0;
+    .btn {
+        margin-top: 20px;
+    }
+}

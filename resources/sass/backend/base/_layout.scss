@@ -1,0 +1,23 @@
+.auth {
+    height: 100vh;
+    .container {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        .row {
+            flex: 1;
+        }
+    }
+}
+
+.dashboard {
+    #wrapper {
+        display: flex;
+    }
+
+    .dashboard-content {
+        margin-top: 50px;
+        width: 100%;
+    }
+}

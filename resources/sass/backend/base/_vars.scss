@@ -1,0 +1,30 @@
+$primarycolor: #284251;
+$secondarycolor: #df8842;
+$accentcolor: #f7f9f8;
+$fontcolor: #1A1818;
+$gray: #e0e0e0;
+$background: #F2F3F4;
+
+
+// Borders Radius
+$border-radius: 0.35rem !default;
+$border-color: darken($gray-200, 2%) !default;
+
+// Spacing Variables
+// Change below variable if the height of the navbar changes
+$topbar-base-height: 150px !default;
+// Change below variable to change the width of the sidenav
+$sidebar-base-width: 300px !default;
+// Change below variable to change the width of the sidenav when collapsed
+$sidebar-collapsed-width: 6.5rem !default;
+
+// Card
+$card-cap-bg: $gray-100 !default;
+$card-border-color: $border-color !default;
+
+// Transitions
+$transition-collapse: height .15s ease !default;
+
+// Dropdowns
+$dropdown-font-size: 0.85rem !default;
+$dropdown-border-color: $border-color !default;

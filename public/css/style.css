@@ -1,0 +1,462 @@
+.header-socail{
+    background-color: #DC8742;
+    padding: 10px 0px;
+}
+
+.header-socail ul {
+    text-align: right;
+}
+.header-socail ul li{
+    display: inline-block;
+}
+
+.header-socail ul li a{
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #DC8742;
+    text-align: center;
+    font-size: 12px;
+    line-height: 26px;
+}
+header{
+    height: auto;
+}
+
+.custom-heading{
+    padding: 5rem 0;
+}
+
+.main-menu ul li a{
+    font-size: 17px;
+    line-height: 23px;
+    font-weight: 400;
+}
+
+.main-menu ul li a.active,
+.main-menu ul li a:hover{
+    color: #df8842;
+}
+
+.home-hero-text h1{
+    font-size: 60px;
+    line-height: 70px;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn-hero {
+    text-align: center;
+}
+.btn-hero .btn{
+    padding: 12px 7rem;
+    font-size: 20px;
+    line-height: 22px;
+    border-radius: 6px;
+}
+
+
+.statistics .statistic .statistic_number{
+    font-size: 3.2rem;
+    margin-bottom: 2rem;
+}
+
+.statistics .statistic span.h5{
+    font-weight: 700;
+}
+.h2.is-centered{
+    color: #2A4250;
+    font-size: 3.6rem;
+}
+
+
+.custom-text p{
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 700;
+}
+
+.review .review_content{
+    text-align: left;
+}
+
+.review .review_content span.h4{
+    font-weight: 800;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+}
+
+.review .review_content span{
+    font-weight: 800;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.review .review_content p{
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #2A4250;
+}
+.custom-h5 h5{
+    font-weight: 800;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+footer .h4 { 
+    border-bottom: 5px solid #df8842; 
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+footer .col li, footer .col a {
+    color: #df8842;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.ftr-bttm h2{
+    color: #2A4250;
+    font-size: 2.2rem;
+    font-weight: 700; 
+    text-align: center;
+    margin-bottom: 4rem;
+}
+ 
+.custom-text-2 label,
+.custom-text-2 span{
+    font-size: 17px;
+    line-height: 24px;
+    font-weight: 400; 
+    display: block; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+.custom-text .form-group{
+    margin-bottom: 2rem;
+}
+.custom-text .is-checkbox{
+    margin-bottom: 10px;
+}
+.footer_image_2{
+    background-image: url(../images/footer-img.png);
+    background-position: center center;
+}
+.footer_image_3{
+    background-image: url(../images/ftr-3.png);
+    background-position: center center;
+}
+
+.login-main-wrap{
+    width: 60%;
+    margin: 0 auto;
+}
+
+.login-main-wrap .card-header{
+    font-size: 3rem;
+    line-height: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.testimo-form-wrap label,
+.login-main-wrap label{
+    font-size: 1.6rem;
+    line-height: 1.2rem;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #2A4250;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.testimo-form-wrap .form-control{
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    font-weight: 400;
+    height: 40px;
+}
+
+.testimo-form-wrap textarea.form-control{
+    height: 120px;
+}
+.btn{
+    font-size: 1.4rem;
+}
+.mb_3{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.home-preference-table table tr td,
+.home-preference-table table tr th,
+.intake-table tr th,
+.intake-table tr td {
+    font-size: 1.5rem;
+}
+
+.home-preference-table table{
+    width: 100%;
+    margin-top: 2rem;
+}
+.home-preference-table table{
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.pagination-wrapper .pagination{
+    justify-content: center;
+}
+
+.main-label{
+    font-weight: 700!important;
+    margin-bottom: 1rem;
+    font-size: 18px!important;
+    margin-top: 3rem!important;
+}
+
+.form-group .is-checkbox{
+    margin-left: 2rem;
+}
+
+.login-main-wrap .checkmark { 
+    top: -6px; 
+}
+
+
+.services-filter{
+    display: flex;
+    align-items:flex-end;
+    margin-bottom: 2rem;
+}
+
+.services-filter span {
+    font-size: 1.4rem;
+    margin-right: 6px;
+    font-weight: 500;
+    display: block;
+    color: #000;
+    text-transform: capitalize;
+}
+.services-filter h6{
+    font-size: 1.6rem;
+    margin-right: 12px;
+    margin-bottom: 0;
+    font-weight: 600;
+}
+.services-filter select {
+    font-size: 1.4rem;
+    max-width: 216px;
+    height: 32px;
+    padding: 0 2px;
+    border: 1px solid #bbb;
+}
+
+.filter-wrap{
+    margin-right: 1rem;  
+}
+
+.payment-page-wrap {
+    padding: 2rem;
+    background: #eee;
+    border-radius: 10px;
+    width: 55%;
+    margin: 0 auto;
+    text-align: center;
+    border: 2px solid #aaa;
+}
+
+.payment-page-wrap img{
+    width: 250px;
+}
+.payment-page-wrap h3{
+    font-size: 2rem; 
+    margin: 1rem 0;
+    font-weight: 600;
+}
+
+.payment-page-wrap h5{
+    font-size: 4rem; 
+    margin: 1rem 0;
+    font-weight: 600;
+    color: #df8842;
+}
+ 
+
+#checkout-button{
+    font-size: 1.5rem; 
+    padding: .8rem 4rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #df8842;
+    border-radius: 8px;
+
+}
+
+/* user profile css start */
+.user-profile-wrap{
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 2.5rem;
+    border: 1px solid #aaa;
+}
+
+.user-profile-wrap h1{
+    font-size: 3rem;
+    line-height: 4rem;
+    font-weight: 600;
+    color: #2A4250;
+    margin-bottom: 1.6rem;
+}
+.user-profile-wrap p{
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    font-weight: 500;
+    color: #2A4250;
+}
+/* user profile css end */
+
+.login-main-wrap .form-group label{
+    margin-bottom: 2rem;
+}
+
+.cont {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-left: 2rem;
+  }
+  
+  /* Hide the browser's default radio button */
+  .cont input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .cont:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .cont input:checked ~ .checkmark {
+    background-color: #df8842;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .cont input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .cont .checkmark:after {
+    top: 7px;
+    left: 7px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: white;
+}
+  
+html{
+    overflow-x: hidden;
+}
+
+.edit-table tr td input{
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    font-weight: 500;
+}
+ 
+/* responsive css start */
+@media(min-width: 320px) and (max-width: 575px) {
+    .logo a{
+        display: block;
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+    .custom-heading {
+        padding: 3rem 0;
+    }
+
+    .logo a img{
+        display: inline-block;
+    }
+    .header-socail ul {
+        text-align: center;
+    }
+    .main-menu ul li a{
+        text-align: center;
+        margin-bottom: 12px;
+        display: block;
+    }
+    .cta_header .btn{
+        display: block;
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 40px;
+    }
+    .home-hero-text h1 {
+        font-size: 30px;
+        line-height: 40px; 
+    }
+    br{
+        display: none;
+    }
+    .h2.is-centered{
+        font-size: 2.8rem;
+    }
+    .custom-text p{
+        font-size: 16px;
+        line-height: 22px;
+    }
+    .custom-text-2 br{
+        display: block;
+    }
+    footer .h4{
+        font-size: 1.4rem;
+    }
+    footer .col li, footer .col a{
+        font-size: 1.4rem;
+    }
+
+    .login-main-wrap{
+        width: 100%;
+    }
+    header .flex-container{
+        text-align: center;
+    }
+}
+/* responsive css end */
