@@ -10,11 +10,13 @@
             Ik BEN EEN ZORGVERLENER (seller)
             </a>
         </li>
-        <li>
+        <!-- to remove -->
+        <!-- <li>
             <a href="{{ route('frontend.meld') }}" class="{{ (request()->is('meld')) ? 'active' : '' }}">
             MELD ME
             </a>
-        </li>
+        </li> -->
+        <!-- to remove -->
         
         <li>
             <a href="{{ route('frontend.onze') }}" class="{{ (request()->is('onze')) ? 'active' : '' }}">

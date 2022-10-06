@@ -7,7 +7,7 @@
 betrouwbare huishoudelijke <br>
 hulp of begeleider?</h1>
                 <div class="btn-hero">
-                    <a href="#" class="btn btn-secondary">
+                    <a href="{{ route('intake.index') }}" class="btn btn-secondary">
                     MEER INFORMATIE! 
                     </a>
                 </div>
@@ -57,10 +57,7 @@ hulp of begeleider?</h1>
                 <p> Om toch een basis kwaliteit te garanderen is PGBToppers opgericht. Wij screenen Huishoudelijke hulpen en Begeleiders en andersom zijn zij bereid een dergelijke screening te ondergaan. </p>
 
                 <p>Dat geeft geen garanties dat er een goede match komt maar als budgethouder weet je wel wat dat aan bepaalde basisvoorwaarden is voldaan.</p>
-
-                <div class="btn-hero">
-                    <button class="btn btn-secondary">VERTEL MIJ MEER </button>
-                </div> 
+ 
             </div>
         </div>
     </section>
@@ -72,11 +69,8 @@ hulp of begeleider?</h1>
                 <p> Zorgverleners die zich bij ons aanmelden wordt gescreend. Zij krijgen een inschrijfformulier met allerlei vragen.  </p>
 
                 <p>De antwoorden worden in een persoonlijk gesprek besproken. Tevens controleren wij of het algemene profiel dat een zorgverlener opgeeft klopt met onze ervaring. </p>
-                <p> Ook vragen wij naar een geldige VOG, referenties en eventuele certificaten en/of diploma’s. De referenties trekken wij ook na.</p>
-                <p> Ook vragen wij naar een geldige VOG, referenties en eventuele certificaten en/of diploma’s. De referenties trekken wij ook na.</p>
-                <div class="btn-hero">
-                    <a href="#" class="btn btn-secondary"> VERTEL MIJ MEER  </a>
-                </div>
+                <p> Ook vragen wij naar een geldige VOG, referenties en eventuele certificaten en/of diploma’s. De referenties trekken wij ook na.</p> 
+               
             </div>
         </div>
     </section>
@@ -86,19 +80,20 @@ hulp of begeleider?</h1>
             <div class="card card-secondary">
                 <h2 class="h3">Zoek jij een betrouwbare gecontroleerde zorgverlener?</h2>
                 <div>
-                    <a href="#" class="btn btn-primary">Ja graag </a>
+                    <a href="{{ route('intake.index') }}" class="btn btn-primary">Ja graag </a>
                 </div>
             </div>
             <div class="card card-secondary">
                 <h2 class="h3">Ben jij een betrouwbare zorgverlener die gaat voor kwaliteit?</h2>
                 <div>
-                    <a href="#" class="btn btn-primary">Ja, hoe verder? </a>
+                    <a href="{{ route('intake.index') }}" class="btn btn-primary">Ja, hoe verder? </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="reviews">
+    <!-- to remove -->
+    <!-- <section class="reviews">
         <div class="container">
             <div class="flex-container">
             @foreach($testmonial as $test)
@@ -127,7 +122,8 @@ hulp of begeleider?</h1>
                 </a>
             </div>
         </div>
-    </section>
+    </section> -->
+    <!-- to remove -->
 
     <section class="footer_image"></section>
 

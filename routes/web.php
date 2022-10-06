@@ -53,7 +53,6 @@ Route::controller(IntakeController::class)->group(function () {
     Route::post('/intake/store', 'store')->name('intake.store');
 });
 
-
 Auth::routes();
 
 Route::get('/logout', function(){
@@ -61,6 +60,7 @@ Route::get('/logout', function(){
     Session::flush();
     return Redirect::to('/');
 })->name('logout');
+
 Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'name' => 'admin.'], function () {
 
     Route::controller(AdminHomeController::class)->group(function () {
