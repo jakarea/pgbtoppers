@@ -615,7 +615,9 @@ width: 50%;
 }
 
 .form-btn{
-    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 /* zoek new css end */
 

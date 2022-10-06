@@ -52,9 +52,10 @@
                             </ul>
                         </div>
                     @endif
+
                     <form action="{{url('admin/send-mail') }}" method="POST"> 
                         @csrf
-                        <input type="hidden" name="receiver_id" value="4">
+                        <input type="hidden" name="receiver_id" value="{{ $service->user->id }}">
                         <div class="form-group">
                             <label for="">Subject:</label>
                             <input name="title" type="text" placeholder="Enter your title..">
@@ -64,9 +65,17 @@
                             <textarea name="message" class="form-control"></textarea>
                         </div>
                         <div class="form-btn">
-                            <button type="submit" class="btn btn-submit">Send</button>
+                        <button type="submit" class="btn btn-submit">Send</button>
+                        @if (session()->has('message'))
+                            <div class="text-success" style="text-align: center;">
+                                <p style="color: green; margin: 0px;">{{ session('message') }}</p>
+                            </div>
+                        @endif
+            
+                            
                         </div>
                     </form>
+
                 </div>
             </div>
             <div class="zoek-view-right">
@@ -76,11 +85,7 @@
                     </div>
 
                     <table class="table table-striped" style="width: 100%; margin: 0 auto;">
-                    <tr>
-                        <th>User ID</th>
-                        <th>:</th>
-                        <td>{{ $service->user->id }}</td>
-                    </tr>
+          
                     <tr>
                         <th>Name</th>
                         <th>:</th>

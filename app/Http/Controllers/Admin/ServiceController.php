@@ -43,10 +43,6 @@ class ServiceController extends Controller
     }
 
     public function index()
-<<<<<<< HEAD
-    {   
-        return view('backend.services');
-=======
     { 
         $age = isset($_GET['age']) ? $_GET['age'] : ''; 
         $distance = isset($_GET['distance']) ? $_GET['distance'] : ''; 
@@ -80,7 +76,6 @@ class ServiceController extends Controller
        $services = $services->paginate(1);
  
         return view('backend.services',['title' => 'Services Show All', 'services' => $services]);
->>>>>>> master
     }
 
     public function indexprovider()
