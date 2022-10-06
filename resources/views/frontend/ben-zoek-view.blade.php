@@ -43,7 +43,18 @@
                 </div>
                 <div class="zoek-mail-box-wrap">
                     <h4>Send Message to this Seller</h4>
-                    <form action=""> 
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    <form action="{{url('admin/send-mail') }}" method="POST"> 
+                        @csrf
+                        <input type="hidden" name="receiver_id" value="4">
                         <div class="form-group">
                             <label for="">Subject:</label>
                             <input name="title" type="text" placeholder="Enter your title..">

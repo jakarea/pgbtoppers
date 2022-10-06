@@ -33,7 +33,7 @@ Route::controller(HomeController::class)->group(function () {
 
     // home contact store
     Route::post('/home/store', 'store')->name('home.store');
- 
+
 });
 
 
@@ -86,6 +86,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'name' => 'admin.'], 
         Route::get('/services/edit/{id}', 'edit')->name('services.edit'); 
         Route::post('/services/update/{id}', 'update')->name('services.update'); 
         Route::get('/services/destroy/{id}', 'destroy')->name('services.destroy');
+
+        Route::post('/send-mail', 'sendMailToSeller');
     });
 
     Route::controller(UserController::class)->group(function (){ 
