@@ -6,7 +6,11 @@
     <!-- Sidebar - Brand -->
     <div class="sidebar-brand mt-4">
         <a href="{{ url('admin') }}">
-            <img class="img-responsive" src="https://ui-avatars.com/api/?background=random&name={{Auth()->user()->name}}&rounded=true" alt="">
+        @if(Auth::user()->photo)
+                <img id="preview" class="img-responsive" style="max-width: 120px" src="/images/thumbnail/{{ Auth::user()->photo }}"/ >
+                @else
+                <img id="preview" class="img-responsive" src="https://ui-avatars.com/api/?background=random&name={{Auth()->user()->name}}&rounded=true" alt="{{Auth()->user()->name}}" style="width: 120px;">
+                @endif
             <span class="mt-3 h3">{{Auth()->user()->name}}</span>
         </a>
     </div>
