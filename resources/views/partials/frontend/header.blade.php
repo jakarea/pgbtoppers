@@ -17,23 +17,14 @@
             </div>
         </div>
     </div>
-    </div>
-    <div class="upper">
-        <div class="container">
-            <ul class="flex-container socials">
-                <li> 
-
-                </li>
-            </ul>
-        </div>
-    </div>
+    </div> 
     <div class="container flex-container cta_header custom-heading">
-        <div class="logo">
+        <div class="logo main-header">
             <a href="{{ route('frontend.home') }}">
                 <img src="{{ asset('images/logo.png') }}" class="img-responsive" alt="PGB toppers">
             </a>
         </div>
-        <div class="flex-container">
+        <div class="flex-container main-header">
 
             @include('partials.frontend.global.nav')
             
@@ -61,4 +52,52 @@
            </div>
         </div>
     </div>
+
+    <!-- mobile menu start -->
+    <nav role="navigation" class="mobile-main">
+        <div id="menuToggle"> 
+            <input type="checkbox" id="humbarg" /> 
+            <span></span>
+            <span></span>
+            <span></span>
+ 
+             
+            <ul id="menu">
+                @include('partials.frontend.global.nav')
+
+                @if(auth()->user())
+                <li>
+                    <a href="{{ url('admin/') }}" class="text-uppercase">
+                        Dashboard
+                    </a>
+
+                </li>  
+                <li>
+                    <a href="{{ url('logout') }}" class="text-uppercase">
+                        Logout
+                    </a>
+                </li>
+                @else 
+                <li>
+                    <a href="{{ route('login') }}" class="btn btn-primary">
+                        Inloggen
+                    </a>
+                </li>
+                @endif 
+            </ul>
+        </div>
+        <div class="logo" style="position: absolute; right: 12px; top: -35px;">
+            <a href="{{ route('frontend.home') }}">
+                <img src="{{ asset('images/logo.png') }}" class="img-responsive" alt="PGB toppers">
+            </a>
+        </div>
+        </nav>
+    <!-- mobile menu end -->
+
 </header>
+<script>
+    var navOpen = document.getElementById('humbarg');
+    if(navOpen.checked){
+        navOpen.click();
+    }
+</script>
