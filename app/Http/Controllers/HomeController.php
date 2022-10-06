@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\Models\Intake;
+use App\Models\Service;
 use App\Mail\ContactMail;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
@@ -21,21 +22,94 @@ class HomeController extends Controller
 
     public function ikzoek()
     {
-        return view('frontend.ik-zoek');
-    }
+        
+        $age = isset($_GET['age']) ? $_GET['age'] : ''; 
+        $distance = isset($_GET['distance']) ? $_GET['distance'] : ''; 
+        $gender = isset($_GET['gender']) ? $_GET['gender'] : '';  
+        $desired = isset($_GET['desired']) ? $_GET['desired'] : ''; 
+        $license = isset($_GET['license']) ? $_GET['license'] : ''; 
+        $candidate_status = isset($_GET['candidate_status']) ? $_GET['candidate_status'] : ''; 
+        $experience = isset($_GET['experience']) ? $_GET['experience'] : ''; 
+          
+      $services =  Service::orderBy('id','desc')->where('serving',NULL);
+ 
+       if(!empty($age)){
+           $services->where('age','like','%'.trim($age).'%');
+       }
+       if(!empty($distance)){
+           $services->where('distance','like','%'.trim($distance).'%');
+       }
+       if(!empty($gender)){
+           $services->where('gender','like','%'.trim($gender).'%');
+       } 
+       if(!empty($desired)){
+           $services->where('desired','like','%'.trim($desired).'%');
+       }
+       if(!empty($candidate_status)){
+           $services->where('candidate_status','like','%'.trim($candidate_status).'%');
+       }
+       if(!empty($experience)){
+           $services->where('experience','like','%'.trim($experience).'%');
+       }
 
-    public function ikzoekview()
-    {
-        return view('frontend.ik-zoek-view');
-    }
+       $services = $services->paginate(10);
+ 
+ 
+        return view('frontend.ik-zoek',['title' => 'Services Show All', 'services' => $services]);
+        
+    } 
 
     public function ikben()
     {
-        if(!Auth::user()->paid){
-            return redirect('admin/payment')->with("message", "You need to pay to create your care provider profile!");  
-        }
-        return view('frontend.ik-ben');
+        $age = isset($_GET['age']) ? $_GET['age'] : ''; 
+        $distance = isset($_GET['distance']) ? $_GET['distance'] : ''; 
+        $gender = isset($_GET['gender']) ? $_GET['gender'] : '';  
+        $desired = isset($_GET['desired']) ? $_GET['desired'] : ''; 
+        $license = isset($_GET['license']) ? $_GET['license'] : ''; 
+        $candidate_status = isset($_GET['candidate_status']) ? $_GET['candidate_status'] : ''; 
+        $experience = isset($_GET['experience']) ? $_GET['experience'] : ''; 
+          
+      $services =  Service::orderBy('id','desc')->where('serving',1);
+ 
+       if(!empty($age)){
+           $services->where('age','like','%'.trim($age).'%');
+       }
+       if(!empty($distance)){
+           $services->where('distance','like','%'.trim($distance).'%');
+       }
+       if(!empty($gender)){
+           $services->where('gender','like','%'.trim($gender).'%');
+       } 
+       if(!empty($desired)){
+           $services->where('desired','like','%'.trim($desired).'%');
+       }
+       if(!empty($candidate_status)){
+           $services->where('candidate_status','like','%'.trim($candidate_status).'%');
+       }
+       if(!empty($experience)){
+           $services->where('experience','like','%'.trim($experience).'%');
+       }
+
+       $services = $services->paginate(10);
+ 
+ 
+        return view('frontend.ik-ben',['title' => 'Services Show All', 'services' => $services]);
+
     }
+
+
+    public function ikbenview($id)
+    {
+        $service = Service::find($id);
+        return view('frontend.ben-zoek-view',['title' => 'View Services', 'service' => $service]);
+    }
+
+    public function ikzoekview($id)
+    {
+        $service = Service::find($id);
+        return view('frontend.ben-zoek-view',['title' => 'View Services', 'service' => $service]);
+    }
+
     public function meld()
     {
         return view('frontend.meld');
