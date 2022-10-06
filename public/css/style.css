@@ -508,7 +508,8 @@ width: 100%;
     color: #2A4250;
 }
 .zoek-bottom-info table tr td:last-child{
-text-align: right;
+text-align: left;
+width: 50%;
 }
 
 .services-filter span {

@@ -20,14 +20,22 @@
                      <div class="zoek-media">
                      <img src="https://cdn3.vectorstock.com/i/thumb-large/66/77/avatar-young-bearded-guy-brow-haired-man-vector-32416677.jpg" alt="" class="img-fluid">
                      <div class="zoek-media-body">
-                        <h5><strong>Name: </strong>Jhon Doe</h5>
-                        <h6><strong>Email: </strong>admin@pgbtopper.com</h6> 
+                        <h5><strong>Name: </strong>{{ $service->user ? $service->user->name : '' }}</h5>
+                        <h6><strong>Email: </strong>{{ $service->user ? $service->user->email : '' }}</h6> 
                      </div>
                      </div>
                      <div class="zoek-bottom-info">
                         <table>
                             <tr>
-                                <td style="text-align: left;"><p><span>Role:</span> Geen voorkeur</p></td> 
+                                <td style="text-align: left;"><p><span>Role:</span>
+                                @if($service->user->role === 1)
+                                {{ ('Admin') }}
+                                @elseif($service->user->role === 2)
+                                {{ ('Provider') }}
+                                @else
+                                {{ ('Finder') }}
+                                @endif
+                                </p></td> 
                             </tr> 
                         </table>
                      </div>
@@ -68,66 +76,71 @@
                     </div>
 
                     <table class="table table-striped" style="width: 100%; margin: 0 auto;">
-                        <tr>
+                    <tr>
+                        <th>User ID</th>
+                        <th>:</th>
+                        <td>{{ $service->user->id }}</td>
+                    </tr>
+                    <tr>
                         <th>Name</th>
                         <th>:</th>
-                        <td>->userame</td>
-                        </tr>
-                        <tr>
+                        <td>{{ $service->user->name }}</td>
+                    </tr>
+                    <tr>
                         <th>Age</th>
                         <th>:</th>
-                        <td>->age</td>
-                        </tr>
-                        <tr>
+                        <td>{{ $service->age }}</td>
+                    </tr>
+                    <tr>
                         <th>Distance</th>
                         <th>:</th>
-                        <td>->distance</td>
-                        </tr>
-                        <tr>
+                        <td>{{ $service->distance }}</td>
+                    </tr>
+                    <tr>
                         <th>Gender</th>
                         <th>:</th>
-                        <td>->gender</td>
-                        </tr>
-                        <tr>
+                        <td>{{ $service->gender }}</td>
+                    </tr>
+                    <tr>
                         <th>Days</th>
                         <th>:</th>
-                        <td>->days</td>
-                        </tr>
-                        <tr>
+                        <td>{{ $service->days }}</td>
+                    </tr>
+                    <tr>
                         <th>Desired</th>
                         <th>:</th>
-                        <td>->desired</td>
-                        </tr>
-                        <tr>
+                        <td>{{ $service->desired }}</td>
+                    </tr>
+                    <tr>
                         <th>License</th>
                         <th>:</th>
-                        <td>->license</td>
-                        </tr>
-                        <tr>
+                        <td>{{ $service->license }}</td>
+                    </tr>
+                    <tr>
                         <th>Candidate Status</th>
                         <th>:</th>
-                        <td>->candidate_status</td>
-                        </tr>
-                        <tr>
+                        <td>{{ $service->candidate_status }}</td>
+                    </tr>
+                    <tr>
                         <th>Experience</th>
                         <th>:</th>
-                        <td>->experience</td>
-                        </tr>
-                        <tr>
+                        <td>{{ $service->experience }}</td>
+                    </tr>
+                    <tr>
                         <th>Other</th>
                         <th>:</th>
-                        <td>->other</td>
-                        </tr>
-                        <tr>
+                        <td>{{ $service->other }}</td>
+                    </tr>
+                    <tr>
                         <th>Services</th>
                         <th>:</th>
-                        <td>->services</td>
-                        </tr>
-                        <tr>
+                        <td>{{ $service->services }}</td>
+                    </tr> 
+                    <tr>
                         <th>Specific Experience</th>
                         <th>:</th>
-                        <td>->specific_experience</td>
-                        </tr>
+                        <td>{{ $service->specific_experience ?: 'N/A'}}</td>
+                    </tr> 
                     </table> 
                 </div>
             </div>

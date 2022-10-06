@@ -43,6 +43,10 @@ class ServiceController extends Controller
     }
 
     public function index()
+<<<<<<< HEAD
+    {   
+        return view('backend.services');
+=======
     { 
         $age = isset($_GET['age']) ? $_GET['age'] : ''; 
         $distance = isset($_GET['distance']) ? $_GET['distance'] : ''; 
@@ -76,49 +80,17 @@ class ServiceController extends Controller
        $services = $services->paginate(1);
  
         return view('backend.services',['title' => 'Services Show All', 'services' => $services]);
+>>>>>>> master
     }
 
     public function indexprovider()
     { 
-
-        $age = isset($_GET['age']) ? $_GET['age'] : ''; 
-        $distance = isset($_GET['distance']) ? $_GET['distance'] : ''; 
-        $gender = isset($_GET['gender']) ? $_GET['gender'] : '';  
-        $desired = isset($_GET['desired']) ? $_GET['desired'] : ''; 
-        $license = isset($_GET['license']) ? $_GET['license'] : ''; 
-        $candidate_status = isset($_GET['candidate_status']) ? $_GET['candidate_status'] : ''; 
-        $experience = isset($_GET['experience']) ? $_GET['experience'] : ''; 
-          
-      $services =  Service::orderBy('id','desc')->where('serving',1);
- 
-       if(!empty($age)){
-           $services->where('age','like','%'.trim($age).'%');
-       }
-       if(!empty($distance)){
-           $services->where('distance','like','%'.trim($distance).'%');
-       }
-       if(!empty($gender)){
-           $services->where('gender','like','%'.trim($gender).'%');
-       } 
-       if(!empty($desired)){
-           $services->where('desired','like','%'.trim($desired).'%');
-       }
-       if(!empty($candidate_status)){
-           $services->where('candidate_status','like','%'.trim($candidate_status).'%');
-       }
-       if(!empty($experience)){
-           $services->where('experience','like','%'.trim($experience).'%');
-       }
-
-       $services = $services->paginate(1);
- 
-        return view('backend.services-provider',['title' => 'Services Show All', 'services' => $services]);
+        return view('backend.services-provider');
     }
 
     public function view($id)
-    {  
-        $service = Service::find($id);
-        return view('backend.services-view',['title' => 'View Services', 'service' => $service]);
+    {   
+        return view('backend.services-view');
  
     }
 

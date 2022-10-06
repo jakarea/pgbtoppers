@@ -13,6 +13,9 @@
         <h1 class="mb-5" style="font-size: 2.6rem; font-family: Arial, Helvetica, sans-serif; margin-bottom: 30px;">IK ZOEK EEN ZORGVERLENER</h1>
         <form action="" method="GET">
             <div class="services-filter">
+            @php 
+                $age = isset($_GET['age']) ? $_GET['age'] : '';
+            @endphp
                 <div class="filter-wrap">
                     <span>Leeftijd:</span>
                     @php 
@@ -109,33 +112,38 @@
         </form>
         </div>
         <div class="container">
+        
             <div class="zoek-cards-wrap">
+            @php $i = 1; @endphp
+ 
+            @foreach($services as $service)
                 <div class="zoek-main-card">
-                     <a href="#">
+                     <a href="{{ url('ik-ben/'.$service->id) }}">
                      <div class="zoek-media">
                      <img src="https://cdn3.vectorstock.com/i/thumb-large/66/77/avatar-young-bearded-guy-brow-haired-man-vector-32416677.jpg" alt="" class="img-fluid">
                      <div class="zoek-media-body">
-                        <h5><strong>Name: </strong>Jhon Doe</h5>
-                        <h6><strong>Email: </strong>admin@pgbtopper.com</h6> 
+                        <h5><strong>Name: </strong>{{ $service->user ? $service->user->name : '' }}</h5>
+                        <h6><strong>Email: </strong>{{ $service->user ? $service->user->email : '' }}</h6> 
                      </div>
                      </div>
                      <div class="zoek-bottom-info">
                         <table>
                             <tr>
-                                <td><p><span>Age:</span> Geen voorkeur</p></td>
-                                <td><p><span>Distance:</span> Geen voorkeur</p></td>
+                                <td><p><span>Age:</span> {{ substr($service->age,0,17) }}</p></td>
+                                <td><p><span>Distance:</span> {{ substr($service->distance,0,15) }}</p></td>
                             </tr>
                             <tr>
-                                <td><p><span>Age:</span> Geen voorkeur</p></td>
-                                <td><p><span>Distance:</span> Geen voorkeur</p></td>
+                                <td><p><span>Gender:</span> {{ $service->gender }}</p></td>
+                                <td><p><span>Status:</span> {{ $service->candidate_status }}</p></td>
                             </tr>
                             <tr>
-                                <td colspan="2" style="text-align: left;"><p><span>Specific Experience:</span> Niet van toepassing</p></td> 
+                                <td colspan="2" style="text-align: left;"><p><span>Specific Experience:</span> {{ $service->specific_experience }}</p></td> 
                             </tr>
                         </table>
                      </div>
                      </a>
                 </div> 
+            @endforeach
             </div>
         </div>
     </section>
