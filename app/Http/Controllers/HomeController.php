@@ -23,6 +23,12 @@ class HomeController extends Controller
     {
         return view('frontend.ik-zoek');
     }
+
+    public function ikzoekview()
+    {
+        return view('frontend.ik-zoek-view');
+    }
+
     public function ikben()
     {
         if(!Auth::user()->paid){
