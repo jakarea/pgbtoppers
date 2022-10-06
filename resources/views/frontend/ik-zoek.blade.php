@@ -3,14 +3,14 @@
     <section class="hero">
         <div class="container">
             <div class="home-hero-text">
-                <h1>Ik zoek een zorgverlener</h1>
+                <h1>Ik BEN EEN ZORGVERLENER</h1>
             </div>
         </div>
     </section>
 
     <section class="zoek-view-sec">
         <div class="container"> 
-        <h1 class="mb-5" style="font-size: 2.6rem; font-family: Arial, Helvetica, sans-serif; margin-bottom: 30px;">IK ZOEK EEN ZORGVERLENER</h1>
+        <h1 class="mb-5" style="font-size: 2.6rem; font-family: Arial, Helvetica, sans-serif; margin-bottom: 30px;">All approved healthcare providers</h1>
         <form action="" method="GET">
             <div class="services-filter">
             @php 
@@ -118,7 +118,7 @@
  
             @foreach($services as $service)
                 <div class="zoek-main-card">
-                     <a href="{{ url('ik-ben/'.$service->id) }}">
+                     <a href="{{ url('ik-zoek/'.$service->id) }}">
                      <div class="zoek-media">
                      <img src="https://cdn3.vectorstock.com/i/thumb-large/66/77/avatar-young-bearded-guy-brow-haired-man-vector-32416677.jpg" alt="" class="img-fluid">
                      <div class="zoek-media-body">
