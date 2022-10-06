@@ -32,7 +32,7 @@ class HomeController extends Controller
         $candidate_status = isset($_GET['candidate_status']) ? $_GET['candidate_status'] : ''; 
         $experience = isset($_GET['experience']) ? $_GET['experience'] : ''; 
           
-      $services =  Service::orderBy('id','desc')->where('serving',NULL);
+      $services =  Service::orderBy('id','desc')->where('serving',1);
  
        if(!empty($age)){
            $services->where('age','like','%'.trim($age).'%');
@@ -70,7 +70,7 @@ class HomeController extends Controller
         $candidate_status = isset($_GET['candidate_status']) ? $_GET['candidate_status'] : ''; 
         $experience = isset($_GET['experience']) ? $_GET['experience'] : ''; 
           
-      $services =  Service::orderBy('id','desc')->where('serving',1);
+      $services =  Service::orderBy('id','desc')->where('serving',NULL);
  
        if(!empty($age)){
            $services->where('age','like','%'.trim($age).'%');

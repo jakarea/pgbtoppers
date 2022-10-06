@@ -17,6 +17,7 @@ class CreateIntakesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
+            $table->string('looking_for');
             $table->string('dayphone')->nullable();
             $table->string('evephone')->nullable(); 
             $table->string('aggree')->default(0); 

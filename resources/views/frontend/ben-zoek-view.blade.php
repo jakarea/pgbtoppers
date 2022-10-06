@@ -91,11 +91,7 @@
                     </div>
 
                     <table class="table table-striped" style="width: 100%; margin: 0 auto;">
-<<<<<<< HEAD
-           
-=======
           
->>>>>>> dc52c614327627d431234b0a6793df072bae4c03
                     <tr>
                         <th>Name</th>
                         <th>:</th>
