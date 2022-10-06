@@ -634,7 +634,7 @@ width: 50%;
     max-width: 60px!important; 
  }
 /* responsive css start */
-@media(min-width: 320px) and (max-width: 575px) {
+@media(min-width: 320px) and (max-width: 991px) {
     .logo a{
         display: block;
         text-align: center;
@@ -816,13 +816,13 @@ width: 50%;
         text-align: center;
         width: 113%;
         padding: 80px 30px 30px;
-        background: #ddd;
+        background: #f8faff;
         list-style-type: none;
         -webkit-font-smoothing: antialiased;
         transform-origin: 0% 0%;
         transform: translate(-100%, 0);
         transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-        left: -38px;
+        left: -42px;
         top: -42px;
     }
 
@@ -842,5 +842,25 @@ width: 50%;
     {
     transform: none;
     }
+
+    .text-white{
+        color: #fff!important;
+    }
 }
+
+@media(min-width: 550px) and (max-width: 767px) {
+    #menu{
+        left: -56px;
+    }
+
+}
+
+@media(min-width: 768px) and (max-width: 991px) {
+    #menu{
+        left: -96px;
+    }
+
+}
+
+
 /* responsive css end */

@@ -79,7 +79,7 @@
                 </li>
                 @else 
                 <li>
-                    <a href="{{ route('login') }}" class="btn btn-primary">
+                    <a href="{{ route('login') }}" class="btn btn-primary text-white">
                         Inloggen
                     </a>
                 </li>
