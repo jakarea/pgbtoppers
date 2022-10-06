@@ -9,11 +9,12 @@ use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
-
 class HomeController extends Controller
 {
     public function index()
     { 
+        
+
         $testmonial = Testimonial::orderBy('id','desc')->paginate(3);
 
         return view('frontend.home',['title' => 'Testmonial Show All', 'testmonial' => $testmonial]);
