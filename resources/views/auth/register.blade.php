@@ -65,12 +65,12 @@
                             <div class="form-group">
                                 <label for="" class="main-label">I am :</label>
 
-                                <label class="cont"> EEN ZORGVERLENER (seller)
+                                <label class="cont"> EEN ZORGVERLENER
                                     <input type="radio" name="role" value="2">
                                     <span class="checkmark"></span>
                                 </label>
                                 <br>
-                                <label class="cont"> ZOEK EEN ZORGVERLENER (buyer)
+                                <label class="cont"> ZOEK EEN ZORGVERLENER
                                     <input type="radio" checked name="role" value="3" checked>
                                     <span class="checkmark"></span>
                                 </label> 

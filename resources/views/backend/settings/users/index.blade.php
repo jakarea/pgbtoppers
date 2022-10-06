@@ -38,11 +38,7 @@
                     @endphp
 
                     @foreach($users as $user)
-                    @php 
-                    $photo = $user->photo;
-                        if(!$photo)
-                            $photo = 'default.jpeg';
-                    @endphp
+                    
                     <tr>
                         <td valign="middle">{{ ++$i }}</td>
                         <td valign="middle">
@@ -60,10 +56,12 @@
 
                         @elseif($user->role === 2)
 
-                        {{ ('Provider') }}
+                        {{ ('Intake Team') }}
+                        @elseif($user->role === 3)
+
+                        {{ ('Healthcare Provider') }}
                         @else
-                        
-                        {{ ('Finder') }}
+                        {{ ('Looking for healthcare Provider') }}
                         @endif
                         </td>
                         <td valign="middle">
