@@ -170,7 +170,7 @@ class ServiceController extends Controller
 
         Session::flash('status', 'Success');
         Session::flash('message', 'Services Info Send Successfully');
-        return redirect()->route('frontend.ikben');
+        return redirect()->route('frontend.ikzoek');
     }
 
     public function edit($id)

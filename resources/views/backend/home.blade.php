@@ -112,7 +112,7 @@
         @elseif(Auth()->user()->role === 3)
             <a href="{{ route('frontend.ikzoek') }}" class="btn btn-primary mt-4">Create Profile</a>
         @elseif(Auth()->user()->role === 2)
-        <a href="{{ route('frontend.ikben') }}" class="btn btn-primary mt-4">Create Profile</a>
+        <a href="{{ route('frontend.ikzoek') }}" class="btn btn-primary mt-4">Create Profile</a>
         @endif
     </div>
 </div>
