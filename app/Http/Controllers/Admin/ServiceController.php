@@ -76,6 +76,7 @@ class ServiceController extends Controller
        $services = $services->paginate(1);
  
         return view('backend.services',['title' => 'Services Show All', 'services' => $services]);
+
     }
 
     public function indexprovider()

@@ -31,9 +31,9 @@
                                 @if($service->user->role === 1)
                                 {{ ('Admin') }}
                                 @elseif($service->user->role === 2)
-                                {{ ('Provider') }}
+                                {{ ('Seller') }}
                                 @else
-                                {{ ('Finder') }}
+                                {{ ('Buyer') }}
                                 @endif
                                 </p></td> 
                             </tr> 
@@ -42,7 +42,13 @@
                      </a>
                 </div>
                 <div class="zoek-mail-box-wrap">
-                    <h4>Send Message to this Seller</h4>
+                    <h4>Send Message to this @if($service->user->role === 1)
+                                {{ ('Admin') }}
+                                @elseif($service->user->role === 2)
+                                {{ ('Seller') }}
+                                @else
+                                {{ ('Buyer') }}
+                                @endif</h4>
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -85,7 +91,11 @@
                     </div>
 
                     <table class="table table-striped" style="width: 100%; margin: 0 auto;">
+<<<<<<< HEAD
+           
+=======
           
+>>>>>>> dc52c614327627d431234b0a6793df072bae4c03
                     <tr>
                         <th>Name</th>
                         <th>:</th>

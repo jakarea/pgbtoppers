@@ -44,9 +44,9 @@
                         <td valign="middle">{{ ++$i }}</td>
                         <td valign="middle">
                         @if($user->photo)
-                <img id="preview" class="img-responsive" style="max-width: 120px" src="/images/thumbnail/{{ $user->photo }}"/ >
+                <img id="preview" class="img-responsive" style="max-width: 120px" src="/images/thumbnail/{{ $user->photo }}" style="width: 60px;">
                 @else
-                <img id="preview" class="img-responsive" src="https://ui-avatars.com/api/?background=random&name={{Auth()->user()->name}}&rounded=true" alt="{{Auth()->user()->name}}" style="width: 120px;">
+                <img id="preview" class="img-responsive" src="https://ui-avatars.com/api/?background=random&name={{Auth()->user()->name}}&rounded=true" alt="{{Auth()->user()->name}}" style="width: 60px;">
                 @endif
                         </td>  
                         <td valign="middle">{{ $user->name }}</td>

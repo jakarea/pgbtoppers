@@ -18,7 +18,9 @@
 					</div>
 				@endif
 
+				<div style="text-align: center; margin-bottom: 20px;">
 				<img id="preview" class="table_photo" style="max-width: 160px" src="/images/thumbnail/default.jpeg"/ >
+				</div>
 
 				<form action="{{ route('users.store') }}" enctype = "multipart/form-data" method="POST">
 					@csrf
