@@ -66,25 +66,19 @@
     </li>
 
     <!-- Nav Item - Utilities Collapse Menu -->
+    
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#settings"
-            aria-expanded="true" aria-controls="settings">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Instellingen</span>
+        <a class="nav-link" href="{{ route('users.index') }}">
+        <i class="fa fa-users"></i>
+            <span>Gebruikers</span>
         </a>
-        <div id="settings" class="collapse" aria-labelledby="settings"
-            data-parent="#settings">
-            <div class="py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{ route('users.index') }}">
-                    Gebruikers
-                </a>
-                <a class="collapse-item" href="{{ route('frontend.home') }}">
-                    Website
-                </a>
-            </div>
-        </div>
-    </li>
-
+    </li> 
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('frontend.home') }}">
+        <i class="fa fa-eye"></i>
+            <span>Website</span>
+        </a>
+    </li> 
     <li class="nav-item active">
         <a class="nav-link" href="{{ url('/logout') }}">
         <i class="fa fa-facebook"></i>
