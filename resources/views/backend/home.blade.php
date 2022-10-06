@@ -41,7 +41,7 @@
             <div class="intake-table">
                 <div class="d-flex justify-content-between align-items-center">
                     <h1 class="my-5">Information</h1>
-                    <a href="{{ url('admin/services/edit/'.$user->service->id)}}" class="btn btn-info"><i class="fas fa-pen"></i> Edit</a> 
+                    <a href="{{ url('admin/services/'.$user->service->id.'/edit')}}" class="btn btn-info"><i class="fas fa-pen"></i> Edit</a> 
                 </div>
 
                 <table class="table table-striped" style="width: 100%; margin: 0 auto;">
@@ -105,14 +105,13 @@
                     <th>:</th>
                     <td>{{ $user->service->specific_experience ?: 'N/A'}}</td>
                     </tr>
-                </table>
-                SEND Messags[Not done]
+                </table> 
             </div>
         </div>
         @elseif(Auth()->user()->role === 3)
-            <a href="{{ route('frontend.ikzoek') }}" class="btn btn-primary mt-4">Create Profile</a>
+            <a href="{{ url('admin/services-provider/add')  }}" class="btn btn-primary mt-4">Create Profile</a>
         @elseif(Auth()->user()->role === 2)
-        <a href="{{ route('frontend.ikben') }}" class="btn btn-primary mt-4">Create Profile</a>
+        <a href="{{ url('admin/services/add')  }}" class="btn btn-primary mt-4">Create Profile</a>
         @endif
     </div>
 </div>

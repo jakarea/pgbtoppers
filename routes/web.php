@@ -24,10 +24,8 @@ use App\Http\Controllers\Admin\StripeController;
 
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('frontend.home');
-   Route::get('/ik-zoek', 'ikzoek')->name('frontend.ikzoek'); 
-    Route::get('/ik-ben', 'ikben')->name('frontend.ikben');
+   Route::get('/ik-zoek', 'ikzoek')->name('frontend.ikzoek');  
     Route::get('/ik-zoek/{id}', 'ikzoekview')->name('frontend.ikzoekview');
-    Route::get('/ik-ben/{id}', 'ikbenview')->name('frontend.ikbenview');
     Route::get('/meld', 'meld')->name('frontend.meld');
     Route::get('/onze', 'onze')->name('frontend.onze');
 
@@ -78,12 +76,21 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'name' => 'admin.'], 
 
     Route::controller(ServiceController::class)->group(function () { 
 
-        Route::get('/services', 'index')->name('admin.services');
+        Route::get('/services', 'index')->name('admin.services'); 
         Route::get('/services-provider', 'indexprovider')->name('admin.services-provider');
-        Route::post('/services/store', 'store')->name('services.store'); 
-        Route::post('/services-provider/store', 'providerstore')->name('services-provider.store'); 
-        Route::get('/services-provider/{id}', 'view')->name('services.view'); 
-        Route::get('/services/edit/{id}', 'edit')->name('services.edit'); 
+
+        // ik-zoek store
+        Route::get('/services/add', 'add')->name('services.add'); 
+        Route::post('/services/add', 'store')->name('services.store'); 
+
+        // ik-ben store
+        Route::get('/services-provider/add', 'provideradd')->name('services-provider.add'); 
+        Route::post('/services-provider/add', 'providerstore')->name('services-provider.store'); 
+
+        Route::get('/services-provider/{id}', 'view')->name('services.view');
+
+        Route::get('/services/{id}/edit', 'edit')->name('services.edit');
+
         Route::post('/services/update/{id}', 'update')->name('services.update'); 
         Route::get('/services/destroy/{id}', 'destroy')->name('services.destroy');
 

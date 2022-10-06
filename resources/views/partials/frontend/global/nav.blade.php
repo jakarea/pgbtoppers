@@ -2,12 +2,12 @@
     <ul class="flex-container">
         <li>
             <a href="{{ route('frontend.ikzoek') }}" class="{{ (request()->is('ik-zoek')) ? 'active' : '' }}">
-            IK ZOEK EEN ZORGVERLENER (buyer)
+            IK ZOEK EEN ZORGVERLENER
             </a>
         </li>
         <li>
-            <a href="{{ route('frontend.ikben') }}" class="{{ (request()->is('ik-ben')) ? 'active' : '' }}">
-            Ik BEN EEN ZORGVERLENER (seller)
+            <a href="{{ route('intake.index') }}" class="{{ (request()->is('intake')) ? 'active' : '' }}">
+            Ik BEN EEN ZORGVERLENER
             </a>
         </li>
         <!-- to remove -->

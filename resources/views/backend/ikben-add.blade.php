@@ -1,26 +1,16 @@
-@extends('layouts.default', ['body_class' => 'frontend-home-page'])
-@section('content')
-    <section class="hero">
-        <div class="container">
-            <div class="home-hero-text">
-                <h1>Ik zoek een zorgverlener</h1>
-             
-            </div>
-        </div>
-    </section>
-
+@extends('layouts.dashboard')
+@section('content') 
 
     <section class="our-mission">
         <div class="container">
-            <div class="custom-text custom-text-2">
+            <div class="custom-text custom-text-2" style="padding-left: 2rem;">
             @if (session()->has('message'))
                 <div class="text-success" style="text-align: center;">
                     <p style="color: green; margin-top: 0px;">{{ session('message') }}</p>
                 </div>
             @endif
-                <h2 class="h2">Als je zoekt als hulpvrager naar een Begeleider::</h2>
-
-                <form action="{{ route('services.store') }}" method="POST"> 
+                <h2 class="h2" style="font-weight: 700;">Als je zoekt als hulpvrager naar een Begeleider::</h2>
+                <form action="{{ route('services-provider.store') }}" method="POST"> 
                     @csrf
                     <div class="form-group">
                         <label for="" class="main-label">Leeftijd:</label>
@@ -221,6 +211,54 @@
                             </label>   
                         </div>
                         <div class="form-group">
+                            <label for="" class="main-label">Specifieke ervaring noodzakelijk met:</label>
+                            <label class="cont">Geen eisen
+                                <input type="radio" value="Geen eisen" checked="checked" name="specific_experience">
+                                <span class="checkmark"></span>
+                            </label>  
+                            <label class="cont">Autisme
+                                <input type="radio" name="specific_experience" value="Autisme">
+                                <span class="checkmark"></span>
+                            </label>  
+                            <label class="cont">ADHD
+                                <input type="radio" name="specific_experience" value="ADHD">
+                                <span class="checkmark"></span>
+                            </label>  
+                            <label class="cont">Verslaving
+                                <input type="radio" name="specific_experience" value="Verslaving">
+                                <span class="checkmark"></span>
+                            </label>  
+                            <label class="cont">NAH
+                                <input type="radio" name="specific_experience" value="NAH">
+                                <span class="checkmark"></span>
+                            </label>  
+                            <label class="cont">Rolstoel gebonden mensen
+                                <input type="radio" name="specific_experience" value="Rolstoel gebonden mensen">
+                                <span class="checkmark"></span>
+                            </label> 
+                            <label class="cont">Angststoornis
+                                <input type="radio" name="specific_experience" value="Angststoornis">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="cont">Borderline-persoonlijkheidsstoornis
+                                <input type="radio" name="specific_experience" value="Borderline-persoonlijkheidsstoornis">
+                                <span class="checkmark"></span>
+                            </label>  
+                            <label class="cont">Dementie
+                                <input type="radio" name="specific_experience" value="Dementie">
+                                <span class="checkmark"></span>
+                            </label>  
+                            <label class="cont">Eetstoornissen
+                                <input type="radio" name="specific_experience" value="Eetstoornissen">
+                                <span class="checkmark"></span>
+                            </label>  
+                            <label class="cont">Fobiën
+                                <input type="radio" name="specific_experience" value="Fobiën">
+                                <span class="checkmark"></span>
+                            </label>  
+                            
+                        </div>
+                        <div class="form-group">
                             <label for="" class="main-label">Overig</label>
                             <label class="cont">Geen bezwaar tegen huisdieren
                                 <input type="radio" checked="checked" name="other" value="Geen bezwaar tegen huisdieren">
@@ -237,48 +275,49 @@
                         </div>
                         <div class="form-group">
                             <label for="" class="main-label">Diensten</label>
-                            <label class="cont">stofzuigen
-                                <input type="radio" checked="checked" name="services" value="stofzuigen">
+                            <label class="cont">helpen met administratie
+                                <input type="radio" checked="checked" name="services" value="helpen met administratie">
                                 <span class="checkmark"></span>
                             </label> 
-                            <label class="cont">Poetsen
-                                <input type="radio" name="services" value="Poetsen">
+                            <label class="cont">helpen met daginvulling
+                                <input type="radio" name="services" value="helpen met daginvulling">
                                 <span class="checkmark"></span>
                             </label> 
-                            <label class="cont">Was doen
-                                <input type="radio" name="services" value="Was doen">
+                            <label class="cont">begeleiden bij afspraken arts/instanties/
+                                <input type="radio" name="services" value="begeleiden bij afspraken arts/instanties/">
                                 <span class="checkmark"></span>
                             </label> 
-                            <label class="cont">Strijken
-                                <input type="radio" name="services" value="Strijken">
+                            <label class="cont">samen bewegen/sporten
+                                <input type="radio" name="services" value="samen bewegen/sporten">
                                 <span class="checkmark"></span>
                             </label> 
-                            <label class="cont">Tuinwerk
-                                <input type="radio" name="services" value="Tuinwerk">
+                            <label class="cont">begeleiden bij externe dagbesteding
+                                <input type="radio" name="services" value="begeleiden bij externe dagbesteding">
                                 <span class="checkmark"></span>
                             </label>  
-                            <label class="cont">Ramen wassen
-                                <input type="radio" name="services" value="Ramen wassen">
+                            <label class="cont">begeleiden bij uitstapjes (bios/theater/festival/..)
+                                <input type="radio" name="services" value="begeleiden bij uitstapjes (bios/theater/festival/..)">
                                 <span class="checkmark"></span>
                             </label>   
-                            <label class="cont">Opruimen
-                                <input type="radio" name="services" value="Opruimen">
+                            <label class="cont">Geen bezwaar tegen huisdieren
+                                <input type="radio" name="services" value="Geen bezwaar tegen huisdieren">
                                 <span class="checkmark"></span>
                             </label>    
-                            <label class="cont">Boodschappen doen
-                                <input type="radio" name="services" value="Boodschappen doen">
+                            <label class="cont">niet-roker
+                                <input type="radio" name="services" value="niet-roker">
                                 <span class="checkmark"></span>
                             </label>   
-                            <label class="cont">Koken
-                                <input type="radio" name="services" value="Koken">
+                            <label class="cont">meerdere jaren
+                                <input type="radio" name="services" value="meerdere jaren">
                                 <span class="checkmark"></span>
                             </label>     
                         </div>
                         <div class="btn_wrapper" style="justify-content: flex-start;">
-                            <button type="submit" class="btn"  style="background: #DC8742;">
+                            <button type="submit" class="btn" style="background: #DC8742;">
                                 verstuur
                             </button>
                         </div>
+                        
                     </form>  
             </div>
         </div>

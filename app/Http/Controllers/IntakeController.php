@@ -17,6 +17,7 @@ class IntakeController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required', 
+            'looking_for' => 'required', 
             'aggree' => 'required', 
             'permission' => 'required', 
         ]);
@@ -25,6 +26,7 @@ class IntakeController extends Controller
 
         $intakes->name = $request->name;
         $intakes->email = $request->email;
+        $intakes->looking_for = $request->looking_for;
         $intakes->dayphone = $request->dayphone;
         $intakes->evephone = $request->evephone;
         $intakes->aggree = $request->aggree;
