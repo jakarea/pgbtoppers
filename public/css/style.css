@@ -241,7 +241,7 @@ footer .col li, footer .col a {
 .services-filter{
     display: flex;
     align-items:flex-end;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
 
 .services-filter span {
@@ -411,6 +411,132 @@ html{
 .mobile-main{
     display: none;
 }
+
+.container{
+    max-width: 1230px;
+}
+
+/* zoek new css start */
+.zoek-view-sec{
+    padding: 4rem 0;
+}
+
+.zoek-cards-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.zoek-media {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+.zoek-media-body {
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.zoek-main-card{
+    width: 32%;
+    padding: 1.6rem;
+    background-color: #f8faff;
+    border-radius: 7px;
+    margin-bottom: 2rem;
+}
+
+.zoek-main-card:nth-child(17),
+.zoek-main-card:nth-child(14),
+.zoek-main-card:nth-child(11),
+.zoek-main-card:nth-child(8),
+.zoek-main-card:nth-child(5),
+.zoek-main-card:nth-child(2){
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.zoek-media-body h5,
+.zoek-media-body h6{
+    margin: 0;
+}
+.zoek-main-card img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.zoek-media-body h5{
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    color: #232323;
+    font-weight: 400;
+}
+.zoek-media-body h6{
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    color: #232323;
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+.zoek-media-body h6 strong,
+.zoek-media-body h5 strong{
+    color: #2A4250;
+}
+
+.zoek-bottom-info p{
+    margin: 0;
+}
+
+.zoek-bottom-info table{
+width: 100%;
+}
+
+.zoek-bottom-info table tr td p{
+    padding-top: 6px;
+    font-size: 14px;
+    line-height: 19px;
+}
+
+.zoek-bottom-info table tr td p span{
+    font-weight: 600;
+    color: #2A4250;
+}
+.zoek-bottom-info table tr td:last-child{
+text-align: right;
+}
+
+.services-filter span {
+	margin-right: 0px; 
+	margin-bottom: 6px;
+	letter-spacing: 1px;
+}
+
+.services-filter select{
+    background-color: #fff;
+}
+
+.services-filter select option{
+    cursor: pointer;
+}
+
+.services-filter .btn{
+	height: 40px;
+	color: #fff; 
+	padding: 0 27px;
+	border-radius: 7px; 
+}
+
+.services-filter .btn i{
+    margin-right: 6px;
+}
+
+/* zoek new css end */
 
  
  

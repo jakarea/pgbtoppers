@@ -4,286 +4,142 @@
         <div class="container">
             <div class="home-hero-text">
                 <h1>Ik zoek een zorgverlener</h1>
-             
             </div>
         </div>
     </section>
 
-
-    <section class="our-mission">
-        <div class="container">
-            <div class="custom-text custom-text-2">
-            @if (session()->has('message'))
-                <div class="text-success" style="text-align: center;">
-                    <p style="color: green; margin-top: 0px;">{{ session('message') }}</p>
+    <section class="zoek-view-sec">
+        <div class="container"> 
+        <h1 class="mb-5" style="font-size: 2.6rem; font-family: Arial, Helvetica, sans-serif; margin-bottom: 30px;">IK ZOEK EEN ZORGVERLENER</h1>
+        <form action="" method="GET">
+            <div class="services-filter">
+                <div class="filter-wrap">
+                    <span>Leeftijd:</span>
+                    @php 
+                    $age = isset($_GET['age']) ? $_GET['age'] : '';
+                    @endphp
+                    <select name="age">
+                        <option value="">Select Below</option>
+                        <option value="Geen voorkeur" {{ $age == 'Geen voorkeur' ? 'selected' : ''}}>Geen voorkeur</option>
+                        <option value="18-25" {{ $age == '18-25' ? 'selected' : ''}}>18-25</option>
+                        <option value="25-40" {{ $age == '25-40' ? 'selected' : ''}}>25-40</option>
+                        <option value="40-60" {{ $age == '40-60' ? 'selected' : ''}}>40-60</option>
+                        <option value="60+" {{ $age == '60+' ? 'selected' : ''}}>60+</option>
+                    </select>
                 </div>
-            @endif
-                <h2 class="h2">Als je zoekt als hulpvrager naar een Begeleider::</h2>
-
-                <form action="{{ route('services.store') }}" method="POST"> 
-                    @csrf
-                    <div class="form-group">
-                        <label for="" class="main-label">Leeftijd:</label>
-                            <label class="cont">Geen voorkeur
-                                <input type="radio" value="Geen voorkeur" checked="checked" name="age" {{ old('name') == '1' ? 'checked' : '' }}>
-                                <span class="checkmark"></span>
-                            </label>
-                            <p style="color: red; margin-top: 0px;">{{ $errors->first('name') }}</p>
-                            <label class="cont">18-25
-                                <input type="radio" name="age" value="18-25">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="cont">25-40
-                                <input type="radio" name="age" value="25-40">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="cont">40-60
-                                <input type="radio" name="age" value="40-60">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="cont">60+
-                                <input type="radio" name="age" value="60+">
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
-                        <div class="form-group">
-                            <label for="" class="main-label">Afstand:</label>
-                       
-                            <label class="cont">Geen voorkeur
-                                <input type="radio" checked="checked" name="distance" value="Geen voorkeur">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="cont">binnen 5 Km
-                                <input type="radio" name="distance" value="binnen 5 Km">
-                                <span class="checkmark"></span>
-                            </label> 
-                            <label class="cont">binnen 15 Km
-                                <input type="radio" name="distance" value="binnen 15 Km">
-                                <span class="checkmark"></span>
-                            </label>  
-                            <label class="cont">binnen 30 Km
-                                <input type="radio" name="distance" value="binnen 30 Km">
-                                <span class="checkmark"></span>
-                            </label>   
-                        </div>
-                        <div class="form-group">
-                            <label for="" class="main-label">Geslacht:</label>
-
-                            <label class="cont">Geen voorkeur
-                                <input type="radio" checked="checked" name="gender" value="Geen voorkeur">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="cont">Man
-                                <input type="radio" name="gender" value="Man">
-                                <span class="checkmark"></span>
-                            </label> 
-                            <label class="cont">Vrouw
-                                <input type="radio" name="gender" value="Vrouw">
-                                <span class="checkmark"></span>
-                            </label>  
-                        </div>
-                        <div class="form-group">
-                            <label for="" class="main-label">Beschikbare dagen:</label>
-                            <div class="is-checkbox">
-                                <label>
-                                    <input type="checkbox" checked name="days[]" value="Geen voorkeur">
-                                    <span class="custom-checkbox"></span>
-                                    <span>Geen voorkeur</span>
-                                </label> 
-                            </div>
-                            <div class="is-checkbox">
-                                <label>
-                                    <input type="checkbox" name="days[]" value="Ma">
-                                    <span class="custom-checkbox"></span>
-                                    <span>Ma</span>
-                                </label> 
-                            </div>
-                            <div class="is-checkbox">
-                                <label>
-                                    <input type="checkbox" name="days[]" value="Di">
-                                    <span class="custom-checkbox"></span>
-                                    <span>Di</span>
-                                </label> 
-                            </div>
-                            <div class="is-checkbox">
-                                <label>
-                                    <input type="checkbox" name="days[]" value="Wo">
-                                    <span class="custom-checkbox"></span>
-                                    <span>Wo</span>
-                                </label> 
-                            </div> 
-                            <div class="is-checkbox">
-                                <label>
-                                    <input type="checkbox" name="days[]" value="Do">
-                                    <span class="custom-checkbox"></span>
-                                    <span>Do</span>
-                                </label> 
-                            </div> 
-                            <div class="is-checkbox">
-                                <label>
-                                    <input type="checkbox" name="days[]" value="Vr">
-                                    <span class="custom-checkbox"></span>
-                                    <span>Vr</span>
-                                </label> 
-                            </div> 
-                            <div class="is-checkbox">
-                                <label>
-                                    <input type="checkbox" name="days[]" value="Za">
-                                    <span class="custom-checkbox"></span>
-                                    <span>Za</span>
-                                </label> 
-                            </div> 
-                            <div class="is-checkbox">
-                                <label>
-                                    <input type="checkbox" name="days[]" value="Zo">
-                                    <span class="custom-checkbox"></span>
-                                    <span>Zo</span>
-                                </label> 
-                            </div> 
-                        </div>
-                        <div class="form-group">
-                            <label for="" class="main-label">Gewenste dagdeel:</label>
-                            <label class="cont">Geen voorkeur
-                                <input type="radio" checked="checked" name="desired" value="Geen voorkeur">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="cont">Middag
-                                <input type="radio" name="desired" value="Middag">
-                                <span class="checkmark"></span>
-                            </label> 
-                            <label class="cont">Avond
-                                <input type="radio" name="desired" value="Avond">
-                                <span class="checkmark"></span>
-                            </label>  
-                            <label class="cont">nacht
-                                <input type="radio" name="desired" value="nacht">
-                                <span class="checkmark"></span>
-                            </label>  
-
-                        </div>
-                        <div class="form-group">
-                            <label for="" class="main-label">Bezit rijbewijs:</label>
-                            <label class="cont">Geen voorkeur
-                                <input type="radio" checked="checked" name="license" value="Geen voorkeur">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="cont">Noodzakelijk
-                                <input type="radio" checked="checked" name="license" value="Noodzakelijk">
-                                <span class="checkmark"></span>
-                            </label> 
-                            <label class="cont">Niet van toepassing
-                                <input type="radio" checked="checked" name="license" value="Niet van toepassing">
-                                <span class="checkmark"></span>
-                            </label>  
-                        </div>
-                        <div class="form-group">
-                            <label for="" class="main-label">Welke status dient kandidaat te hebben (meerdere opties mogelijk)</label>
-
-                            <label class="cont">Geen voorkeur
-                                <input type="radio" checked="checked" name="candidate_status" value="Geen voorkeur">
-                                <span class="checkmark"></span>
-                            </label>
-
-                            <label class="cont">Cv aanwezig
-                                <input type="radio" name="candidate_status" value="Cv aanwezig">
-                                <span class="checkmark"></span>
-                            </label> 
-                            <label class="cont">Interview gehad met intaketeam
-                                <input type="radio" name="candidate_status" value="Interview gehad met intaketeam">
-                                <span class="checkmark"></span>
-                            </label> 
-                            <label class="cont">Gecontroleerde referenties aanwezig
-                                <input type="radio" name="candidate_status" value="Gecontroleerde referenties aanwezig">
-                                <span class="checkmark"></span>
-                            </label>  
-                            <label class="cont">Geldig VOG
-                                <input type="radio" name="candidate_status" value="Geldig VOG">
-                                <span class="checkmark"></span>
-                            </label>  
-                            <label class="cont">Relevant certificaat of diploma aanwezig
-                                <input type="radio" name="candidate_status" value="Relevant certificaat of diploma aanwezig">
-                                <span class="checkmark"></span>
-                            </label>   
-                        </div>
-                        <div class="form-group">
-                            <label for="" class="main-label">Werkervaring</label>
-                            <label class="cont">Niet noodzakelijk
-                                <input type="radio" checked="checked" name="experience" value="Niet noodzakelijk">
-                                <span class="checkmark"></span>
-                            </label> 
-                             <label class="cont">minimaal 1 jaar
-                                <input type="radio" name="experience" value="minimaal 1 jaar">
-                                <span class="checkmark"></span>
-                            </label> 
-                             <label class="cont">meerdere jaren
-                                <input type="radio" name="experience" value="meerdere jaren">
-                                <span class="checkmark"></span>
-                            </label>   
-                        </div>
-                        <div class="form-group">
-                            <label for="" class="main-label">Overig</label>
-                            <label class="cont">Geen bezwaar tegen huisdieren
-                                <input type="radio" checked="checked" name="other" value="Geen bezwaar tegen huisdieren">
-                                <span class="checkmark"></span>
-                            </label>  
-                            <label class="cont">niet-roker
-                                <input type="radio" name="other" value="niet-roker">
-                                <span class="checkmark"></span>
-                            </label>  
-                            <label class="cont">meerdere jaren
-                                <input type="radio" name="other" value="meerdere jaren">
-                                <span class="checkmark"></span>
-                            </label>      
-                        </div>
-                        <div class="form-group">
-                            <label for="" class="main-label">Diensten</label>
-                            <label class="cont">stofzuigen
-                                <input type="radio" checked="checked" name="services" value="stofzuigen">
-                                <span class="checkmark"></span>
-                            </label> 
-                            <label class="cont">Poetsen
-                                <input type="radio" name="services" value="Poetsen">
-                                <span class="checkmark"></span>
-                            </label> 
-                            <label class="cont">Was doen
-                                <input type="radio" name="services" value="Was doen">
-                                <span class="checkmark"></span>
-                            </label> 
-                            <label class="cont">Strijken
-                                <input type="radio" name="services" value="Strijken">
-                                <span class="checkmark"></span>
-                            </label> 
-                            <label class="cont">Tuinwerk
-                                <input type="radio" name="services" value="Tuinwerk">
-                                <span class="checkmark"></span>
-                            </label>  
-                            <label class="cont">Ramen wassen
-                                <input type="radio" name="services" value="Ramen wassen">
-                                <span class="checkmark"></span>
-                            </label>   
-                            <label class="cont">Opruimen
-                                <input type="radio" name="services" value="Opruimen">
-                                <span class="checkmark"></span>
-                            </label>    
-                            <label class="cont">Boodschappen doen
-                                <input type="radio" name="services" value="Boodschappen doen">
-                                <span class="checkmark"></span>
-                            </label>   
-                            <label class="cont">Koken
-                                <input type="radio" name="services" value="Koken">
-                                <span class="checkmark"></span>
-                            </label>     
-                        </div>
-                        <div class="btn_wrapper" style="justify-content: flex-start;">
-                            <button type="submit" class="btn"  style="background: #DC8742;">
-                                verstuur
-                            </button>
-                        </div>
-                    </form>  
+                <div class="filter-wrap">
+                    <span>Afstand:</span>
+                    @php 
+                    $distance = isset($_GET['distance']) ? $_GET['distance'] : '';
+                    @endphp
+                    <select name="distance" id="">
+                        <option value="">Select Below</option>
+                        <option value="Geen voorkeur" {{ $distance == 'Geen voorkeur' ? 'selected' : ''}}>Geen voorkeur</option>
+                        <option value="binnen 5 Km"  {{ $distance == 'binnen 5 Km' ? 'selected' : ''}}>binnen 5 Km</option>
+                        <option value="binnen 15 Km" {{ $distance == 'binnen 15 Km' ? 'selected' : ''}}>binnen 15 Km</option>
+                        <option value="binnen 30 Km" {{ $distance == 'binnen 30 Km' ? 'selected' : ''}}>binnen 30 Km</option> 
+                    </select>
+                </div>
+                <div class="filter-wrap">
+                    <span>Geslacht:</span>
+                    @php 
+                    $gender = isset($_GET['gender']) ? $_GET['gender'] : '';
+                    @endphp
+                    <select name="gender" id="">
+                        <option value="">Select Below</option>
+                        <option value="Geen voorkeur"  {{ $gender == 'Geen voorkeur' ? 'selected' : ''}}>Geen voorkeur</option>
+                        <option value="Man" {{ $gender == 'Man' ? 'selected' : ''}}>Man</option>
+                        <option value="Vrouw" {{ $gender == 'Vrouw' ? 'selected' : ''}}>Vrouw</option> 
+                    </select>
+                </div>
+                <div class="filter-wrap">
+                    <span style="font-size: 13px;">Gewenste dagdeel:</span>
+                    @php 
+                    $desired = isset($_GET['desired']) ? $_GET['desired'] : '';
+                    @endphp
+                    <select name="desired" id="">
+                        <option value="">Select Below</option>
+                        <option value="Geen voorkeur" {{ $desired == 'Geen voorkeur' ? 'selected' : ''}}>Geen voorkeur</option>
+                        <option value="Middag" {{ $desired == 'Middag' ? 'selected' : ''}}>Middag</option>
+                        <option value="Avond" {{ $desired == 'Avond' ? 'selected' : ''}}>Avond</option> 
+                        <option value="nacht" {{ $desired == 'nacht' ? 'selected' : ''}}>nacht</option>  
+                    </select>
+                </div>
+                <div class="filter-wrap">
+                    <span>Bezit rijbewijs:</span>
+                    @php 
+                    $license = isset($_GET['license']) ? $_GET['license'] : '';
+                    @endphp
+                    <select name="license" id="">
+                        <option value="">Select Below</option>
+                        <option value="Geen voorkeur" {{ $license == 'Geen voorkeur' ? 'selected' : ''}}>Geen voorkeur</option>
+                        <option value="Noodzakelijk" {{ $license == 'Noodzakelijk' ? 'selected' : ''}}>Noodzakelijk</option>
+                        <option value="Niet van toepassing" {{ $license == 'Niet van toepassing' ? 'selected' : ''}}>Niet van toepassing</option>  
+                    </select>
+                </div>
+                <div class="filter-wrap">
+                    <span>meerdere opties mogelijk</span>
+                    @php 
+                    $candidate_status = isset($_GET['candidate_status']) ? $_GET['candidate_status'] : '';
+                    @endphp
+                    <select name="candidate_status" id="">
+                        <option value="">Select Below</option>
+                        <option value="Geen voorkeur" {{ $candidate_status == 'Geen voorkeur' ? 'selected' : ''}}>Geen voorkeur</option>
+                        <option value="Cv aanwezig" {{ $candidate_status == 'Cv aanwezig' ? 'selected' : ''}}>Cv aanwezig</option>
+                        <option value="Interview gehad met intaketeam" {{ $candidate_status == 'Interview gehad met intaketeam' ? 'selected' : ''}}>Interview gehad met intaketeam</option>  
+                        <option value="Gecontroleerde referenties aanwezig" {{ $candidate_status == 'Gecontroleerde referenties aanwezig' ? 'selected' : ''}}>Gecontroleerde referenties aanwezig</option>  
+                        <option value="Geldig VOG" {{ $candidate_status == 'Geldig VOG' ? 'selected' : ''}}>Geldig VOG</option>  
+                        <option value="Relevant certificaat of diploma aanwezig" {{ $candidate_status == 'Relevant certificaat of diploma aanwezig' ? 'selected' : ''}}>Relevant certificaat of diploma aanwezig</option>  
+                    </select>
+                </div>
+                <div class="filter-wrap">
+                    <span>Werkervaring</span>
+                    @php 
+                    $experience = isset($_GET['candidate_status']) ? $_GET['candidate_status'] : '';
+                    @endphp
+                    <select name="experience" id="">
+                        <option value="">Select Below</option>
+                        <option value="Niet noodzakelijk" {{ $experience == 'Niet noodzakelijk' ? 'selected' : ''}}>Niet noodzakelijk</option>
+                        <option value="minimaal 1 jaar" {{ $experience == 'minimaal 1 jaar' ? 'selected' : ''}}>minimaal 1 jaar</option>
+                        <option value="meerdere jaren" {{ $experience == 'meerdere jaren' ? 'selected' : ''}}>meerdere jaren</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-success" style="background: #dc8742; border-color: #dc8742;"><i class="fas fa-filter"></i>  Filter</button>
+            </div>
+        </form>
+        </div>
+        <div class="container">
+            <div class="zoek-cards-wrap">
+                <div class="zoek-main-card">
+                     <a href="#">
+                     <div class="zoek-media">
+                     <img src="https://cdn3.vectorstock.com/i/thumb-large/66/77/avatar-young-bearded-guy-brow-haired-man-vector-32416677.jpg" alt="" class="img-fluid">
+                     <div class="zoek-media-body">
+                        <h5><strong>Name: </strong>{{ Auth()->user()->name}}</h5>
+                        <h6><strong>Email: </strong>{{ Auth()->user()->email}}</h6> 
+                     </div>
+                     </div>
+                     <div class="zoek-bottom-info">
+                        <table>
+                            <tr>
+                                <td><p><span>Age:</span> Geen voorkeur</p></td>
+                                <td><p><span>Distance:</span> Geen voorkeur</p></td>
+                            </tr>
+                            <tr>
+                                <td><p><span>Age:</span> Geen voorkeur</p></td>
+                                <td><p><span>Distance:</span> Geen voorkeur</p></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="text-align: left;"><p><span>Specific Experience:</span> Niet van toepassing</p></td> 
+                            </tr>
+                        </table>
+                     </div>
+                     </a>
+                </div> 
             </div>
         </div>
     </section>
 
-    <section class="footer_image footer_image_2"></section>
+<section class="footer_image footer_image_2"></section>
     
 @endsection

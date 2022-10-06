@@ -4,11 +4,7 @@
         <div class="container">
             <div class="home-hero-text">
                 <h1>ONZE AMBITIE</h1>
-                <div class="btn-hero">
-                    <a href="#" class="btn btn-secondary">
-                    CONTACT
-                    </a>
-                </div>
+                
             </div>
         </div>
     </section>
