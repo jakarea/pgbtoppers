@@ -101,7 +101,7 @@ class HomeController extends Controller
 
         $intakes->save();
 
-        Mail::to($request->email)->cc($intakes->email)->send(new ContactMail($intakes));
+        Mail::to($request->email)->cc(env('INTAKE_MAIL'))->send(new ContactMail($intakes));
 
         Session::flash('status', 'Success');
         Session::flash('message', 'Contact Info Send Successfully');

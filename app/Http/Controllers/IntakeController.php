@@ -1,9 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Intake;
-use Illuminate\Support\Facades\Session;
+use App\Mail\ContactMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 
 class IntakeController extends Controller
 {
@@ -33,6 +36,7 @@ class IntakeController extends Controller
         $intakes->permission = $request->permission;
 
         $intakes->save();
+        Mail::to($request->email)->cc(env('INTAKE_MAIL'))->send(new ContactMail($intakes));
 
         Session::flash('status', 'Success');
         Session::flash('message', 'Contact Info Send Successfully');

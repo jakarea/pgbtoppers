@@ -32,9 +32,8 @@
                         </div>
 
                         <div class="row mb-0" style="margin-top: 20px;">
-                        <a href="{{ route('login') }}" >Login</a>
+                        <a href="{{ route('login') }}" style="margin-bottom: 10px; display: block; color: #DC8742; font-size: 14px;">Login</a>
                             <div class="col-md-6 offset-md-4">
-                           
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Send Password Reset Link') }}
                                 </button>

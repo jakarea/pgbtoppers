@@ -13,7 +13,7 @@
                 <h1 style="color: #3d4852; font-size: 18px; font-weight: bold;">Hey, It's me {{ $data->name }} !</h1> 
  
                 <p>Email Address: {{ $data->email }}</p>
-
+                <p>{{ $data->looking_for ? $data->looking_for: ''  }} </p>
                 <span style="display: block; margin-top: 30px; font-size: 14px; text-align: center;">Thank you</span>
             </span>
         </td>

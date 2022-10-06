@@ -35,6 +35,7 @@ Onze ambitie is dat wij over enkele jaren niet meer nodig zijn. Tot die tijd wil
     <section class="reviews" style="margin-top: 100px;">
         <div class="container">
             <div class="flex-container">
+                
                 <div class="review card">
                     <div class="review_quote">
                         <i class="fa fa-quote-right" aria-hidden="false"></i>
@@ -48,6 +49,7 @@ Onze ambitie is dat wij over enkele jaren niet meer nodig zijn. Tot die tijd wil
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation nummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud ex</p>
                     </div>
                 </div>
+
                 <div class="review card">
                     <div class="review_quote">
                         <i class="fa fa-quote-right" aria-hidden="false"></i>
