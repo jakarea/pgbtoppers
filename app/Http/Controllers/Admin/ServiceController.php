@@ -3,17 +3,44 @@
 namespace App\Http\Controllers\Admin;
 
 use Auth;
+use App\Models\User;
 use App\Models\Payment;
 use App\Models\Service;
+use App\Models\Mailbox;
 use App\Mail\ServiceMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session; 
 
-
 class ServiceController extends Controller
 {
+
+    function sendMailToSeller(Request $request){
+
+        $request->validate([
+            'title' => 'required',
+            'message' => 'required',
+            'receiver_id' => 'required'
+        ]);
+
+        $receiver = User::findOrFail($request->receiver_id);
+        
+        $mailbox = New Mailbox();
+        $mailbox->sender_id =  Auth::user()->id;
+        $mailbox->receiver_id = $request->receiver_id;
+        $mailbox->title = $request->title;
+        $mailbox->body = $request->message;
+        
+        $mailbox->save();
+
+        Mail::to($receiver->email)->cc(env('INTAKE_MAIL'))->send(new ServiceMail($mailbox));
+
+        Session::flash('status', 'Success');
+        Session::flash('message', 'Mail sent successfully');
+        return redirect()->back();
+
+    }
 
     public function index()
     { 
@@ -24,8 +51,8 @@ class ServiceController extends Controller
         $license = isset($_GET['license']) ? $_GET['license'] : ''; 
         $candidate_status = isset($_GET['candidate_status']) ? $_GET['candidate_status'] : ''; 
         $experience = isset($_GET['experience']) ? $_GET['experience'] : ''; 
-          
-      $services =  Service::orderBy('id','desc')->where('serving',NULL);
+    
+        $services =  Service::orderBy('id','desc')->where('serving',NULL);
  
        if(!empty($age)){
            $services->where('age','like','%'.trim($age).'%');
