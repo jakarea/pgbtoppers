@@ -6,13 +6,17 @@
             <div class="user-profile-wrap">
                 <div class="d-flex align-items-center justify-content-between">
                     <h1>My Profile</h1>
-                    <a href="{{ url('admin/users/edit/'.Auth()->user()->id) }}">
+                    <a href="{{ url('admin/users/'.Auth()->user()->id).'/edit' }}">
                     <i class="fas fa-pen"></i>
                     </a>
                 </div>
                 `
                 <div class="media align-items-center">
-                    <img class="img-responsive" src="https://ui-avatars.com/api/?background=random&name={{Auth()->user()->name}}&rounded=true" alt="{{Auth()->user()->name}}" style="width: 120px;">
+                @if(Auth::user()->photo)
+                <img id="preview" class="img-responsive" style="max-width: 120px" src="/images/thumbnail/{{ Auth::user()->photo }}"/ >
+                @else
+                <img id="preview" class="img-responsive" src="https://ui-avatars.com/api/?background=random&name={{Auth()->user()->name}}&rounded=true" alt="{{Auth()->user()->name}}" style="width: 120px;">
+                @endif
                     <div class="media-body ml-3">
                     <p><strong>Name: </strong> {{ Auth()->user()->name }}</p>
                     <br>

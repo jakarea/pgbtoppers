@@ -89,9 +89,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'name' => 'admin.'], 
     Route::controller(UserController::class)->group(function (){ 
         Route::get('/', 'userprofile')->name('admin.userprofile');
         Route::get('/users', 'index')->name('users.index');
+        Route::get('/users/add', 'add')->name('users.add');
+        Route::post('/users/add', 'strore')->name('users.store');
 
-        Route::get('/users/edit/{id}', 'edit')->name('users.edit');
-        Route::post('/users/edit/{id}', 'update')->name('users.update');
+        Route::get('/users/{id}/edit', 'edit')->name('users.edit');
+        Route::post('/users/{id}/edit', 'update')->name('users.update');
         Route::get('/users/{id}/delete', 'destroy')->name('users.destroy');
     });
 
