@@ -81,12 +81,44 @@ class ServiceController extends Controller
 
     public function indexprovider()
     { 
-        return view('backend.services-provider');
+        $age = isset($_GET['age']) ? $_GET['age'] : ''; 
+        $distance = isset($_GET['distance']) ? $_GET['distance'] : ''; 
+        $gender = isset($_GET['gender']) ? $_GET['gender'] : '';  
+        $desired = isset($_GET['desired']) ? $_GET['desired'] : ''; 
+        $license = isset($_GET['license']) ? $_GET['license'] : ''; 
+        $candidate_status = isset($_GET['candidate_status']) ? $_GET['candidate_status'] : ''; 
+        $experience = isset($_GET['experience']) ? $_GET['experience'] : ''; 
+    
+        $services =  Service::orderBy('id','desc')->where('serving',1);
+ 
+       if(!empty($age)){
+           $services->where('age','like','%'.trim($age).'%');
+       }
+       if(!empty($distance)){
+           $services->where('distance','like','%'.trim($distance).'%');
+       }
+       if(!empty($gender)){
+           $services->where('gender','like','%'.trim($gender).'%');
+       } 
+       if(!empty($desired)){
+           $services->where('desired','like','%'.trim($desired).'%');
+       }
+       if(!empty($candidate_status)){
+           $services->where('candidate_status','like','%'.trim($candidate_status).'%');
+       }
+       if(!empty($experience)){
+           $services->where('experience','like','%'.trim($experience).'%');
+       }
+
+       $services = $services->paginate(10);
+ 
+        return view('backend.services-provider',['title' => 'Services Show All', 'services' => $services]);
     }
 
     public function view($id)
     {   
-        return view('backend.services-view');
+        $service = Service::find($id);
+        return view('backend.services-view',['title' => 'View Services', 'service' => $service]);
  
     }
 
@@ -105,7 +137,10 @@ class ServiceController extends Controller
             'services' => 'required', 
         ]);
 
-        $services = New Service();
+        $services = Service::where("user_id",Auth::user()->id)->first();
+        if(!$services){
+            $services = New Service();
+        }
         $services->user_id = Auth::user()->id; 
         $services->age = $request->age; 
         $services->distance = $request->distance; 
@@ -120,18 +155,27 @@ class ServiceController extends Controller
 
         $services->save();
 
-        Mail::to("nayan@yopmail.com")->cc(Auth()->user()->email)->send(new ServiceMail($services));
+        Mail::to(env('INTAKE_MAIL'))->cc(Auth()->user()->email)->send(new ServiceMail($services));
 
         Session::flash('status', 'Success');
         Session::flash('message', 'Services Info Send Successfully');
         return redirect()->route('frontend.ikzoek');
+}
+
+    public function provideradd()
+    {
+        return view('backend.ikben-add');
+    }
+    public function add()
+    {
+        return view('backend.ikzoek-add');
     }
 
     public function providerstore(Request $request)
     {
-        if(!Auth::user()->paid){
-            return redirect()->back()->with("message", "You need to pay to create your care provider profile!");  
-        }
+        // if(!Auth::user()->paid){
+        //     return redirect()->back()->with("message", "You need to pay to create your care provider profile!");  
+        // }
 
         $request->validate([
             'age' => 'required',
@@ -147,7 +191,10 @@ class ServiceController extends Controller
             'specific_experience' => 'required', 
         ]);
 
-        $services = New Service();
+        $services = Service::where("user_id",Auth::user()->id)->first();
+        if(!$services){
+            $services = New Service();
+        }
 
         $services->user_id = Auth::user()->id; 
         $services->age = $request->age; 
@@ -166,11 +213,11 @@ class ServiceController extends Controller
 
         $services->save();
 
-        Mail::to("nayan@yopmail.com")->cc(Auth()->user()->email)->send(new ServiceMail($services));
+        Mail::to($request->email)->cc(Auth()->user()->email)->send(new ServiceMail($services));
 
         Session::flash('status', 'Success');
         Session::flash('message', 'Services Info Send Successfully');
-        return redirect()->route('frontend.ikzoek');
+        return redirect()->route('admin.services');
     }
 
     public function edit($id)

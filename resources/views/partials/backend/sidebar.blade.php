@@ -45,7 +45,7 @@
     <li class="nav-item active">
         <a class="nav-link" href="{{ route('admin.services') }}">
             <i class="fas fa-fw fa-cog"></i>
-            <span>IK ZOEK EEN ZORGVERLENER (finder) </span>
+            <span>IK ZOEK EEN ZORGVERLENER </span>
         </a>
     </li>
 
@@ -54,7 +54,7 @@
     <li class="nav-item active">
         <a class="nav-link" href="{{ route('admin.services-provider') }}">
             <i class="fas fa-fw fa-cog"></i>
-            <span>EEN ZORGVERLENER CP (provider)</span>
+            <span>EEN ZORGVERLENER </span>
         </a>
     </li>
     @endif

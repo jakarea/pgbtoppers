@@ -49,7 +49,7 @@ class UserController extends Controller
             'email' => 'required', 
             'role' => 'required',  
             'password' => 'required',  
-            'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'photo' => 'image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
         ]);
         $photo_name = ''; 
         $photo = $request->file('photo');
@@ -101,10 +101,9 @@ class UserController extends Controller
 
         $request->validate([
             'name' => 'required',
-            'email' => 'required', 
-            'role' => 'required',  
+            'email' => 'required',  
             'password' => 'nullable|min:6',  
-            'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'photo' => 'image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
         ]);
 
         $user = User::findOrFail($id);
@@ -125,7 +124,9 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->name = $request->name; 
         $user->email = $request->email; 
-        $user->role = $request->role; 
+        if($request->role){
+            $user->role = $request->role; 
+        }
         $user->photo = $photo_name; 
         if($request->password){
             $user->password = Hash::make($request->password); 

@@ -16,7 +16,10 @@
             <div class="intake-table">
                 <div class="d-flex justify-content-between align-items-center">
                 <h1 class="mb-5">Gebruikers</h1>
-                    <a href="{{ url('admin/users/add') }}" class="btn btn-info">Add</a>
+
+                    @if(Auth::user()->role == 1 || Auth::user()->role == 2)
+                        <a href="{{ url('admin/users/add') }}" class="btn btn-info">Add</a>
+                    @endif
                 </div>
 
                 <table class="table table-striped">
@@ -44,7 +47,7 @@
                         <td valign="middle">{{ ++$i }}</td>
                         <td valign="middle">
                         @if($user->photo)
-                <img id="preview" class="img-responsive" style="max-width: 120px" src="/images/thumbnail/{{ $user->photo }}" style="width: 60px;">
+                <img id="preview" class="img-responsive prev-inner" style="max-width: 120px" src="/images/thumbnail/{{ $user->photo }}" style="width: 60px;">
                 @else
                 <img id="preview" class="img-responsive" src="https://ui-avatars.com/api/?background=random&name={{Auth()->user()->name}}&rounded=true" alt="{{Auth()->user()->name}}" style="width: 60px;">
                 @endif

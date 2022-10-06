@@ -138,6 +138,10 @@ footer .col li, footer .col a {
     text-align: center;
     margin-bottom: 4rem;
 }
+
+.sidebar-brand{
+    margin-bottom: 2rem;
+}
  
 .custom-text-2 label,
 .custom-text-2 span{
@@ -621,8 +625,14 @@ width: 50%;
 }
 /* zoek new css end */
 
+
+#preview{
+    border-radius: 50%;
+}
  
- 
+ .prev-inner{
+    max-width: 60px!important; 
+ }
 /* responsive css start */
 @media(min-width: 320px) and (max-width: 575px) {
     .logo a{

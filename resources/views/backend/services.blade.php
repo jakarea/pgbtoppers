@@ -6,8 +6,9 @@
         <div class="col-lg-12">
             <div class="intake-table">
                 
-                <div class="d-flex align-items-center">
-                <h1 class="mb-5" style="font-size: 2rem;">IK ZOEK EEN ZORGVERLENER</h1>
+                <div class="d-flex justify-content-between align-items-center mb-5">
+                <h1 class="mb-0" style="font-size: 2rem;">IK ZOEK EEN ZORGVERLENER</h1>
+                <a class="btn btn-primary" href="{{ url('admin/services-provider/add')  }}">Add</a>
 </div>
                 <form action="" method="GET">
                     
@@ -156,6 +157,12 @@
                             <a href="{{ url('admin/services-provider/'.$service->id)}}">
                                 <i class="fas fa-eye"></i>
                             </a> 
+
+                            @if($service->user->id == Auth()->user()->id || Auth()->user()->role == 1 || Auth::user()->role == 2)
+                            <a href="{{url('admin/services/'.$service->id.'/edit')}}" style="margin-left: 1rem; color: green;">
+                                <i class="fas fa-pen"></i>
+                            </a>
+                            @endif
 
                             @if(Auth::user()->role === 1)
                             <a href="{{url('admin/services/destroy/'.$service->id)}}" style="margin-left: 1rem; color: red;">

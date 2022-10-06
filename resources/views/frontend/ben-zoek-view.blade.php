@@ -15,40 +15,21 @@
         <div class="container">
             <div class="zoek-single-views">
             <div class="zoek-view-left">
-            <div class="zoek-main-card" style="width: 100%;">
-                     <a href="#">
+            <div class="zoek-main-card" style="width: 100%;"> 
                      <div class="zoek-media">
-                     <img src="https://cdn3.vectorstock.com/i/thumb-large/66/77/avatar-young-bearded-guy-brow-haired-man-vector-32416677.jpg" alt="" class="img-fluid">
+                     @if(Auth::user()->photo)
+                <img id="preview" class="img-responsive" style="max-width: 120px" src="/images/thumbnail/{{ Auth::user()->photo }}"/ >
+                @else
+                <img id="preview" class="img-responsive" src="https://ui-avatars.com/api/?background=random&name={{$service->user->name}}&rounded=true" alt="{{$service->user->name}}" style="width: 120px;">
+                @endif
                      <div class="zoek-media-body">
                         <h5><strong>Name: </strong>{{ $service->user ? $service->user->name : '' }}</h5>
                         <h6><strong>Email: </strong>{{ $service->user ? $service->user->email : '' }}</h6> 
                      </div>
-                     </div>
-                     <div class="zoek-bottom-info">
-                        <table>
-                            <tr>
-                                <td style="text-align: left;"><p><span>Role:</span>
-                                @if($service->user->role === 1)
-                                {{ ('Admin') }}
-                                @elseif($service->user->role === 2)
-                                {{ ('Seller') }}
-                                @else
-                                {{ ('Buyer') }}
-                                @endif
-                                </p></td> 
-                            </tr> 
-                        </table>
-                     </div>
-                     </a>
+                     </div>  
                 </div>
                 <div class="zoek-mail-box-wrap">
-                    <h4>Send Message to this @if($service->user->role === 1)
-                                {{ ('Admin') }}
-                                @elseif($service->user->role === 2)
-                                {{ ('Seller') }}
-                                @else
-                                {{ ('Buyer') }}
-                                @endif</h4>
+                    <h4>Send Message to <i> {{ Auth::user()->name }}</i></h4>
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>

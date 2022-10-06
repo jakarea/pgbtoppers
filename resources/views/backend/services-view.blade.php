@@ -86,8 +86,7 @@
                         <th>:</th>
                         <td>{{ $service->specific_experience ?: 'N/A'}}</td>
                     </tr> 
-                </table>
-                 SEND Messags[Not done]
+                </table> 
             </div>
         </div> 
      </div>
