@@ -9,13 +9,25 @@
                 <div class="d-flex justify-content-between align-items-center">
                 <h1 class="h1">Gebruikers</h1> 
                 </div>
-                <form action="{{ route('users.update',$user->id) }}" method="POST">
+                @if ($errors->any())
+					<div class="alert alert-danger">
+						<ul>
+							@foreach ($errors->all() as $error)
+								<li>{{ $error }}</li>
+							@endforeach
+						</ul>
+					</div>
+				@endif
+                @if($user->photo)
+                <img id="preview" class="img-responsive" style="max-width: 120px" src="/images/thumbnail/{{ $user->photo }}"/ >
+                @else
+                <img id="preview" class="img-responsive" src="https://ui-avatars.com/api/?background=random&name={{Auth()->user()->name}}&rounded=true" alt="{{Auth()->user()->name}}" style="width: 120px;">
+                @endif
+               
+                <form action="{{ route('users.update',$user->id) }}" enctype = "multipart/form-data" method = "POST">
                 @csrf
                 <table class="table table-striped">
-                    <tr>
-                        <th>Id</th>
-                        <td valign="middle">{{ $user->id }}</td>
-                    </tr>
+                
                     <tr>  
                         <th>Name</th>
                         <td valign="middle"><input type="text" name="name" value="{{ $user->name }}" class="form-control"></td> 
@@ -26,19 +38,27 @@
                     </tr>
 
                     @if(Auth()->user()->role == 1)
-  
                     <tr>  
-                       <th>Role</th>
+                        <th>Role</th>
                         <td>
-                        <select name="role" class="form-control">
-                            <option value="1">Admin</option>
-                            <option value="2">Ik BEN EEN ZORGVERLENER</option>
-                            <option value="3">IK ZOEK EEN ZORGVERLENER</option>
-                        </select>
+                            <select name="role" class="form-control">
+                                <option value="1" {{ $user->role ===1 ? 'selected' : '' }}>Admin</option>
+                                <option value="2" {{ $user->role ===2 ? 'selected' : '' }}>Intake team</option>
+                                <option value="3" {{ $user->role ===3 ? 'selected' : '' }}>Healthcare provider</option>
+                                <option value="4" {{ $user->role ===4 ? 'selected' : '' }}>Looking for healthcare provider</option>
+                            </select>
                         </td>
                     </tr> 
 
                     @endif
+                    <tr>
+							<th>Password</th>
+							<td valign="middle"><input type="password" name="password" class="form-control"></td>
+						</tr>
+                    <tr>  
+                        <th>Photo</th>
+                        <td valign="middle"><input type="file" name="photo" class="form-control"></td>
+                    </tr>
 
                     <tr>
                         <td colspan="2" class="text-right">

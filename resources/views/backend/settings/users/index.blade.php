@@ -14,15 +14,15 @@
             
 
             <div class="intake-table">
-                
                 <div class="d-flex justify-content-between align-items-center">
-                <h1 class="h1">Gebruikers</h1>
-                <!-- <a href="{{ url('admin/testimonial/add') }}" class="btn btn-info">Add</a> -->
+                <h1 class="mb-5">Gebruikers</h1>
+                    <a href="{{ url('admin/users/add') }}" class="btn btn-info">Add</a>
                 </div>
+
                 <table class="table table-striped">
                     <tr>
-                        <th>No</th>
-                        <th>Id</th>
+                        <th>#</th>
+                        <th>Photo</th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Role</th>
@@ -35,9 +35,20 @@
                     @endphp
 
                     @foreach($users as $user)
+                    @php 
+                    $photo = $user->photo;
+                        if(!$photo)
+                            $photo = 'default.jpeg';
+                    @endphp
                     <tr>
-                        <td valign="middle">{{ ++$i }}</td>  
-                        <td valign="middle">{{ $user->id }}</td>
+                        <td valign="middle">{{ ++$i }}</td>
+                        <td valign="middle">
+                        @if($user->photo)
+                <img id="preview" class="img-responsive" style="max-width: 120px" src="/images/thumbnail/{{ $user->photo }}"/ >
+                @else
+                <img id="preview" class="img-responsive" src="https://ui-avatars.com/api/?background=random&name={{Auth()->user()->name}}&rounded=true" alt="{{Auth()->user()->name}}" style="width: 120px;">
+                @endif
+                        </td>  
                         <td valign="middle">{{ $user->name }}</td>
                         <td valign="middle">{{ $user->email }}</td>
                         <td valign="middle">
@@ -53,7 +64,7 @@
                         @endif
                         </td>
                         <td valign="middle">
-                            <a href="{{ url('admin/users/edit/'.$user->id) }}">
+                            <a href="{{ url('admin/users/'.$user->id.'/edit') }}">
                                 <i class="fas fa-pen text-success"></i>
                             </a>
                             @if(Auth()->user()->role == 1)
