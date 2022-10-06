@@ -122,6 +122,15 @@ footer .col li, footer .col a {
     font-weight: 700;
     text-transform: uppercase;
 }
+.ftr-bttm {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background: #fff;
+    z-index: 999; 
+    padding: 0;
+}
 .ftr-bttm h2{
     color: #2A4250;
     font-size: 2.2rem;
