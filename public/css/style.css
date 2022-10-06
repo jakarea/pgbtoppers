@@ -536,6 +536,86 @@ text-align: right;
     margin-right: 6px;
 }
 
+.zoek-single-views{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.zoek-view-left{
+    width: 40%;
+}
+
+.zoek-view-right{
+    width: 56%;
+    margin-left: 4%;
+    background-color: #f8faff;
+    padding: 1.2rem 2.2rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 7px;
+}
+
+.zoek-view-right table tr th{
+    padding-bottom: 12px;
+}
+.zoek-view-right table tr th:first-child{
+    text-align: left;
+}
+
+.zoek-view-right table tr td:last-child{
+    text-align: right;
+}
+
+.zoek-mail-box-wrap{
+    margin-top: 2rem;
+    background-color: #f8faff;
+    padding: 1.6rem;
+    border-radius: 7px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.zoek-mail-box-wrap h4{
+    color: #2A4250;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.zoek-mail-box-wrap label{
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #232323;
+    margin-bottom: 10px;
+}
+.zoek-mail-box-wrap textarea{
+    height: 120px;
+    resize:vertical; 
+    padding-top: 5px;
+}
+.zoek-mail-box-wrap textarea,
+.zoek-mail-box-wrap input{
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #232323;
+    margin-bottom: 10px;
+    border-radius: 7px;
+}
+
+.form-btn .btn-submit{
+    padding: 5px 20px!important;
+    color: #fff;
+    background-color: #DC8742;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 21px;
+    border-radius: 7px;
+    height: 40px;
+}
+
+.form-btn{
+    text-align: right;
+}
 /* zoek new css end */
 
  

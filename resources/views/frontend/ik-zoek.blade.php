@@ -115,8 +115,8 @@
                      <div class="zoek-media">
                      <img src="https://cdn3.vectorstock.com/i/thumb-large/66/77/avatar-young-bearded-guy-brow-haired-man-vector-32416677.jpg" alt="" class="img-fluid">
                      <div class="zoek-media-body">
-                        <h5><strong>Name: </strong>{{ Auth()->user()->name}}</h5>
-                        <h6><strong>Email: </strong>{{ Auth()->user()->email}}</h6> 
+                        <h5><strong>Name: </strong>Jhon Doe</h5>
+                        <h6><strong>Email: </strong>admin@pgbtopper.com</h6> 
                      </div>
                      </div>
                      <div class="zoek-bottom-info">
