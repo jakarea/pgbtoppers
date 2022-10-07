@@ -17,8 +17,8 @@
             <div class="zoek-view-left">
             <div class="zoek-main-card" style="width: 100%;"> 
                      <div class="zoek-media">
-                     @if(Auth::user()->photo)
-                <img id="preview" class="img-responsive" style="max-width: 120px" src="/images/thumbnail/{{ Auth::user()->photo }}"/ >
+                     @if($service->user->photo)
+                <img id="preview" class="img-responsive" style="max-width: 120px" src="/images/thumbnail/{{ $service->user->photo }}"/ >
                 @else
                 <img id="preview" class="img-responsive" src="https://ui-avatars.com/api/?background=random&name={{$service->user->name}}&rounded=true" alt="{{$service->user->name}}" style="width: 120px;">
                 @endif
@@ -29,16 +29,7 @@
                      </div>  
                 </div>
                 <div class="zoek-mail-box-wrap">
-                    <h4>Send Message to <i> {{ Auth::user()->name }}</i></h4>
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
+                    <h4>Send Message to <i> {{ $service->user->name }}</i></h4>
 
                     <form action="{{url('admin/send-mail') }}" method="POST"> 
                         @csrf
@@ -46,10 +37,12 @@
                         <div class="form-group">
                             <label for="">Subject:</label>
                             <input name="title" type="text" placeholder="Enter your title..">
+                            <p class="label-error" style="color: red; margin-top: 0px;">{{ $errors->first('title') }}</p>
                         </div>
                         <div class="form-group">
                             <label for="">Message:</label>
                             <textarea name="message" class="form-control"></textarea>
+                            <p class="label-error" style="color: red; margin-top: 0px;">{{ $errors->first('message') }}</p>
                         </div>
                         <div class="form-btn">
                         <button type="submit" class="btn btn-submit">Send</button>

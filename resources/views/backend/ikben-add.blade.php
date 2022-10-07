@@ -9,7 +9,7 @@
                     <p style="color: green; margin-top: 0px;">{{ session('message') }}</p>
                 </div>
             @endif
-                <h2 class="h2" style="font-weight: 700;">Als je zoekt als hulpvrager naar een Begeleider::</h2>
+                <h2 class="h2" style="font-weight: 700;">Als je zoekt als hulpvrager naar een Begeleider:</h2>
                 <form action="{{ route('services-provider.store') }}" method="POST"> 
                     @csrf
                     <div class="form-group">

@@ -1,5 +1,7 @@
 @extends('layouts.dashboard')
 @section('content')
+
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-7">
@@ -23,15 +25,20 @@
                     <p><strong>Email: </strong> {{ Auth()->user()->email }}</p>
                     <p><strong>Role: </strong>
                         @if(Auth()->user()->role === 1)
-                        {{ ('Admin') }}
+                            {{ ('Admin') }}
                         @elseif(Auth()->user()->role === 2)
-                        {{ ('Provider') }}
+                            {{ ('Intake Team') }}
+                        @elseif(Auth()->user()->role === 3)
+                            {{ ('Healthcare provider') }}
                         @else
-                        {{ ('Finder') }}
+                            {{ ('Looking for healthcare provider') }}
                         @endif
                     </p>
                     </div>
                 </div>
+                @if(Auth::user()->role === 3 && !Auth::user()->paid)
+                    <a href="{{ route('admin.payment')}}" class="activation_notice">Activate your health care provider profile</a>
+                @endif
             </div>
         </div>
     </div>
@@ -110,7 +117,7 @@
         </div>
         @elseif(Auth()->user()->role === 3)
             <a href="{{ url('admin/services-provider/add')  }}" class="btn btn-primary mt-4">Create Profile</a>
-        @elseif(Auth()->user()->role === 2)
+        @elseif(Auth()->user()->role === 4)
         <a href="{{ url('admin/services/add')  }}" class="btn btn-primary mt-4">Create Profile</a>
         @endif
     </div>

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Payment;
 use App\Models\User;
+use App\Models\Service;
 
 use Session;
 
@@ -79,14 +80,9 @@ class StripeController extends Controller
                 $payment->phone = $status->customer_details->phone;
                 $payment->save();
             }
+            // return $service = Service::where('user_id',Auth::user()->id)->first();
 
-            // $stripe = new \Stripe\StripeClient(env('STRIPE_SECRET'));
-            // $dd = $stripe->checkout->sessions->all(['limit' => 3]);
-            
-            // echo "<pre>";
-            //     print_r($dd);
-            // echo "</pre>";
-
+            User::where('id', Auth::user()->id)->update(['paid' =>1]);
             Session::flash('message', 'Payment successful!');
             return redirect('admin/payment-history');
         exit;

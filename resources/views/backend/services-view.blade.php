@@ -22,11 +22,6 @@
                 <table class="table table-striped" style="width: 60%; margin: 0 auto;">
                     
                     <tr>
-                        <th>User ID</th>
-                        <th>:</th>
-                        <td>{{ $service->user->id }}</td>
-                    </tr>
-                    <tr>
                         <th>Name</th>
                         <th>:</th>
                         <td>{{ $service->user->name }}</td>
@@ -86,9 +81,26 @@
                         <th>:</th>
                         <td>{{ $service->specific_experience ?: 'N/A'}}</td>
                     </tr> 
+                    <tr>
+                        <th>Status</th>
+                        <th>:</th>
+                        <td>
+                            <label>{{ $service->approved ? 'Approved' : 'Pending' }}</label>
+
+                            @if($service->approved)
+                                <a style="float:right" href="{{url('admin/services-provider/'.$service->id.'/pending')}}" class="btn btn-warning"><i class="fas fa-check"></i> Pending</a>
+                            @else
+                                <a style="float:right" href="{{url('admin/services-provider/'.$service->id.'/approve')}}" class="btn btn-success"><i class="fas fa-check"></i> Approve</a>
+                            @endif
+                        </td>
+                    </tr>
+                    
+                    
+                    
                 </table> 
+                
             </div>
         </div> 
-     </div>
+    </div>
 </div>
 @endsection

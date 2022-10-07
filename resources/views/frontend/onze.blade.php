@@ -35,47 +35,21 @@ Onze ambitie is dat wij over enkele jaren niet meer nodig zijn. Tot die tijd wil
     <section class="reviews" style="margin-top: 100px;">
         <div class="container">
             <div class="flex-container">
-                
-                <div class="review card">
+            @foreach($testmonial as $test)
+            <div class="review card">
                     <div class="review_quote">
                         <i class="fa fa-quote-right" aria-hidden="false"></i>
                     </div>
                     <div class="review_image">
-                        <img src="https://ui-avatars.com/api/?background=random&amp;name=ClaraLean&amp;" alt="Review person" class="img-responsive">
+                    <img src="{{ asset('images/testimonial/'.$test->image) }}" alt="advisor Image" class="img-fluid" style="width: 130px; height: 130px; border-radius: 50%; object-fit: cover;">
                     </div>
                     <div class="review_content">
-                        <span class="h4">Clara Lean</span>
-                        <span class="h5">Pgber</span>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation nummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud ex</p>
+                        <span class="h4">{{ $test->name }}</span>
+                        <span class="h5">{{ $test->designation }}</span>
+                        <p >{{ substr($test->description,0,400) }}</p>
                     </div>
-                </div>
-
-                <div class="review card">
-                    <div class="review_quote">
-                        <i class="fa fa-quote-right" aria-hidden="false"></i>
-                    </div>
-                    <div class="review_image">
-                        <img src="{{ asset('images/thijs_round.png') }}" alt="Review person" class="img-responsive">
-                    </div>
-                    <div class="review_content">
-                        <span class="h4">LAURA ZAANDAM</span>
-                        <span class="h5">ZORGVERLENER</span>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud tation nummy nibh euismod tincidunt ut laoreet dolore ma</p>
-                    </div>
-                </div>
-                <div class="review card">
-                    <div class="review_quote">
-                        <i class="fa fa-quote-right" aria-hidden="false"></i>
-                    </div>
-                    <div class="review_image">
-                        <img src="{{ asset('images/thijs_round.png') }}" alt="Review person" class="img-responsive">
-                    </div>
-                    <div class="review_content">
-                        <span class="h4">TOM DE LANGE</span>
-                        <span class="h5">PGBER</span>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation nummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud ex</p>
-                    </div>
-                </div>
+                </div> 
+            @endforeach
             </div> 
         </div>
     </section>

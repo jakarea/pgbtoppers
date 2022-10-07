@@ -35,13 +35,13 @@
                             <div class="form-group">
                                 <label for="">Image</label>
                                 <input type="file" class="form-control" name="image">
-                                <span class="label-error" style="color: red;">{{ $errors->first('designation') }}</span>
+                                <span class="label-error" style="color: red;">{{ $errors->first('image') }}</span>
                             </div>
                         </div>
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label for="">Description</label> 
-                                <textarea name="description" id="" class="form-control" cols="30" rows="10"></textarea>
+                                <textarea name="description" id="" class="form-control" cols="30" rows="10">{{ old('description') }}</textarea>
                                 <span class="label-error" style="color: red;">{{ $errors->first('description') }}</span>
                             </div>
                         </div>

@@ -8,12 +8,13 @@
                 <h1 class="mb-5">Intake Information</h1>
                 <table class="table table-striped">
                     <tr>
-                        <th>No</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Day Number</th>
-                        <th>Evening Number</th>
-                    </tr>
+                        <th>#</th>
+                        <th>Naam</th>
+                        <th>E-mailadres</th>
+                        <th>Telefoon overdag</th>
+                        <th>Telefoon avond</th>  
+                        <th>Zoek</th>
+                        </tr>
 
                     @php 
                         $i = isset($_GET['page']) ? $_GET['page'] : 1;
@@ -27,7 +28,7 @@
                         <td valign="middle">{{ $intak->email }}</td>
                         <td valign="middle">{{ $intak->dayphone }}</td>
                         <td valign="middle">{{ $intak->evephone }}</td>
-                         
+                        <td valign="middle">{{ $intak->looking_for }}</td>
                     </tr>
                     @endforeach
                 </table>
