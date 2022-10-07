@@ -65,7 +65,13 @@
     </li>
 
     <!-- Nav Item - Utilities Collapse Menu -->
-    
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.mailbox') }}">
+        <i class="fa fa-users"></i>
+            <span>Mailbox</span>
+        </a>
+    </li> 
+
     <li class="nav-item">
         <a class="nav-link" href="{{ route('users.index') }}">
         <i class="fa fa-users"></i>

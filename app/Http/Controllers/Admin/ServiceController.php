@@ -54,6 +54,19 @@ class ServiceController extends Controller
 
     }
 
+    function mailBox(){
+        $mailboxes = Mailbox::orderBy('id','desc')->paginate(20);
+        return view('backend.mailbox',['title' => 'Show All', 'mailboxes' => $mailboxes]);
+    }
+
+    function mailBoxView($id){
+        $mailbox = Mailbox::findOrFail($id);
+        if(Auth::user()->id === $mailbox->receiver_id){
+            Mailbox::where('id',$id)->update(['seen' => 1]);
+        }
+        return view('backend.mailboxsingle',['title' => 'Read your mail', 'mailbox' => $mailbox]);
+    }
+
     public function index()
     { 
         $age = isset($_GET['age']) ? $_GET['age'] : ''; 
@@ -85,7 +98,7 @@ class ServiceController extends Controller
            $services->where('experience','like','%'.trim($experience).'%');
        }
 
-       $services = $services->paginate(1);
+       $services = $services->paginate(20);
  
         return view('backend.services',['title' => 'Services Show All', 'services' => $services]);
 
@@ -122,7 +135,7 @@ class ServiceController extends Controller
            $services->where('experience','like','%'.trim($experience).'%');
        }
 
-       $services = $services->paginate(10);
+       $services = $services->paginate(20);
  
         return view('backend.services-provider',['title' => 'Services Show All', 'services' => $services]);
     }

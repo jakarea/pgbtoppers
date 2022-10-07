@@ -53,7 +53,7 @@ class HomeController extends Controller
             $services->where('experience','like','%'.trim($experience).'%');
         }
 
-        $services = $services->paginate(10);
+        $services = $services->paginate(20);
         return view('frontend.ik-zoek',['title' => 'Services Show All', 'services' => $services]);
         
     } 

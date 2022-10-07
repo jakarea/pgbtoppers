@@ -98,6 +98,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'name' => 'admin.'], 
         Route::get('/services/destroy/{id}', 'destroy')->name('services.destroy');
 
         Route::post('/send-mail', 'sendMailToSeller');
+
+        Route::get('/mailbox', 'mailBox')->name('admin.mailbox');
     });
 
     Route::controller(UserController::class)->group(function (){ 
