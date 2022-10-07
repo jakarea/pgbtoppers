@@ -14,8 +14,8 @@
             <div class="intake-table">
                 
                 <div class="d-flex justify-content-between align-items-center">
-                <h1 class="mb-5">Testimonial Information</h1>
-                <a href="{{ url('admin/testimonial/add') }}" class="btn btn-info">Add</a>
+                <h1 class="mb-5">Reviews Toevoegen</h1>
+                <a href="{{ url('admin/testimonial/add') }}" class="btn btn-info">Toevoegen</a>
                 </div>
                 <table class="table table-striped">
                     <tr>

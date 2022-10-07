@@ -39,7 +39,7 @@ class IntakeController extends Controller
         Mail::to($request->email)->cc(env('INTAKE_MAIL'))->send(new ContactMail($intakes));
 
         Session::flash('status', 'Success');
-        Session::flash('message', 'Contact Info Send Successfully');
+        Session::flash('message', 'We hebben je aanvraag in goede orde ontvangen. We nemen zo spoedig mogelijk contact met je op voor de intake.');
         return redirect()->route('intake.index');
     }
 }

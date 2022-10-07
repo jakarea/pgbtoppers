@@ -39,7 +39,7 @@
             <div class="col-lg-12">
                 <div class="user-profile-wrap">
                     <h1 class="mb-5">Mail</h1>
-                    <h2><b>Subject</b></h2><br/> <p>{{ $mailbox->title}}</p>
+                    <h2><b>Onderwerp</b></h2><br/> <p>{{ $mailbox->title}}</p>
                     <h2><b>Message </b></h2><br/><p>{{ $mailbox->body}}</p>
                 </div>
             </div>

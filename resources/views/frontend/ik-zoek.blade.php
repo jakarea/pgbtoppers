@@ -3,14 +3,14 @@
     <section class="hero">
         <div class="container">
             <div class="home-hero-text">
-                <h1>Ik BEN EEN ZORGVERLENER</h1>
+                <h1>IK ZOEK EEN ZORGVERLENER</h1>
             </div>
         </div>
     </section>
 
     <section class="zoek-view-sec">
         <div class="container"> 
-        <h1 class="mb-5" style="font-size: 2.6rem; font-family: Arial, Helvetica, sans-serif; margin-bottom: 30px;">All approved healthcare providers</h1>
+        <h1 class="mb-5" style="font-size: 2.6rem; font-family: Arial, Helvetica, sans-serif; margin-bottom: 30px;">Alle goedgekeurde zorgverleners</h1>
         <form action="" method="GET">
             <div class="services-filter">
             @php 
@@ -22,7 +22,7 @@
                     $age = isset($_GET['age']) ? $_GET['age'] : '';
                     @endphp
                     <select name="age">
-                        <option value="">Select Below</option>
+                        <option value="">Selecteer</option>
                         <option value="Geen voorkeur" {{ $age == 'Geen voorkeur' ? 'selected' : ''}}>Geen voorkeur</option>
                         <option value="18-25" {{ $age == '18-25' ? 'selected' : ''}}>18-25</option>
                         <option value="25-40" {{ $age == '25-40' ? 'selected' : ''}}>25-40</option>
@@ -36,7 +36,7 @@
                     $distance = isset($_GET['distance']) ? $_GET['distance'] : '';
                     @endphp
                     <select name="distance" id="">
-                        <option value="">Select Below</option>
+                        <option value="">Selecteer</option>
                         <option value="Geen voorkeur" {{ $distance == 'Geen voorkeur' ? 'selected' : ''}}>Geen voorkeur</option>
                         <option value="binnen 5 Km"  {{ $distance == 'binnen 5 Km' ? 'selected' : ''}}>binnen 5 Km</option>
                         <option value="binnen 15 Km" {{ $distance == 'binnen 15 Km' ? 'selected' : ''}}>binnen 15 Km</option>
@@ -49,7 +49,7 @@
                     $gender = isset($_GET['gender']) ? $_GET['gender'] : '';
                     @endphp
                     <select name="gender" id="">
-                        <option value="">Select Below</option>
+                        <option value="">Selecteer</option>
                         <option value="Geen voorkeur"  {{ $gender == 'Geen voorkeur' ? 'selected' : ''}}>Geen voorkeur</option>
                         <option value="Man" {{ $gender == 'Man' ? 'selected' : ''}}>Man</option>
                         <option value="Vrouw" {{ $gender == 'Vrouw' ? 'selected' : ''}}>Vrouw</option> 
@@ -61,7 +61,7 @@
                     $desired = isset($_GET['desired']) ? $_GET['desired'] : '';
                     @endphp
                     <select name="desired" id="">
-                        <option value="">Select Below</option>
+                        <option value="">Selecteer</option>
                         <option value="Geen voorkeur" {{ $desired == 'Geen voorkeur' ? 'selected' : ''}}>Geen voorkeur</option>
                         <option value="Middag" {{ $desired == 'Middag' ? 'selected' : ''}}>Middag</option>
                         <option value="Avond" {{ $desired == 'Avond' ? 'selected' : ''}}>Avond</option> 
@@ -74,7 +74,7 @@
                     $license = isset($_GET['license']) ? $_GET['license'] : '';
                     @endphp
                     <select name="license" id="">
-                        <option value="">Select Below</option>
+                        <option value="">Selecteer</option>
                         <option value="Geen voorkeur" {{ $license == 'Geen voorkeur' ? 'selected' : ''}}>Geen voorkeur</option>
                         <option value="Noodzakelijk" {{ $license == 'Noodzakelijk' ? 'selected' : ''}}>Noodzakelijk</option>
                         <option value="Niet van toepassing" {{ $license == 'Niet van toepassing' ? 'selected' : ''}}>Niet van toepassing</option>  
@@ -86,7 +86,7 @@
                     $candidate_status = isset($_GET['candidate_status']) ? $_GET['candidate_status'] : '';
                     @endphp
                     <select name="candidate_status" id="">
-                        <option value="">Select Below</option>
+                        <option value="">Selecteer</option>
                         <option value="Geen voorkeur" {{ $candidate_status == 'Geen voorkeur' ? 'selected' : ''}}>Geen voorkeur</option>
                         <option value="Cv aanwezig" {{ $candidate_status == 'Cv aanwezig' ? 'selected' : ''}}>Cv aanwezig</option>
                         <option value="Interview gehad met intaketeam" {{ $candidate_status == 'Interview gehad met intaketeam' ? 'selected' : ''}}>Interview gehad met intaketeam</option>  
@@ -101,7 +101,7 @@
                     $experience = isset($_GET['candidate_status']) ? $_GET['candidate_status'] : '';
                     @endphp
                     <select name="experience" id="">
-                        <option value="">Select Below</option>
+                        <option value="">Selecteer</option>
                         <option value="Niet noodzakelijk" {{ $experience == 'Niet noodzakelijk' ? 'selected' : ''}}>Niet noodzakelijk</option>
                         <option value="minimaal 1 jaar" {{ $experience == 'minimaal 1 jaar' ? 'selected' : ''}}>minimaal 1 jaar</option>
                         <option value="meerdere jaren" {{ $experience == 'meerdere jaren' ? 'selected' : ''}}>meerdere jaren</option>
@@ -125,27 +125,27 @@
                 @else
                 <img id="preview" class="img-responsive" src="https://ui-avatars.com/api/?background=random&name={{$service->user->name}}&rounded=true" alt="{{$service->user->name}}" style="width: 120px;">
                 @endif
-                     <div class="zoek-media-body">
+                    <div class="zoek-media-body">
                         <h5><strong>Name: </strong>{{ $service->user ? $service->user->name : '' }}</h5>
                         <h6><strong>Email: </strong>{{ $service->user ? $service->user->email : '' }}</h6> 
-                     </div>
-                     </div>
-                     <div class="zoek-bottom-info">
+                    </div>
+                    </div>
+                    <div class="zoek-bottom-info">
                         <table>
                             <tr>
-                                <td><p><span>Age:</span> {{ substr($service->age,0,17) }}</p></td>
-                                <td><p><span>Distance:</span> {{ substr($service->distance,0,15) }}</p></td>
+                                <td><p><span>Leeftijd:</span> {{ substr($service->age,0,17) }}</p></td>
+                                <td><p><span>Afstand:</span> {{ substr($service->distance,0,15) }}</p></td>
                             </tr>
                             <tr>
-                                <td><p><span>Gender:</span> {{ $service->gender }}</p></td>
+                                <td><p><span>Geslacht:</span> {{ $service->gender }}</p></td>
                                 <td><p><span>Status:</span> {{ substr($service->candidate_status,0,14) }}</p></td>
                             </tr>
                             <tr>
-                                <td colspan="2" style="text-align: left;"><p><span>Specific Experience:</span> {{ $service->specific_experience }}</p></td> 
+                                <td colspan="2" style="text-align: left;"><p><span>Specifieke Ervaring:</span> {{ $service->specific_experience }}</p></td> 
                             </tr>
                         </table>
-                     </div>
-                     </a>
+                    </div>
+                    </a>
                 </div> 
             @endforeach
             </div>

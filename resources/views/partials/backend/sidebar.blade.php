@@ -37,7 +37,7 @@
     <li class="nav-item active">
         <a class="nav-link" href="{{ route('admin.testimonial') }}">
             <i class="fas fa-fw fa-users"></i>
-            <span>Testimonial</span>
+            <span>Reviews</span>
         </a>
     </li>
     @endif
@@ -60,7 +60,7 @@
     <li class="nav-item active">
         <a class="nav-link" href="{{ route('admin.payment-history') }}">
             <i class="fas fa-fw fa-cog"></i>
-            <span>Payment History</span>
+            <span>Betaalgeschiedenis</span>
         </a>
     </li>
 
@@ -87,7 +87,7 @@
     <li class="nav-item active">
         <a class="nav-link" href="{{ url('/logout') }}">
         <i class="fa fa-facebook"></i>
-            <span>Logout</span>
+            <span>Uitloggen</span>
         </a>
     </li> 
 

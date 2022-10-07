@@ -5,13 +5,13 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="intake-table">
-                <h1 class="mb-5">Intake Information</h1>
+                <h1 class="mb-5">Informatie over de Intakes</h1>
                 <table class="table table-striped">
                     <tr>
                         <th>#</th>
                         <th>Sender</th>
                         <th>Receiver</th>
-                        <th>Subject</th>
+                        <th>Onderwerp</th>
                         <th>Message</th>  
                         <th>Action</th> 
                         </tr>

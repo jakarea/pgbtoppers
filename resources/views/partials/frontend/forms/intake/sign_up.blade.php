@@ -7,7 +7,6 @@
     <p class="label-error" style="color: red; margin-top: 0px;">{{ $errors->first('name') }}</p>
     <div class="input_wrapper"> 
         <input type="email" placeholder="E-mailadres *" name="email" value="{{ old('email') }}">
-        
     </div>
     <p class="label-error" style="color: red; margin-top: 0px;">{{ $errors->first('email') }}</p>
 
@@ -34,9 +33,6 @@
 
     @include('partials.forms.fields.checkbox', ['name' => 'aggree', 'value' => 1, 'attribute' => 'Ja, Ik heb de algemene voorwaarden gelezen en wil mij graag inschrijven bij PGBtoppers.nl.']) 
     @include('partials.forms.fields.checkbox', ['name' => 'permission', 'value' => 1, 'attribute' => 'Ik geef toestemming aan PGBtoppers om contact met mij op te nemen voor een online intakegesprek. Na dat gesprek ontvang ik het inschrijfformulier.'])
-
-    
-    
 
     <div>
         <button type="submit" class="btn btn-primary">Aanmelden</button>

@@ -7,7 +7,7 @@
             <div class="card mt-4">
                <div class="card-header">
                <div class="d-flex justify-content-between align-items-center">
-                <h1>Edit Testimonial Information</h1>
+                <h1>Bewerk Reviews Toevoegen</h1>
                 <a href="{{ url('admin/testimonial') }}" class="btn btn-info">Back</a>
                 </div>
                  
@@ -23,7 +23,7 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <label for="">Name</label>
+                                <label for="">Naam</label>
                                 <input type="text" placeholder="Naam *" class="form-control" name="name" value="{{ $testimonial->name }}">
                                 <span class="label-error" style="color: red;">{{ $errors->first('name') }}</span>
                             </div>

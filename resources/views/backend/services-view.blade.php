@@ -14,70 +14,70 @@
             <div class="intake-table">
                 
                 <div class="d-flex justify-content-between align-items-center">
-                <h1 class="mb-5">{{ $service->user->name }} Information</h1>
+                <h1 class="mb-5">{{ $service->user->name }} Informatie</h1>
                 @if(Auth::user()->role === 1)
-                <a href="{{ url('admin/services/edit/'.$service->id)}}" class="btn btn-info"><i class="fas fa-pen"></i> Edit</a>
+                <a href="{{ url('admin/services/edit/'.$service->id)}}" class="btn btn-info"><i class="fas fa-pen"></i> Bewerk</a>
                 @endif
                 </div>
                 <table class="table table-striped" style="width: 60%; margin: 0 auto;">
                     
                     <tr>
-                        <th>Name</th>
+                        <th>Naam</th>
                         <th>:</th>
                         <td>{{ $service->user->name }}</td>
                     </tr>
                     <tr>
-                        <th>Age</th>
+                        <th>Leeftijd</th>
                         <th>:</th>
                         <td>{{ $service->age }}</td>
                     </tr>
                     <tr>
-                        <th>Distance</th>
+                        <th>Afstand</th>
                         <th>:</th>
                         <td>{{ $service->distance }}</td>
                     </tr>
                     <tr>
-                        <th>Gender</th>
+                        <th>Geslacht</th>
                         <th>:</th>
                         <td>{{ $service->gender }}</td>
                     </tr>
                     <tr>
-                        <th>Days</th>
+                        <th>Dagen</th>
                         <th>:</th>
                         <td>{{ $service->days }}</td>
                     </tr>
                     <tr>
-                        <th>Desired</th>
+                        <th>Voorkeur</th>
                         <th>:</th>
                         <td>{{ $service->desired }}</td>
                     </tr>
                     <tr>
-                        <th>License</th>
+                        <th>Licentie</th>
                         <th>:</th>
                         <td>{{ $service->license }}</td>
                     </tr>
                     <tr>
-                        <th>Candidate Status</th>
+                        <th> Status</th>
                         <th>:</th>
                         <td>{{ $service->candidate_status }}</td>
                     </tr>
                     <tr>
-                        <th>Experience</th>
+                        <th>Ervaring</th>
                         <th>:</th>
                         <td>{{ $service->experience }}</td>
                     </tr>
                     <tr>
-                        <th>Other</th>
+                        <th>Aanvullende informatie</th>
                         <th>:</th>
                         <td>{{ $service->other }}</td>
                     </tr>
                     <tr>
-                        <th>Services</th>
+                        <th>Diensten</th>
                         <th>:</th>
                         <td>{{ $service->services }}</td>
                     </tr> 
                     <tr>
-                        <th>Specific Experience</th>
+                        <th>Specifieke Ervaring</th>
                         <th>:</th>
                         <td>{{ $service->specific_experience ?: 'N/A'}}</td>
                     </tr> 
@@ -85,12 +85,12 @@
                         <th>Status</th>
                         <th>:</th>
                         <td>
-                            <label>{{ $service->approved ? 'Approved' : 'Pending' }}</label>
+                            <label>{{ $service->approved ? 'goedgekeurd' : 'afgekeurd' }}</label>
 
                             @if($service->approved)
-                                <a style="float:right" href="{{url('admin/services-provider/'.$service->id.'/pending')}}" class="btn btn-warning"><i class="fas fa-check"></i> Pending</a>
+                                <a style="float:right" href="{{url('admin/services-provider/'.$service->id.'/pending')}}" class="btn btn-warning"><i class="fas fa-check"></i> afgekeurd</a>
                             @else
-                                <a style="float:right" href="{{url('admin/services-provider/'.$service->id.'/approve')}}" class="btn btn-success"><i class="fas fa-check"></i> Approve</a>
+                                <a style="float:right" href="{{url('admin/services-provider/'.$service->id.'/approve')}}" class="btn btn-success"><i class="fas fa-check"></i> goedgekeurd</a>
                             @endif
                         </td>
                     </tr>

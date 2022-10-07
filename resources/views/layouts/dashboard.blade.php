@@ -15,7 +15,7 @@
 
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
-    <body>
+    <body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
 
         <main class="dashboard">
             <div id="wrapper">

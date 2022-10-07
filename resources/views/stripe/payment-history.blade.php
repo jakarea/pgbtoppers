@@ -6,19 +6,19 @@
             <div class="intake-table">
                 
                 <div class="d-flex justify-content-between align-items-center mb-5">
-                <h1 class="mb-0" style="font-size: 2rem;">Payment Information</h1>
-                <a class="btn btn-primary" href="{{ url('admin/payment')}}">Pay</a>
+                <h1 class="mb-0" style="font-size: 2rem;">betalingsinformatie</h1>
+                <a class="btn btn-primary" href="{{ url('admin/payment')}}">PBetalenay</a>
 </div>
-                <!-- <a href="{{ url('admin/testimonial/add') }}" class="btn btn-info">Add</a> -->
+                <!-- <a href="{{ url('admin/testimonial/add') }}" class="btn btn-info">Toevoegen</a> -->
 
                 <table class="table table-striped">
                     <tr>
                         <th>#</th>
-                        <th>User</th>
+                        <th>Gebruiker</th>
                         <th>Email</th>
-                        <th>Payment Id</th>
-                        <th>Amount</th>
-                        <th>Currency</th> 
+                        <th>Betalings-ID</th>
+                        <th>Hoeveelheid</th>
+                        <th>Munteenheid</th> 
                     </tr>
                     @php $i = 1; @endphp
                     @foreach($histories as $history)

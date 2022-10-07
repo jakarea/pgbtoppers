@@ -7,7 +7,7 @@
             <div class="card mt-4">
                <div class="card-header">
                <div class="d-flex justify-content-between align-items-center">
-                <h1>Add Testimonial Information</h1>
+                <h1>Toevoegen Reviews Informatie</h1>
                 <a href="{{ url('admin/testimonial') }}" class="btn btn-info">Back</a>
                 </div>
                  
