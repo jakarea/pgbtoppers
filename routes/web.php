@@ -100,6 +100,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'name' => 'admin.'], 
         Route::post('/send-mail', 'sendMailToSeller');
 
         Route::get('/mailbox', 'mailBox')->name('admin.mailbox');
+        Route::get('/mailbox/{id}', 'mailBoxView')->name('admin.mailboxsingle');
     });
 
     Route::controller(UserController::class)->group(function (){ 
