@@ -25,9 +25,10 @@ class UserController extends Controller
     public function index()
     {   
 
-        $users = User::orderBy('id','asc')->paginate(20);
-        if(Auth::user()->role !== 1){
-            $users = User::orderBy('id','asc')->where('id',Auth::user()->id)->paginate(20);
+        $users = User::orderBy('id','asc')->where('id',Auth::user()->id)->paginate(20);
+        if(Auth::user()->role === 1 || Auth::user()->role === 2){
+            $users = User::orderBy('id','asc')->paginate(20);
+            
         }
         return view('backend.settings.users.index', compact('users'));
     }

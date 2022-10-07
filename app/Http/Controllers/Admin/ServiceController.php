@@ -16,6 +16,18 @@ use Illuminate\Support\Facades\Session;
 class ServiceController extends Controller
 {
 
+    function approve($id){
+       
+        if(Auth::user()->role == 1 || Auth::user()->role == 2)
+            Service::where('id', $id)->update(['approved' => 1]);
+        return redirect()->back();
+    }
+
+    function pending($id){
+        if(Auth::user()->role == 1 || Auth::user()->role == 2)
+            Service::where('id', $id)->update(['approved' => 0]);
+        return redirect()->back();
+    }
     function sendMailToSeller(Request $request){
 
         $request->validate([
@@ -159,7 +171,7 @@ class ServiceController extends Controller
 
         Session::flash('status', 'Success');
         Session::flash('message', 'Services Info Send Successfully');
-        return redirect()->route('frontend.ikzoek');
+        return redirect()->route('admin.services');
 }
 
     public function provideradd()
@@ -217,7 +229,7 @@ class ServiceController extends Controller
 
         Session::flash('status', 'Success');
         Session::flash('message', 'Services Info Send Successfully');
-        return redirect()->route('admin.services');
+        return redirect()->route('admin.payment');
     }
 
     public function edit($id)

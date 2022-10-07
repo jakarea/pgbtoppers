@@ -25,7 +25,7 @@
     </li>
  
 
-    @if(Auth()->user()->role == 1)
+    @if(Auth()->user()->role === 1 || Auth()->user()->role === 2)
 
     <li class="nav-item active">
         <a class="nav-link" href="{{ route('admin.intake') }}">
@@ -41,20 +41,19 @@
         </a>
     </li>
     @endif
-    @if(Auth()->user()->role === 1 || Auth()->user()->role == 2)
+
+    @if(Auth()->user()->role === 1 || Auth()->user()->role == 2 )
     <li class="nav-item active">
         <a class="nav-link" href="{{ route('admin.services') }}">
             <i class="fas fa-fw fa-cog"></i>
-            <span>IK ZOEK EEN ZORGVERLENER </span>
+            <span> EEN ZORGVERLENER </span>
         </a>
     </li>
 
-    @endif
-    @if(Auth()->user()->role === 1 || Auth()->user()->role == 3)
     <li class="nav-item active">
         <a class="nav-link" href="{{ route('admin.services-provider') }}">
             <i class="fas fa-fw fa-cog"></i>
-            <span>EEN ZORGVERLENER </span>
+            <span>IK ZOEK EEN ZORGVERLENER </span>
         </a>
     </li>
     @endif

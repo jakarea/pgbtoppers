@@ -66,12 +66,12 @@
                                 <label for="" class="main-label">I am :</label>
 
                                 <label class="cont"> EEN ZORGVERLENER
-                                    <input type="radio" name="role" value="2">
+                                    <input type="radio" name="role" value="3">
                                     <span class="checkmark"></span>
                                 </label>
                                 <br>
                                 <label class="cont"> ZOEK EEN ZORGVERLENER
-                                    <input type="radio" checked name="role" value="3" checked>
+                                    <input type="radio" checked name="role" value="4" checked>
                                     <span class="checkmark"></span>
                                 </label> 
                             </div>
