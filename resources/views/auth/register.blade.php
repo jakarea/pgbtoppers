@@ -65,12 +65,12 @@
                             <div class="form-group">
                                 <label for="" class="main-label">Ik :</label>
 
-                                <label class="cont"> BEEN ENN ZORGVERLENER
+                                <label class="cont"> Ben een zorgverlener
                                     <input type="radio" name="role" value="3">
                                     <span class="checkmark"></span>
                                 </label>
                                 <br>
-                                <label class="cont"> ZOEK EEN ZORGVERLENER
+                                <label class="cont"> Zoek een zorgverlener
                                     <input type="radio" checked name="role" value="4" checked>
                                     <span class="checkmark"></span>
                                 </label> 
