@@ -25,9 +25,10 @@ class UserController extends Controller
     public function index()
     {   
 
-        $users = User::orderBy('id','asc')->paginate(20);
-        if(Auth::user()->role !== 1){
-            $users = User::orderBy('id','asc')->where('id',Auth::user()->id)->paginate(20);
+        $users = User::orderBy('id','desc')->where('id',Auth::user()->id)->paginate(20);
+        if(Auth::user()->role === 1 || Auth::user()->role === 2){
+            $users = User::orderBy('id','desc')->paginate(20);
+            
         }
         return view('backend.settings.users.index', compact('users'));
     }
@@ -198,9 +199,14 @@ class UserController extends Controller
         }
         
         $user = User::findOrFail($id);
+        if($user->role === 1){
+            Session::flash('status', 'warning');
+            Session::flash('message', 'Beheerder kan niet worden verwijderd');
+            return redirect()->back();
+        }
         $user->delete();
         Session::flash('status', 'Success');
-        Session::flash('message', 'User Deleted Successfully');
+        Session::flash('message', 'Gebruiker succesvol verwijderd');
         return redirect()->back();
     }
 }

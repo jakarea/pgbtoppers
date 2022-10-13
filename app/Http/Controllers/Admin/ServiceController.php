@@ -16,6 +16,18 @@ use Illuminate\Support\Facades\Session;
 class ServiceController extends Controller
 {
 
+    function approve($id){
+       
+        if(Auth::user()->role == 1 || Auth::user()->role == 2)
+            Service::where('id', $id)->update(['approved' => 1]);
+        return redirect()->back();
+    }
+
+    function pending($id){
+        if(Auth::user()->role == 1 || Auth::user()->role == 2)
+            Service::where('id', $id)->update(['approved' => 0]);
+        return redirect()->back();
+    }
     function sendMailToSeller(Request $request){
 
         $request->validate([
@@ -40,6 +52,30 @@ class ServiceController extends Controller
         Session::flash('message', 'Mail sent successfully');
         return redirect()->back();
 
+    }
+
+    function mailBox(){
+        if(Auth::user()->role === 1 || Auth::user()->role === 2)
+            {$mailboxes = Mailbox::orderBy('id','desc')->paginate(20);}
+        else
+            {$mailboxes = Mailbox::where('receiver_id', Auth::user()->id)->orderBy('id','desc')->paginate(20);}
+        return view('backend.mailbox',['title' => 'Show All', 'mailboxes' => $mailboxes]);
+    }
+
+    function mailBoxView($id){
+        $mailbox = Mailbox::findOrFail($id);
+        if(Auth::user()->role === 1 || Auth::user()->role === 2 || Auth::user()->id == $mailbox->receiver_id){
+            $mailbox = Mailbox::findOrFail($id);
+        }else{
+            Session::flash('status', 'warning');
+            Session::flash('message', 'You do not have enough permission!');
+            return redirect()->back();
+        }
+        
+        if(Auth::user()->id == $mailbox->receiver_id){
+            Mailbox::where('id',$id)->update(['seen' => 1]);
+        }
+        return view('backend.mailboxsingle',['title' => 'Read your mail', 'mailbox' => $mailbox]);
     }
 
     public function index()
@@ -73,7 +109,7 @@ class ServiceController extends Controller
            $services->where('experience','like','%'.trim($experience).'%');
        }
 
-       $services = $services->paginate(1);
+       $services = $services->paginate(20);
  
         return view('backend.services',['title' => 'Services Show All', 'services' => $services]);
 
@@ -110,7 +146,7 @@ class ServiceController extends Controller
            $services->where('experience','like','%'.trim($experience).'%');
        }
 
-       $services = $services->paginate(10);
+       $services = $services->paginate(20);
  
         return view('backend.services-provider',['title' => 'Services Show All', 'services' => $services]);
     }
@@ -159,7 +195,7 @@ class ServiceController extends Controller
 
         Session::flash('status', 'Success');
         Session::flash('message', 'Services Info Send Successfully');
-        return redirect()->route('frontend.ikzoek');
+        return redirect()->route('admin.services');
 }
 
     public function provideradd()
@@ -217,7 +253,7 @@ class ServiceController extends Controller
 
         Session::flash('status', 'Success');
         Session::flash('message', 'Services Info Send Successfully');
-        return redirect()->route('admin.services');
+        return redirect()->route('admin.payment');
     }
 
     public function edit($id)

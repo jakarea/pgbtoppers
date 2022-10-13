@@ -1,11 +1,13 @@
 @extends('layouts.dashboard')
 @section('content')
+
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-7">
             <div class="user-profile-wrap">
                 <div class="d-flex align-items-center justify-content-between">
-                    <h1>My Profile</h1>
+                    <h1>Mijn profiel</h1>
                     <a href="{{ url('admin/users/'.Auth()->user()->id).'/edit' }}">
                     <i class="fas fa-pen"></i>
                     </a>
@@ -23,15 +25,20 @@
                     <p><strong>Email: </strong> {{ Auth()->user()->email }}</p>
                     <p><strong>Role: </strong>
                         @if(Auth()->user()->role === 1)
-                        {{ ('Admin') }}
+                            {{ ('Admin') }}
                         @elseif(Auth()->user()->role === 2)
-                        {{ ('Provider') }}
+                            {{ ('Intake Team') }}
+                        @elseif(Auth()->user()->role === 3)
+                            {{ ('Healthcare provider') }}
                         @else
-                        {{ ('Finder') }}
+                            {{ ('Looking for healthcare provider') }}
                         @endif
                     </p>
                     </div>
                 </div>
+                @if(Auth::user()->role === 3 && !Auth::user()->paid)
+                    <a href="{{ route('admin.payment')}}" class="activation_notice">Activeer uw zorgverlenerprofiel</a>
+                @endif
             </div>
         </div>
     </div>
@@ -40,68 +47,68 @@
         <div class="col-lg-7">
             <div class="intake-table">
                 <div class="d-flex justify-content-between align-items-center">
-                    <h1 class="my-5">Information</h1>
-                    <a href="{{ url('admin/services/'.$user->service->id.'/edit')}}" class="btn btn-info"><i class="fas fa-pen"></i> Edit</a> 
+                    <h1 class="my-5">Informatie</h1>
+                    <a href="{{ url('admin/services/'.$user->service->id.'/edit')}}" class="btn btn-info"><i class="fas fa-pen"></i> Bewerk</a> 
                 </div>
 
                 <table class="table table-striped" style="width: 100%; margin: 0 auto;">
                     <tr>
-                    <th>Name</th>
+                    <th>Naam</th>
                     <th>:</th>
                     <td>{{ $user->service->user->name }}</td>
                     </tr>
                     <tr>
-                    <th>Age</th>
+                    <th>Leeftijd</th>
                     <th>:</th>
                     <td>{{ $user->service->age }}</td>
                     </tr>
                     <tr>
-                    <th>Distance</th>
+                    <th>Afstand</th>
                     <th>:</th>
                     <td>{{ $user->service->distance }}</td>
                     </tr>
                     <tr>
-                    <th>Gender</th>
+                    <th>Geslacht</th>
                     <th>:</th>
                     <td>{{ $user->service->gender }}</td>
                     </tr>
                     <tr>
-                    <th>Days</th>
+                    <th>Dagen</th>
                     <th>:</th>
                     <td>{{ $user->service->days }}</td>
                     </tr>
                     <tr>
-                    <th>Desired</th>
+                    <th>Voorkeur</th>
                     <th>:</th>
                     <td>{{ $user->service->desired }}</td>
                     </tr>
                     <tr>
-                    <th>License</th>
+                    <th>Licentie</th>
                     <th>:</th>
                     <td>{{ $user->service->license }}</td>
                     </tr>
                     <tr>
-                    <th>Candidate Status</th>
+                    <th>Status</th>
                     <th>:</th>
                     <td>{{ $user->service->candidate_status }}</td>
                     </tr>
                     <tr>
-                    <th>Experience</th>
+                    <th>Ervaring</th>
                     <th>:</th>
                     <td>{{ $user->service->experience }}</td>
                     </tr>
                     <tr>
-                    <th>Other</th>
+                    <th>Aanvullende informatie</th>
                     <th>:</th>
                     <td>{{ $user->service->other }}</td>
                     </tr>
                     <tr>
-                    <th>Services</th>
+                    <th>Diensten</th>
                     <th>:</th>
                     <td>{{ $user->service->services }}</td>
                     </tr>
                     <tr>
-                    <th>Specific Experience</th>
+                    <th>Specifieke Ervaring</th>
                     <th>:</th>
                     <td>{{ $user->service->specific_experience ?: 'N/A'}}</td>
                     </tr>
@@ -110,7 +117,7 @@
         </div>
         @elseif(Auth()->user()->role === 3)
             <a href="{{ url('admin/services-provider/add')  }}" class="btn btn-primary mt-4">Create Profile</a>
-        @elseif(Auth()->user()->role === 2)
+        @elseif(Auth()->user()->role === 4)
         <a href="{{ url('admin/services/add')  }}" class="btn btn-primary mt-4">Create Profile</a>
         @endif
     </div>

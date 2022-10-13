@@ -8,7 +8,7 @@
                 
                 <div class="d-flex justify-content-between align-items-center mb-5">
                 <h1 class="mb-0" style="font-size: 2rem;">IK ZOEK EEN ZORGVERLENER</h1>
-                <a class="btn btn-primary" href="{{ url('admin/services-provider/add')  }}">Add</a>
+                <a class="btn btn-primary" href="{{ url('admin/services-provider/add')  }}">Toevoegen</a>
 </div>
                 <form action="" method="GET">
                     
@@ -21,7 +21,7 @@
                         @endphp
 
                         <select name="age">
-                            <option value="">Select Below</option>
+                            <option value="">Selecteer</option>
                             <option value="Geen voorkeur" {{ $age == 'Geen voorkeur' ? 'selected' : ''}}>Geen voorkeur</option>
                             <option value="18-25" {{ $age == '18-25' ? 'selected' : ''}}>18-25</option>
                             <option value="25-40" {{ $age == '25-40' ? 'selected' : ''}}>25-40</option>
@@ -38,7 +38,7 @@
                         @endphp
 
                         <select name="distance" id="">
-                            <option value="">Select Below</option>
+                            <option value="">Selecteer</option>
                             <option value="Geen voorkeur" {{ $distance == 'Geen voorkeur' ? 'selected' : ''}}>Geen voorkeur</option>
                             <option value="binnen 5 Km"  {{ $distance == 'binnen 5 Km' ? 'selected' : ''}}>binnen 5 Km</option>
                             <option value="binnen 15 Km" {{ $distance == 'binnen 15 Km' ? 'selected' : ''}}>binnen 15 Km</option>
@@ -53,7 +53,7 @@
                         @endphp
 
                         <select name="gender" id="">
-                        <option value="">Select Below</option>
+                        <option value="">Selecteer</option>
                             <option value="Geen voorkeur"  {{ $gender == 'Geen voorkeur' ? 'selected' : ''}}>Geen voorkeur</option>
                             <option value="Man" {{ $gender == 'Man' ? 'selected' : ''}}>Man</option>
                             <option value="Vrouw" {{ $gender == 'Vrouw' ? 'selected' : ''}}>Vrouw</option> 
@@ -68,7 +68,7 @@
                         @endphp
 
                         <select name="desired" id="">
-                        <option value="">Select Below</option>
+                        <option value="">Selecteer</option>
                             <option value="Geen voorkeur" {{ $desired == 'Geen voorkeur' ? 'selected' : ''}}>Geen voorkeur</option>
                             <option value="Middag" {{ $desired == 'Middag' ? 'selected' : ''}}>Middag</option>
                             <option value="Avond" {{ $desired == 'Avond' ? 'selected' : ''}}>Avond</option> 
@@ -84,7 +84,7 @@
                         @endphp
 
                         <select name="license" id="">
-                        <option value="">Select Below</option>
+                        <option value="">Selecteer</option>
                             <option value="Geen voorkeur" {{ $license == 'Geen voorkeur' ? 'selected' : ''}}>Geen voorkeur</option>
                             <option value="Noodzakelijk" {{ $license == 'Noodzakelijk' ? 'selected' : ''}}>Noodzakelijk</option>
                             <option value="Niet van toepassing" {{ $license == 'Niet van toepassing' ? 'selected' : ''}}>Niet van toepassing</option>  
@@ -99,7 +99,7 @@
                         @endphp
 
                         <select name="candidate_status" id="">
-                        <option value="">Select Below</option>
+                        <option value="">Selecteer</option>
                             <option value="Geen voorkeur" {{ $candidate_status == 'Geen voorkeur' ? 'selected' : ''}}>Geen voorkeur</option>
                             <option value="Cv aanwezig" {{ $candidate_status == 'Cv aanwezig' ? 'selected' : ''}}>Cv aanwezig</option>
                             <option value="Interview gehad met intaketeam" {{ $candidate_status == 'Interview gehad met intaketeam' ? 'selected' : ''}}>Interview gehad met intaketeam</option>  
@@ -116,7 +116,7 @@
                         @endphp
 
                         <select name="experience" id="">
-                        <option value="">Select Below</option>
+                        <option value="">Selecteer</option>
                             <option value="Niet noodzakelijk" {{ $experience == 'Niet noodzakelijk' ? 'selected' : ''}}>Niet noodzakelijk</option>
                             <option value="minimaal 1 jaar" {{ $experience == 'minimaal 1 jaar' ? 'selected' : ''}}>minimaal 1 jaar</option>
                             <option value="meerdere jaren" {{ $experience == 'meerdere jaren' ? 'selected' : ''}}>meerdere jaren</option>
@@ -128,14 +128,14 @@
                 </div>
                 <table class="table table-striped">
                     <tr>
-                        <th>No</th>
-                        <th>User</th>
-                        <th>Age</th>
-                        <th>Distance</th>
-                        <th>Gender</th> 
-                        <th>Days</th> 
-                        <th>Desired</th>  
-                        <th class="text-right">Action</th>
+                        <th>#</th>
+                        <th>Gebruiker</th>
+                        <th>Leeftijd</th>
+                        <th>Afstand</th>
+                        <th>Geslacht</th> 
+                        <th>Dagen</th> 
+                        <th>Voorkeur</th>  
+                        <th class="text-right">Actie</th>
                     </tr>
 
                     @php $i = 1; @endphp

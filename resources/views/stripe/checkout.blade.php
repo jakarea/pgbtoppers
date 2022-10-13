@@ -16,5 +16,4 @@
             <button type="submit" id="checkout-button">Pay</button>
         </form>
     </section>
-
 @endsection

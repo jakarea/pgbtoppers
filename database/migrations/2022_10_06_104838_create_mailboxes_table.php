@@ -19,6 +19,7 @@ class CreateMailboxesTable extends Migration
             $table->string('receiver_id');
             $table->string('title');
             $table->string('body');
+            $table->string('seen')->default(0);
             $table->timestamps();
         });
     }

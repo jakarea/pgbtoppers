@@ -9,7 +9,7 @@
                     <p style="color: green; margin-top: 0px;">{{ session('message') }}</p>
                 </div>
             @endif
-                <h2 class="h2">Edit Information</h2>
+                <h2 class="h2">Bewerk Toevoegen</h2>
                 <form action="{{ route('services.update',$service->id) }}" method="POST"> 
                     @csrf
                     <div class="form-group">

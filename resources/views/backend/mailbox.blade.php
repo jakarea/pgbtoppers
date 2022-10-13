@@ -2,33 +2,32 @@
 
 @section('content')
 <div class="container">
-     <div class="row">
+    <div class="row">
         <div class="col-lg-12">
             <div class="intake-table">
                 <h1 class="mb-5">Informatie over de Intakes</h1>
                 <table class="table table-striped">
                     <tr>
                         <th>#</th>
-                        <th>Naam</th>
-                        <th>E-mailadres</th>
-                        <th>Telefoon overdag</th>
-                        <th>Telefoon avond</th>  
-                        <th>Zoek</th>
+                        <th>Sender</th>
+                        <th>Receiver</th>
+                        <th>Onderwerp</th>
+                        <th>Message</th>  
+                        <th>Action</th> 
                         </tr>
-
                     @php 
                         $i = isset($_GET['page']) ? $_GET['page'] : 1;
                         $i = ($i-1) * 20;
                     @endphp
 
-                    @foreach($intake as $intak)
+                    @foreach($mailboxes as $mail)
                     <tr>
                         <td valign="middle">{{ ++$i }}</td> 
-                        <td valign="middle">{{ $intak->name }}</td>
-                        <td valign="middle">{{ $intak->email }}</td>
-                        <td valign="middle">{{ $intak->dayphone }}</td>
-                        <td valign="middle">{{ $intak->evephone }}</td>
-                        <td valign="middle">{{ $intak->looking_for }}</td>
+                        <td valign="middle">{{ $mail->sender->name }}</td>
+                        <td valign="middle">{{ $mail->receiver->name }}</td>
+                        <td valign="middle">{{ $mail->title }}</td>
+                        <td valign="middle">{{ $mail->body }}</td>
+                        <td valign="middle"><a href="{{ route('admin.mailboxsingle', $mail->id)}}">View</a></td>
                     </tr>
                     @endforeach
                 </table>
@@ -36,9 +35,9 @@
         </div>
         <div class="col-12">
             <div class="text-center  mt-4">
-                @if ($intake->hasPages())
+                @if ($mailboxes->hasPages())
                 <div class="pagination-wrapper text-center">
-                {{ $intake->links("pagination::bootstrap-4") }}
+                {{ $mailboxes->links("pagination::bootstrap-4") }}
                 </div>
             @endif
             </div>

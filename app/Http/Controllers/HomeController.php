@@ -32,30 +32,28 @@ class HomeController extends Controller
         $candidate_status = isset($_GET['candidate_status']) ? $_GET['candidate_status'] : ''; 
         $experience = isset($_GET['experience']) ? $_GET['experience'] : ''; 
           
-      $services =  Service::orderBy('id','desc')->where('serving',1);
+        $services =  Service::orderBy('id','desc')->where(['serving' => 1 , 'approved' => 1]);
  
-       if(!empty($age)){
-           $services->where('age','like','%'.trim($age).'%');
-       }
-       if(!empty($distance)){
-           $services->where('distance','like','%'.trim($distance).'%');
-       }
-       if(!empty($gender)){
-           $services->where('gender','like','%'.trim($gender).'%');
-       } 
-       if(!empty($desired)){
-           $services->where('desired','like','%'.trim($desired).'%');
-       }
-       if(!empty($candidate_status)){
-           $services->where('candidate_status','like','%'.trim($candidate_status).'%');
-       }
-       if(!empty($experience)){
-           $services->where('experience','like','%'.trim($experience).'%');
-       }
+        if(!empty($age)){
+            $services->where('age','like','%'.trim($age).'%');
+        }
+        if(!empty($distance)){
+            $services->where('distance','like','%'.trim($distance).'%');
+        }
+        if(!empty($gender)){
+            $services->where('gender','like','%'.trim($gender).'%');
+        } 
+        if(!empty($desired)){
+            $services->where('desired','like','%'.trim($desired).'%');
+        }
+        if(!empty($candidate_status)){
+            $services->where('candidate_status','like','%'.trim($candidate_status).'%');
+        }
+        if(!empty($experience)){
+            $services->where('experience','like','%'.trim($experience).'%');
+        }
 
-       $services = $services->paginate(10);
- 
- 
+        $services = $services->paginate(20);
         return view('frontend.ik-zoek',['title' => 'Services Show All', 'services' => $services]);
         
     } 
@@ -79,7 +77,8 @@ class HomeController extends Controller
     }
     public function onze()
     {
-        return view('frontend.onze');
+        $testmonial = Testimonial::orderBy('id','desc')->take(3)->get();
+        return view('frontend.onze', compact('testmonial'));
     }
 
     public function searchCareGivers()
@@ -101,10 +100,10 @@ class HomeController extends Controller
 
         $intakes->save();
 
-        Mail::to($request->email)->cc($intakes->email)->send(new ContactMail($intakes));
+        Mail::to($request->email)->cc(env('INTAKE_MAIL'))->send(new ContactMail($intakes));
 
         Session::flash('status', 'Success');
-        Session::flash('message', 'Contact Info Send Successfully');
+        Session::flash('message', 'We hebben je aanvraag in goede orde ontvangen. We nemen zo spoedig mogelijk contact met je op voor de intake.');
         return redirect()->route('frontend.home');
     }
 

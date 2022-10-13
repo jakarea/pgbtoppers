@@ -22,7 +22,7 @@
 <strong>Experience: </strong>{{ $data->experience }} <br>
 <strong>Other: </strong>{{ $data->other }} <br>
 <strong>Services: </strong>{{ $data->services }} <br>
-<strong>Specific Experience: </strong>{{ $data->specific_experience }} <br>
+<strong>Specifieke Ervaring: </strong>{{ $data->specific_experience }} <br>
 
                 <span style="display: block; margin-top: 30px; font-size: 14px; text-align: center;">Thank you</span>
             </span>

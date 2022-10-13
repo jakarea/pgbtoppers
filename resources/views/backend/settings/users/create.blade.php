@@ -48,7 +48,7 @@
 							</td>
 						</tr>
 						<tr>
-							<th>Password</th>
+							<th>Wachtwoord</th>
 							<td valign="middle"><input type="password" name="password" class="form-control"></td>
 						</tr>
 						<tr>  

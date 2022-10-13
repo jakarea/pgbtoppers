@@ -89,12 +89,18 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'name' => 'admin.'], 
 
         Route::get('/services-provider/{id}', 'view')->name('services.view');
 
+        Route::get('/services-provider/{id}/approve', 'approve')->name('services.approve');
+        Route::get('/services-provider/{id}/pending', 'pending')->name('services.pending');
+
         Route::get('/services/{id}/edit', 'edit')->name('services.edit');
 
         Route::post('/services/update/{id}', 'update')->name('services.update'); 
         Route::get('/services/destroy/{id}', 'destroy')->name('services.destroy');
 
         Route::post('/send-mail', 'sendMailToSeller');
+
+        Route::get('/mailbox', 'mailBox')->name('admin.mailbox');
+        Route::get('/mailbox/{id}', 'mailBoxView')->name('admin.mailboxsingle');
     });
 
     Route::controller(UserController::class)->group(function (){ 
@@ -108,7 +114,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'name' => 'admin.'], 
         Route::get('/users/{id}/delete', 'destroy')->name('users.destroy');
     });
 
-    Route::get('/payment',[StripeController::class,'checkout']);
+    Route::get('/payment',[StripeController::class,'checkout'])->name('admin.payment');
     Route::post('/payment/process',[StripeController::class,'paymentSession']);
     Route::get('/payment/success/{session_id}',[StripeController::class,'paymentSuccess']);
     Route::get('/payment/cancel',[StripeController::class,'paymentCancel']);

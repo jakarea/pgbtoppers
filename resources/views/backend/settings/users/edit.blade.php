@@ -21,9 +21,8 @@
                 @if($user->photo)
                 <img id="preview" class="img-responsive" style="max-width: 120px" src="/images/thumbnail/{{ $user->photo }}"/ >
                 @else
-                <img id="preview" class="img-responsive" src="https://ui-avatars.com/api/?background=random&name={{Auth()->user()->name}}&rounded=true" alt="{{Auth()->user()->name}}" style="width: 120px;">
+                <img id="preview" class="img-responsive" src="https://ui-avatars.com/api/?background=random&name={{$user->name}}&rounded=true" alt="{{$user->name}}" style="width: 120px;">
                 @endif
-               
                 <form action="{{ route('users.update',$user->id) }}" enctype = "multipart/form-data" method = "POST">
                 @csrf
                 <table class="table table-striped">
@@ -37,12 +36,21 @@
                         <td valign="middle"><input type="text" name="email" value="{{ $user->email }}" class="form-control"></td>
                     </tr>
 
-                    @if(Auth()->user()->role == 1)
+                    @if(Auth()->user()->role === 1 || Auth()->user()->role === 2)
+                    @php 
+                        $disabled = '';
+                        if(Auth()->user()->role !== 1 &&  $user->role ===1)
+                        $disabled = 'disabled';
+                    @endphp
+                    
                     <tr>  
                         <th>Role</th>
                         <td>
-                            <select name="role" class="form-control">
-                                <option value="1" {{ $user->role ===1 ? 'selected' : '' }}>Admin</option>
+                            <select name="role" class="form-control" <?= $disabled ?> >
+                                <option value=""> -- Do not change -- </option>
+                                @if(Auth()->user()->role === 1 || $user->role === 1)
+                                    <option value="1" {{ $user->role ===1 ? 'selected' : '' }}>Admin</option>
+                                @endif
                                 <option value="2" {{ $user->role ===2 ? 'selected' : '' }}>Intake team</option>
                                 <option value="3" {{ $user->role ===3 ? 'selected' : '' }}>Healthcare provider</option>
                                 <option value="4" {{ $user->role ===4 ? 'selected' : '' }}>Looking for healthcare provider</option>
@@ -52,7 +60,7 @@
 
                     @endif
                     <tr>
-							<th>Password</th>
+							<th>Wachtwoord</th>
 							<td valign="middle"><input type="password" name="password" class="form-control"></td>
 						</tr>
                     <tr>  
