@@ -1,5 +1,5 @@
 <div class="container">
     <a href="#">
-        Edit user
+    Bewerk user
     </a>
 </div>

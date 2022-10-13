@@ -41,7 +41,7 @@
                     </span>
                     <span>
                         <a href="{{ url('logout') }}" class="text-uppercase">
-                            Logout
+                        Uitloggen
                         </a>
                     </span>
                 @else
@@ -74,7 +74,7 @@
                 </li>  
                 <li>
                     <a href="{{ url('logout') }}" class="text-uppercase">
-                        Logout
+                    Uitloggen
                     </a>
                 </li>
                 @else 

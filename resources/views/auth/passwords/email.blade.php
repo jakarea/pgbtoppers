@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card login-main-wrap">
-                <div class="card-header" style="margin-bottom: 40px;">{{ __('Reset Password') }}</div>
+                <div class="card-header" style="margin-bottom: 40px;">{{ __('Wachtwoord opnieuw instellen') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -18,7 +18,7 @@
                         @csrf
 
                         <div class="row">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -32,10 +32,10 @@
                         </div>
 
                         <div class="row mb-0" style="margin-top: 20px;">
-                        <a href="{{ route('login') }}" style="margin-bottom: 10px; display: block; color: #DC8742; font-size: 14px;">Login</a>
+                        <a href="{{ route('login') }}" style="margin-bottom: 10px; display: block; color: #DC8742; font-size: 14px;">Inloggen</a>
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
+                                    {{ __('Stuur wachtwoord reset link') }}
                                 </button>
                             </div>
                         </div>

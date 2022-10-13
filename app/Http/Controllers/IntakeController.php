@@ -20,26 +20,26 @@ class IntakeController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required', 
-            'looking_for' => 'required', 
-            'aggree' => 'required', 
-            'permission' => 'required', 
+            'zoeken_naar' => 'required', 
+            'mee_eens_zijn' => 'required', 
+            'toestemming' => 'required', 
         ]);
 
         $intakes = New Intake();
 
         $intakes->name = $request->name;
         $intakes->email = $request->email;
-        $intakes->looking_for = $request->looking_for;
+        $intakes->looking_for = $request->zoeken_naar;
         $intakes->dayphone = $request->dayphone;
         $intakes->evephone = $request->evephone;
-        $intakes->aggree = $request->aggree;
-        $intakes->permission = $request->permission;
+        $intakes->aggree = $request->mee_eens_zijn;
+        $intakes->permission = $request->toestemming;
 
         $intakes->save();
         Mail::to($request->email)->cc(env('INTAKE_MAIL'))->send(new ContactMail($intakes));
 
         Session::flash('status', 'Success');
-        Session::flash('message', 'Contact Info Send Successfully');
+        Session::flash('message', 'We hebben je aanvraag in goede orde ontvangen. We nemen zo spoedig mogelijk contact met je op voor de intake.');
         return redirect()->route('intake.index');
     }
 }

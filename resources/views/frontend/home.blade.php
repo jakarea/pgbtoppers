@@ -6,11 +6,6 @@
                 <h1>Ben jij op zoek naar een <br>
 betrouwbare huishoudelijke <br>
 hulp of begeleider?</h1>
-                <div class="btn-hero">
-                    <a href="{{ route('intake.index') }}" class="btn btn-secondary">
-                    MEER INFORMATIE! 
-                    </a>
-                </div>
             </div>
         </div>
     </section>
@@ -80,7 +75,7 @@ hulp of begeleider?</h1>
             <div class="card card-secondary">
                 <h2 class="h3">Zoek jij een betrouwbare gecontroleerde zorgverlener?</h2>
                 <div>
-                    <a href="{{ route('intake.index') }}" class="btn btn-primary">Ja graag </a>
+                    <a href="{{ route('frontend.ikzoek') }}" class="btn btn-primary">Ja graag </a>
                 </div>
             </div>
             <div class="card card-secondary">
@@ -125,7 +120,7 @@ hulp of begeleider?</h1>
     </section> -->
     <!-- to remove -->
 
-    <section class="footer_image"></section>
+    <!-- <section class="footer_image"></section>
 
     <section class="sign-up" style="margin-top: 100px;" id="contact">
         <div class="container">
@@ -162,7 +157,7 @@ hulp of begeleider?</h1>
                 <a href="{{ route('intake.index') }}" class="btn btn-secondary">Ja, ik wil graag een online intake! </a>
             </div>
         </div>
-    </section>
+    </section> -->
 
     
 @endsection

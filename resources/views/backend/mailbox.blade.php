@@ -2,20 +2,19 @@
 
 @section('content')
 <div class="container">
-     <div class="row">
+    <div class="row">
         <div class="col-lg-12">
             <div class="intake-table">
-                <h1 class="mb-5">Intake Information</h1>
+                <h1 class="mb-5">Informatie over de Intakes</h1>
                 <table class="table table-striped">
                     <tr>
                         <th>#</th>
                         <th>Sender</th>
                         <th>Receiver</th>
-                        <th>Subject</th>
+                        <th>Onderwerp</th>
                         <th>Message</th>  
-                        <th>Status</th> 
+                        <th>Action</th> 
                         </tr>
-
                     @php 
                         $i = isset($_GET['page']) ? $_GET['page'] : 1;
                         $i = ($i-1) * 20;
@@ -24,11 +23,11 @@
                     @foreach($mailboxes as $mail)
                     <tr>
                         <td valign="middle">{{ ++$i }}</td> 
-                        <td valign="middle">{{ $mail->sender_id }}</td>
-                        <td valign="middle">{{ $mail->receiver_id }}</td>
+                        <td valign="middle">{{ $mail->sender->name }}</td>
+                        <td valign="middle">{{ $mail->receiver->name }}</td>
                         <td valign="middle">{{ $mail->title }}</td>
                         <td valign="middle">{{ $mail->body }}</td>
-                        <td valign="middle">{{ $mail->seen }}</td>
+                        <td valign="middle"><a href="{{ route('admin.mailboxsingle', $mail->id)}}">View</a></td>
                     </tr>
                     @endforeach
                 </table>

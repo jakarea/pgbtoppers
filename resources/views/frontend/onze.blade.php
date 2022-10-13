@@ -76,7 +76,10 @@ Onze ambitie is dat wij over enkele jaren niet meer nodig zijn. Tot die tijd wil
     </section>
 
     <div class="btn-hero" style="margin: 80px 0px;">
-        <button class="btn btn-secondary">JA, IK WIL GRAAG EEN ONLINE INTAKE! </button>
+        
+        <div class="btn_wrapper">
+                <a href="{{ route('intake.index') }}" class="btn btn-secondary">JA, IK WIL GRAAG EEN ONLINE INTAKE!</a>
+            </div>
     </div>
 
       

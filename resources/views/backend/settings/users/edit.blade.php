@@ -21,9 +21,8 @@
                 @if($user->photo)
                 <img id="preview" class="img-responsive" style="max-width: 120px" src="/images/thumbnail/{{ $user->photo }}"/ >
                 @else
-                <img id="preview" class="img-responsive" src="https://ui-avatars.com/api/?background=random&name={{Auth()->user()->name}}&rounded=true" alt="{{Auth()->user()->name}}" style="width: 120px;">
+                <img id="preview" class="img-responsive" src="https://ui-avatars.com/api/?background=random&name={{$user->name}}&rounded=true" alt="{{$user->name}}" style="width: 120px;">
                 @endif
-               
                 <form action="{{ route('users.update',$user->id) }}" enctype = "multipart/form-data" method = "POST">
                 @csrf
                 <table class="table table-striped">
@@ -61,7 +60,7 @@
 
                     @endif
                     <tr>
-							<th>Password</th>
+							<th>Wachtwoord</th>
 							<td valign="middle"><input type="password" name="password" class="form-control"></td>
 						</tr>
                     <tr>  

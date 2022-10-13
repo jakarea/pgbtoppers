@@ -55,13 +55,24 @@ class ServiceController extends Controller
     }
 
     function mailBox(){
-        $mailboxes = Mailbox::orderBy('id','desc')->paginate(20);
+        if(Auth::user()->role === 1 || Auth::user()->role === 2)
+            {$mailboxes = Mailbox::orderBy('id','desc')->paginate(20);}
+        else
+            {$mailboxes = Mailbox::where('receiver_id', Auth::user()->id)->orderBy('id','desc')->paginate(20);}
         return view('backend.mailbox',['title' => 'Show All', 'mailboxes' => $mailboxes]);
     }
 
     function mailBoxView($id){
         $mailbox = Mailbox::findOrFail($id);
-        if(Auth::user()->id === $mailbox->receiver_id){
+        if(Auth::user()->role === 1 || Auth::user()->role === 2 || Auth::user()->id == $mailbox->receiver_id){
+            $mailbox = Mailbox::findOrFail($id);
+        }else{
+            Session::flash('status', 'warning');
+            Session::flash('message', 'You do not have enough permission!');
+            return redirect()->back();
+        }
+        
+        if(Auth::user()->id == $mailbox->receiver_id){
             Mailbox::where('id',$id)->update(['seen' => 1]);
         }
         return view('backend.mailboxsingle',['title' => 'Read your mail', 'mailbox' => $mailbox]);
