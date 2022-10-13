@@ -86,9 +86,8 @@ hulp of begeleider?</h1>
             </div>
         </div>
     </section>
-
-    <!-- to remove -->
-    <!-- <section class="reviews">
+ 
+    <section class="reviews">
         <div class="container">
             <div class="flex-container">
             @foreach($testmonial as $test)
@@ -108,17 +107,16 @@ hulp of begeleider?</h1>
             @endforeach
                
             </div>
-            <div class="custom-h5">
+            <!-- <div class="custom-h5">
                 <h5>Klik hier en lees hier nog meer over de ervaring en verhalen over een van onze PGBToppers.</h5>
             </div>
             <div class="btn-hero">
                 <a href="#" class="btn btn-secondary">
                 Schrijf een review 
                 </a>
-            </div>
+            </div> -->
         </div>
-    </section> -->
-    <!-- to remove -->
+    </section> 
 
     <!-- <section class="footer_image"></section>
 
