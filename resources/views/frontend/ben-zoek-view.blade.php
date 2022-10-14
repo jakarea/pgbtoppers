@@ -24,7 +24,7 @@
                 @endif
                      <div class="zoek-media-body">
                         <h5><strong>Name: </strong>{{ $service->user ? $service->user->name : '' }}</h5>
-                        <h6><strong>Email: </strong>{{ $service->user ? $service->user->email : '' }}</h6> 
+                        <!-- <h6><strong>Email: </strong>{{ $service->user ? $service->user->email : '' }}</h6>  -->
                      </div>
                      </div>  
                 </div>
