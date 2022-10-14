@@ -52,7 +52,7 @@
             <span> EEN ZORGVERLENER </span>
         </a>
     </li>
-
+@endif
 
     @if(Auth()->user()->role === 1 || Auth()->user()->role == 2 || Auth()->user()->role == 4)
 
