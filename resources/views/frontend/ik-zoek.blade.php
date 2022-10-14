@@ -115,7 +115,7 @@
         
             <div class="zoek-cards-wrap">
             @php $i = 1; @endphp
-           
+            
             @foreach($services as $service)
                 <div class="zoek-main-card">
                      <a href="{{ url('ik-zoek/'.$service->id) }}">
@@ -147,7 +147,7 @@
                     </a>
                 </div> 
             @endforeach
-           
+ 
             </div>
         </div>
     </section>
