@@ -6,15 +6,15 @@
                 
                 <ul>
                     <li>
-                        <a href="mailto:">info@pgbtoppers.nl</a>
+                        <a href="mailto:info@pgbtoppers.nl">info@pgbtoppers.nl</a>
                     </li>
                     <li>
-                        <a href="mailto:">support@pgbtoppers.nl</a>
+                        <a href="mailto:support@pgbtoppers.nl">support@pgbtoppers.nl</a>
                     </li>
                 </ul>
                 <ul>
                     <li>
-                        <a href="tel">+31 020 12345678</a>
+                        <a href="tel:+31 020 12345678">+31 020 12345678</a>
                     </li>
                 </ul>
             </div>

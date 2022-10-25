@@ -19,12 +19,12 @@
  
     </div>
     <div class="form-group">
-    <label class="cont" style="margin-left: 0px; margin-top: 12px; font-size: 15px; font-family: sans-serif;">huishoudelijke hulp
+    <label class="cont" style="margin-left: 0px; margin-top: 12px; font-size: 13px; font-family: sans-serif;">huishoudelijke hulp
             <input type="radio" value="Ik zoek huishoudelijk hulp"  name="zoeken_naar" {{ old('zoeken_naar') == '1' ? 'checked' : '' }}>
             <span class="checkmark" style="top: -4px;"></span>
         </label>
         
-    <label class="cont" style="margin-left: 0px; margin-top: 22px; margin-bottom: 20px; font-size: 15px; font-family: sans-serif;">begeleider
+    <label class="cont" style="margin-left: 0px; margin-top: 22px; margin-bottom: 20px; font-size: 13px; font-family: sans-serif;">begeleider
             <input type="radio" value="Ik zoek een begeleider."  name="zoeken_naar" {{ old('zoeken_naar') == '1' ? 'checked' : '' }}>
             <span class="checkmark" style="top: -4px;"></span>
         </label>
