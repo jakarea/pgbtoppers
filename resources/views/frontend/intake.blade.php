@@ -11,8 +11,9 @@
 @endif  
         <h1 class="h1">Intake</h1>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id mattis nibh. Vestibulum quis nibh vel nibh facilisis finibus. Nulla malesuada dignissim eros ac tristique. Suspendisse aliquam massa libero, tincidunt vulputate urna volutpat eleifend. Donec bibendum nibh ac convallis blandit. Mauris non orci in purus sodales ullamcorper mollis a orci. Ut cursus vel quam quis vehicula.
+        Nadat je hieronder jouw gegevens hebt verstuurd ontvang je een e-mail met uitleg over het intakegesprek en de gegevens die we graag willen ontvangen. Je verbindt je nog nergens aan. Pas als we van jou een reactie hebben ontvangen op onze e-mail, plannen we een online intakegesprek in.
         </p>
+       
         @include('partials.frontend.forms.intake.sign_up')
     </div>
 </section>

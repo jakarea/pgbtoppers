@@ -45,13 +45,13 @@ hulp of begeleider?</h1>
     <section class="about-us">
         <div class="container flex-container">
             <div class="content_alinea col custom-text">
-                <h2 class="h2 is-centered">Waarom PGBToppers?</h2>
+                <h2 class="h2 is-centered">Hoe werkt PGBToppers?</h2>
                 <p>
-                Een groot knelpunt waar veel budgethouders tegenaan lopen is het selecteren van de juiste zorgverleners. Voor Verzorging en Verpleging gelden meer wettelijke regels, diploma’s en registraties dan voor Huishoudelijke hulp en Begeleiding. 
+                Een groot knelpunt waar veel budgethouders en/of vertegenwoordigers tegen aan lopen is het selecteren van de juiste zorgverleners. Voor verzorging en verpleging gelden meer wettelijke regels, diploma’s en registraties dan voor huishoudelijke hulp en begeleiding.
                 </p>
-                <p> Om toch een basis kwaliteit te garanderen is PGBToppers opgericht. Wij screenen Huishoudelijke hulpen en Begeleiders en andersom zijn zij bereid een dergelijke screening te ondergaan. </p>
+                <p>Om toch een basiskwaliteit te garanderen is PGBToppers opgericht. Wij screenen huishoudelijke hulpen en begeleiders en andersom zijn zij bereid een dergelijke screening te ondergaan.</p>
 
-                <p>Dat geeft geen garanties dat er een goede match komt maar als budgethouder weet je wel wat dat aan bepaalde basisvoorwaarden is voldaan.</p>
+                <p>Dat geeft geen garantie dat er een goede match komt maar als budgethouder weet je wel wat dat aan bepaalde basisvoorwaarden is voldaan</p>
  
             </div>
         </div>

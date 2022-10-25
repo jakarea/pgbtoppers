@@ -10,7 +10,7 @@
 
     <section class="zoek-view-sec">
         <div class="container"> 
-        <h1 class="mb-5" style="font-size: 2.4rem; font-family: Arial, Helvetica, sans-serif; margin-bottom: 30px;">Alle goedgekeurde zorgverleners</h1>
+        <h1 class="mb-5" style="font-size: 2.4rem; font-family: Arial, Helvetica, sans-serif; margin-bottom: 30px;">zorgverleners</h1>
         <form action="" method="GET">
             <div class="services-filter">
             @php 
@@ -143,7 +143,8 @@
                             </tr>
                             <tr>
                                 <td><p><span>Geslacht:</span> {{ $service->gender }}</p></td>
-                                <td><p><span>Status:</span> {{ substr($service->candidate_status,0,14) }}</p></td>
+                                <td><p><span>Welke status dient de zorgverlener te hebben?
+:</span> {{ substr($service->candidate_status,0,14) }}</p></td>
                             </tr>
                             <tr>
                                 <td colspan="2" style="text-align: left;"><p><span>Specifieke Ervaring:</span> {{ $service->specific_experience }}</p></td> 

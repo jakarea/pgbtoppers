@@ -42,32 +42,29 @@
                         <td>{{ $service->gender }}</td>
                     </tr>
                     <tr>
-                        <th>Dagen</th>
+                        <th>Beschikbare dagen</th>
                         <th>:</th>
                         <td>{{ $service->days }}</td>
                     </tr>
                     <tr>
-                        <th>Voorkeur</th>
+                        <th>Gewenste dagdeel</th>
                         <th>:</th>
                         <td>{{ $service->desired }}</td>
                     </tr>
+                    
                     <tr>
-                        <th>Licentie</th>
-                        <th>:</th>
-                        <td>{{ $service->license }}</td>
-                    </tr>
-                    <tr>
-                        <th> Status</th>
+                        <th> Welke status dient de zorgverlener te hebben?
+</th>
                         <th>:</th>
                         <td>{{ $service->candidate_status }}</td>
                     </tr>
                     <tr>
-                        <th>Ervaring</th>
+                        <th>Werkervaring</th>
                         <th>:</th>
                         <td>{{ $service->experience }}</td>
                     </tr>
                     <tr>
-                        <th>Aanvullende informatie</th>
+                        <th>Overig</th>
                         <th>:</th>
                         <td>{{ $service->other }}</td>
                     </tr>
@@ -82,7 +79,8 @@
                         <td>{{ $service->specific_experience ?: 'N/A'}}</td>
                     </tr> 
                     <tr>
-                        <th>Status</th>
+                        <th>Welke status dient de zorgverlener te hebben?
+</th>
                         <th>:</th>
                         <td>
                             <label>{{ $service->approved ? 'goedgekeurd' : 'afgekeurd' }}</label>
