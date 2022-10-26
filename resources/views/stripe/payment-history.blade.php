@@ -6,7 +6,7 @@
             <div class="intake-table">
                 
                 <div class="d-flex justify-content-between align-items-center mb-5">
-                <h1 class="mb-0" style="font-size: 2rem;">betalingsinformatie</h1>
+                <h1 class="mb-0" style="font-size: 1.9rem;">betalingsinformatie</h1>
                 <a class="btn btn-primary" href="{{ url('admin/payment')}}">PBetalenay</a>
 </div>
                 <!-- <a href="{{ url('admin/testimonial/add') }}" class="btn btn-info">Toevoegen</a> -->

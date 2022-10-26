@@ -9,8 +9,8 @@
     <tr>
         <td valign="top">
             <span  style="background: #fff; padding: 1.6rem; display: block; width: 60%; margin: 0 auto;">
-                <h1 style="color: #3d4852; font-size: 18px; font-weight: bold;"> Services details: </h1>
-                <h4 style="color: #3d4852; font-size: 16px; font-weight: regular;"> The Age Is {{ $data->age }} !</h4>
+                <h1 style="color: #3d4852; font-size: 16px; font-weight: bold;"> Services details: </h1>
+                <h4 style="color: #3d4852; font-size: 14px; font-weight: regular;"> The Age Is {{ $data->age }} !</h4>
 
                 <strong>Services details: </strong><br>
 <strong>Distance: </strong>{{ $data->distance }} <br>

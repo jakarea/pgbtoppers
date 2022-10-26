@@ -28,7 +28,7 @@ header {
 }
 
 .custom-heading {
-    padding: 5rem 0;
+    padding: 2rem 0;
 }
 
 .main-menu ul li a {
@@ -887,52 +887,67 @@ html {
     .text-white {
         color: #fff !important;
     }
-    .zoek-cards-wrap{
+
+    .zoek-cards-wrap {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .zoek-main-card{
+    .zoek-main-card {
         width: 100%;
         margin-left: 0;
         margin-right: 0;
     }
-    .zoek-main-card:nth-child(17), .zoek-main-card:nth-child(14), .zoek-main-card:nth-child(11), .zoek-main-card:nth-child(8), .zoek-main-card:nth-child(5), .zoek-main-card:nth-child(2){
+
+    .zoek-main-card:nth-child(17),
+    .zoek-main-card:nth-child(14),
+    .zoek-main-card:nth-child(11),
+    .zoek-main-card:nth-child(8),
+    .zoek-main-card:nth-child(5),
+    .zoek-main-card:nth-child(2) {
         margin-left: 0;
         margin-right: 0;
     }
+
     .services-filter {
         align-items: flex-start;
         margin-bottom: 2rem;
         flex-wrap: wrap;
     }
-    .filter-wrap{
+
+    .filter-wrap {
         flex: 0 50%;
-        margin-right: 0; 
+        margin-right: 0;
         margin-bottom: 1rem;
     }
-    .filter-wrap span{
+
+    .filter-wrap span {
         margin-left: 2%;
         font-size: 12px;
     }
-    .filter-wrap select{
+
+    .filter-wrap select {
         max-width: 95%;
     }
+
     .services-filter .btn {
         margin-top: 1.6rem;
         display: block;
         width: 49%;
     }
-    .zoek-single-views{
+
+    .zoek-single-views {
         flex-direction: column;
     }
-    .zoek-view-left{
+
+    .zoek-view-left {
         width: 100%;
     }
+
     .zoek-view-right {
         width: 100%;
         margin-top: 2rem;
-        margin-left: 0%; 
+        margin-left: 0%;
     }
 }
 
@@ -963,3 +978,11 @@ html {
 
 
 /* responsive css end */
+
+
+input#geen_voorkeur {
+    cursor: pointer;
+    margin: 5px;
+    opacity: 1;
+    height: 14px;
+}

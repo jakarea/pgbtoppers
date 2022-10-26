@@ -10,7 +10,7 @@
 
     <section class="zoek-view-sec">
         <div class="container"> 
-        <h1 class="mb-5" style="font-size: 2.6rem; font-family: Arial, Helvetica, sans-serif; margin-bottom: 30px;">Alle goedgekeurde zorgverleners</h1>
+        <h1 class="mb-5" style="font-size: 2.4rem; font-family: Arial, Helvetica, sans-serif; margin-bottom: 30px;">Alle goedgekeurde zorgverleners</h1>
         <form action="" method="GET">
             <div class="services-filter">
             @php 
@@ -56,7 +56,7 @@
                     </select>
                 </div>
                 <div class="filter-wrap">
-                    <span style="font-size: 13px;">Gewenste dagdeel:</span>
+                    <span style="font-size: 11px;">Gewenste dagdeel:</span>
                     @php 
                     $desired = isset($_GET['desired']) ? $_GET['desired'] : '';
                     @endphp
@@ -68,6 +68,12 @@
                         <option value="nacht" {{ $desired == 'nacht' ? 'selected' : ''}}>nacht</option>  
                     </select>
                 </div>
+
+                <!-- <label for="geen_voorkeur" >Geen voorkeur</label><input id="geen_voorkeur" type="checkbox" name="desired" value="Geen voorkeur"  {{ $desired == 'Geen voorkeur' ? 'checked' : ''}}> 
+                    <label for="middag">Middag</label><input for="middag" type="checkbox" name="desired" value="Middag"  {{ $desired == 'Middag' ? 'checked' : ''}}> 
+                    <label for="avond">Avond</label><input for="avond" type="checkbox" name="desired" value="Avond" {{ $desired == 'Avond' ? 'checked' : ''}}> 
+                    <label for="aacht">Aacht</label><input for="aacht" type="checkbox" name="desired" value="nacht" {{ $desired == 'nacht' ? 'checked' : ''}}>  -->
+
                 <div class="filter-wrap">
                     <span>Bezit rijbewijs:</span>
                     @php 

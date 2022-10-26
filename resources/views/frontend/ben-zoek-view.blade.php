@@ -10,7 +10,7 @@
 
     <section class="zoek-view-sec">
         <div class="container"> 
-            <h1 class="mb-5" style="font-size: 2.6rem; font-family: Arial, Helvetica, sans-serif; margin-bottom: 30px;">IK ZOEK EEN ZORGVERLENER</h1>
+            <h1 class="mb-5" style="font-size: 2.4rem; font-family: Arial, Helvetica, sans-serif; margin-bottom: 30px;">IK ZOEK EEN ZORGVERLENER</h1>
         </div>
         <div class="container">
             <div class="zoek-single-views">
