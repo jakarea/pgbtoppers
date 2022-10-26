@@ -20,20 +20,18 @@ class IntakeController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required', 
-            'zoeken_naar' => 'required', 
-            'mee_eens_zijn' => 'required', 
-            'toestemming' => 'required', 
+           
+            'mee_eens_zijn' => 'required',  
         ]);
 
         $intakes = New Intake();
 
         $intakes->name = $request->name;
         $intakes->email = $request->email;
-        $intakes->looking_for = $request->zoeken_naar;
         $intakes->dayphone = $request->dayphone;
         $intakes->evephone = $request->evephone;
         $intakes->aggree = $request->mee_eens_zijn;
-        $intakes->permission = $request->toestemming;
+    
 
         $intakes->save();
         Mail::to($request->email)->cc(env('INTAKE_MAIL'))->send(new ContactMail($intakes));
