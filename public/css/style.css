@@ -947,6 +947,17 @@ html {
     #menu {
         left: -96px;
     }
+    .zoek-cards-wrap{
+        flex-direction: inherit!important;
+        flex-wrap: wrap!important;
+        align-items: flex-start;
+    }
+
+    .zoek-main-card{
+        flex: 0 48%;
+        width: 48%!important;
+        margin-right: 12px; 
+    } 
 
 }
 
