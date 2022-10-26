@@ -259,10 +259,8 @@ footer .col a {
 }
 
 
-.services-filter {
-    display: flex;
-    align-items: flex-end;
-    margin-bottom: 4rem;
+.services-filter { 
+    margin-bottom: 2rem;
 }
 
 .services-filter span {
@@ -522,6 +520,10 @@ html {
     color: #2A4250;
 }
 
+.zoek-bottom-info{
+    margin-top: 1rem;
+}
+
 .zoek-bottom-info p {
     margin: 0;
 }
@@ -667,6 +669,27 @@ html {
 .prev-inner {
     max-width: 60px !important;
 }
+
+.left-sidebar-filter-wrap{
+    width: 20%;
+}
+.zoek-cards-wrap{
+    width: 80%;
+}
+
+.secondary-parent-wrap{
+    display: flex; 
+    align-items: flex-start;
+}
+
+.filter-wrap{
+    margin-bottom: 1.5rem;
+}
+
+.filter-wrap span{
+    font-weight: 600;
+}
+
 
 /* responsive css start */
 @media(min-width: 320px) and (max-width: 991px) {

@@ -14,11 +14,14 @@ class HomeController extends Controller
 {
     public function index()
     { 
-        
-
         $testmonial = Testimonial::orderBy('id','desc')->paginate(3);
 
         return view('frontend.home',['title' => 'Testmonial Show All', 'testmonial' => $testmonial]);
+    }
+
+    public function zoek_ben()
+    {
+        return view('frontend.zoek-ben');
     }
 
     public function  ikzoek()
@@ -55,6 +58,43 @@ class HomeController extends Controller
 
         $services = $services->paginate(20);
         return view('frontend.ik-zoek',['title' => 'Services Show All', 'services' => $services]);
+        
+    } 
+
+    public function  ikben()
+    {
+        
+        $age = isset($_GET['age']) ? $_GET['age'] : ''; 
+        $distance = isset($_GET['distance']) ? $_GET['distance'] : ''; 
+        $gender = isset($_GET['gender']) ? $_GET['gender'] : '';  
+        $desired = isset($_GET['desired']) ? $_GET['desired'] : ''; 
+        $license = isset($_GET['license']) ? $_GET['license'] : ''; 
+        $candidate_status = isset($_GET['candidate_status']) ? $_GET['candidate_status'] : ''; 
+        $experience = isset($_GET['experience']) ? $_GET['experience'] : ''; 
+          
+        $services =  Service::orderBy('id','desc')->where(['serving' => 1 , 'approved' => 1]);
+ 
+        if(!empty($age)){
+            $services->where('age','like','%'.trim($age).'%');
+        }
+        if(!empty($distance)){
+            $services->where('distance','like','%'.trim($distance).'%');
+        }
+        if(!empty($gender)){
+            $services->where('gender','like','%'.trim($gender).'%');
+        } 
+        if(!empty($desired)){
+            $services->where('desired','like','%'.trim($desired).'%');
+        }
+        if(!empty($candidate_status)){
+            $services->where('candidate_status','like','%'.trim($candidate_status).'%');
+        }
+        if(!empty($experience)){
+            $services->where('experience','like','%'.trim($experience).'%');
+        }
+
+        $services = $services->paginate(20);
+        return view('frontend.ik-ben',['title' => 'Services Show All', 'services' => $services]);
         
     } 
 

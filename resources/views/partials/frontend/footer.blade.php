@@ -55,7 +55,8 @@
     <section class="footer_end">
         <div class="container">
             <div>
-                <span>Auteursrechten 2022 &copy; PGBTOPPERS</span>
+    
+                <span>Copyright &copy; PGBToppers 2022 | alle rechten voorbehouden</span>
             </div>
         </div>
     </section>
