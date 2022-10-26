@@ -13,7 +13,8 @@
         
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
-    <body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+    <!-- <body oncontextmenu="return false" onselectstart="return false" ondragstart="return false"> -->
+    <body>
 
         @include('partials.frontend.header')
 

@@ -58,7 +58,68 @@
                                     <option value="Man" {{ $gender == 'Man' ? 'selected' : ''}}>Man</option>
                                     <option value="Vrouw" {{ $gender == 'Vrouw' ? 'selected' : ''}}>Vrouw</option> 
                                 </select>
-                            </div> 
+                            </div>
+                            <div class="filter-wrap custom-text-2">
+                            <div class="form-group">
+                                <label for="" class="main-label">Beschikbare dagen:</label>
+                                <div class="is-checkbox" style="margin-left: 0px;">
+                                    <label>
+                                        <input type="checkbox" checked name="days[]" value="Geen voorkeur">
+                                        <span class="custom-checkbox"></span>
+                                        <span>Geen voorkeur</span>
+                                    </label> 
+                                </div>
+                                <div class="is-checkbox" style="margin-left: 0px;">
+                                    <label>
+                                        <input type="checkbox" name="days[]" value="Ma">
+                                        <span class="custom-checkbox"></span>
+                                        <span>Ma</span>
+                                    </label> 
+                                </div>
+                                <div class="is-checkbox" style="margin-left: 0px;">
+                                    <label>
+                                        <input type="checkbox" name="days[]" value="Di">
+                                        <span class="custom-checkbox"></span>
+                                        <span>Di</span>
+                                    </label> 
+                                </div>
+                                <div class="is-checkbox" style="margin-left: 0px;">
+                                    <label>
+                                        <input type="checkbox" name="days[]" value="Wo">
+                                        <span class="custom-checkbox"></span>
+                                        <span>Wo</span>
+                                    </label> 
+                                </div> 
+                                <div class="is-checkbox" style="margin-left: 0px;">
+                                    <label>
+                                        <input type="checkbox" name="days[]" value="Do">
+                                        <span class="custom-checkbox"></span>
+                                        <span>Do</span>
+                                    </label> 
+                                </div> 
+                                <div class="is-checkbox" style="margin-left: 0px;">
+                                    <label>
+                                        <input type="checkbox" name="days[]" value="Vr">
+                                        <span class="custom-checkbox"></span>
+                                        <span>Vr</span>
+                                    </label> 
+                                </div> 
+                                <div class="is-checkbox" style="margin-left: 0px;">
+                                    <label>
+                                        <input type="checkbox" name="days[]" value="Za">
+                                        <span class="custom-checkbox"></span>
+                                        <span>Za</span>
+                                    </label> 
+                                </div> 
+                                <div class="is-checkbox" style="margin-left: 0px;">
+                                    <label>
+                                        <input type="checkbox" name="days[]" value="Zo">
+                                        <span class="custom-checkbox"></span>
+                                        <span>Zo</span>
+                                    </label> 
+                                </div> 
+                            </div>
+                            </div>
                             <div class="filter-wrap">
                                 <span>Gewenste dagdeel:</span>
                                 @php 

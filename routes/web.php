@@ -24,8 +24,14 @@ use App\Http\Controllers\Admin\StripeController;
 
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('frontend.home');
-    Route::get('/ik-zoek', 'ikzoek')->name('frontend.ikzoek')->middleware('auth');;  
-    Route::get('/ik-zoek/{id}', 'ikzoekview')->name('frontend.ikzoekview')->middleware('auth');;
+    Route::get('/ik-zoek-ben', 'zoek_ben')->name('frontend.zoek_ben');
+
+    Route::get('/ik-ben', 'ikben')->name('frontend.ikben')->middleware('auth');
+    Route::get('/ik-ben/{id}', 'ikbenview')->name('frontend.ikbenview')->middleware('auth');
+
+    Route::get('/ik-zoek', 'ikzoek')->name('frontend.ikzoek')->middleware('auth');
+    Route::get('/ik-zoek/{id}', 'ikzoekview')->name('frontend.ikzoekview')->middleware('auth');
+
     Route::get('/meld', 'meld')->name('frontend.meld');
     Route::get('/onze', 'onze')->name('frontend.onze');
 
