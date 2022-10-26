@@ -133,8 +133,8 @@
                         <th>Leeftijd</th>
                         <th>Afstand</th>
                         <th>Geslacht</th> 
-                        <th>Dagen</th> 
-                        <th>Voorkeur</th>  
+                        <th>Beschikbare dagen</th> 
+                        <th>Gewenste dagdeel</th>  
                         <th class="text-right">Actie</th>
                     </tr>
 
