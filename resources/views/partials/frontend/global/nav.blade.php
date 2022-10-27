@@ -1,7 +1,7 @@
 <nav class="main-menu">
     <ul class="flex-container">
         <li>
-            <a href="{{ route('frontend.zoek_ben') }}" class="{{ (request()->is('ik-zoek-ben*')) ? 'active' : '' }}">
+            <a href="{{ url('ik-zoek') }}" class="{{ (request()->is('ik-zoek-ben*')) ? 'active' : '' }}">
             Ik zoek een zorgverlener
             </a>
         </li>

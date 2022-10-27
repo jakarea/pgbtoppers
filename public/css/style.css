@@ -690,6 +690,32 @@ html {
     font-weight: 600;
 }
 
+/* .d-flexx{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} */
+
+.d-flexx .is-checkbox{
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.d-flexx label span{
+    font-size: 13px;
+    font-weight: 400;
+    margin-left: 0;
+}
+.d-flexx .is-checkbox .custom-checkbox{
+    width: 17px;
+    height: 17px;
+}
+
+.d-flexx .is-checkbox .custom-checkbox::after { 
+    width: 5px;
+    top: -1px;
+    height: 8px; 
+}
 
 /* responsive css start */
 @media(min-width: 320px) and (max-width: 991px) {
