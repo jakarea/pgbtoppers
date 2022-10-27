@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-12">
                 <ul>
-                    <li>
+                    <!-- <li>
                         <a href="#"><i class="fa fa-phone"></i></a>
                     </li>
                     <li>
@@ -12,7 +12,7 @@
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-camera"></i></a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>

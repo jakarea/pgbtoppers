@@ -93,7 +93,7 @@
     </li> 
     <li class="nav-item active">
         <a class="nav-link" href="{{ url('/logout') }}">
-        <i class="fa fa-facebook"></i>
+        <i class="fas fa-fw fa-cog"></i>
             <span>Uitloggen</span>
         </a>
     </li> 
