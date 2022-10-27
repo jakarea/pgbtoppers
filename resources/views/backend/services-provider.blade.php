@@ -12,7 +12,7 @@
                 </div>
                 <form action="" method="GET">
                     
-                <div class="services-filter">
+                <div class="services-filter services-main-filter">
                     <div class="filter-wrap">
                         <span>Leeftijd:</span>
 
@@ -125,7 +125,7 @@
 
                     <button type="submit" class="btn btn-success" style="background: #dc8742; border-color: #dc8742;"><i class="fas fa-filter"></i>  Filter</button>
                 </form>
-</div>
+                </div>
                 <table class="table table-striped">
                     <tr>
                         <th>No</th>

@@ -12,7 +12,7 @@
 </div>
                 <form action="" method="GET">
                     
-                <div class="services-filter">
+                <div class="services-filter services-main-filter">
                     <div class="filter-wrap">
                         <span>Leeftijd:</span>
 

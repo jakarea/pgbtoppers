@@ -717,6 +717,11 @@ html {
     height: 8px; 
 }
 
+.services-main-filter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 /* responsive css start */
 @media(min-width: 320px) and (max-width: 991px) {
     .logo a {

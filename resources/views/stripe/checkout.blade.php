@@ -7,13 +7,13 @@
         <div class="product">
             <img src="https://pgbtoppers.nl/images/logo.png" alt="PGBToppers Logo" />
             <div class="description">
-            <h3>Activate your health care provider profile</h3>
+            <h3>Activeer uw zorgverlenerprofiel</h3>
             <h5>€45.00</h5>
             </div>
         </div>
         <form action="{{ url('admin/payment/process') }}" method="POST">
             @csrf
-            <button type="submit" id="checkout-button">Pay</button>
+            <button type="submit" id="checkout-button">Betalen</button>
         </form>
     </section>
 @endsection

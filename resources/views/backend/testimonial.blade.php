@@ -15,6 +15,7 @@
                 
                 <div class="d-flex justify-content-between align-items-center">
                 <h1 class="mb-5">Beoordelingen Toevoegen</h1>
+ 
                 <a href="{{ url('admin/testimonial/add') }}" class="btn btn-info">Toevoegen</a>
                 </div>
                 <table class="table table-striped">
