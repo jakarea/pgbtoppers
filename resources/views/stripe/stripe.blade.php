@@ -29,7 +29,7 @@
                id="payment-form">
                @csrf
                <div class="form-group">
-                  <label for="name_on_card">Name on Card</label>
+                  <label for="name_on_card">Naam on Card</label>
                   <input type="text" class="form-control" id="name_on_card"  placeholder="John Doe">
                </div>
                <div class="form-group">

@@ -6,7 +6,7 @@
             <div class="col-lg-7">
                 <div class="user-profile-wrap">
                     <div class="d-flex align-items-center justify-content-between">
-                        <h1>Sender Profile</h1>
+                        <h1>Afzenderprofiel</h1>
                         
                     </div>
                     
@@ -17,7 +17,7 @@
                         <img id="preview" class="img-responsive" src="https://ui-avatars.com/api/?background=random&name={{ $mailbox->sender->name}}&rounded=true" alt="{{ $mailbox->sender->name}}" style="width: 120px;">
                         @endif
                         <div class="media-body ml-3">
-                            <p><strong>Name: </strong> {{ $mailbox->sender->name }}</p>
+                            <p><strong>Naam: </strong> {{ $mailbox->sender->name }}</p>
                             <br>
                             <p><strong>Email: </strong> {{ $mailbox->sender->email }}</p>
                             <p><strong>Role: </strong>

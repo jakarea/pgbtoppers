@@ -14,18 +14,18 @@
             <div class="intake-table">
                 
                 <div class="d-flex justify-content-between align-items-center">
-                <h1 class="mb-5">Reviews Toevoegen</h1>
+                <h1 class="mb-5">Beoordelingen Toevoegen</h1>
                 <a href="{{ url('admin/testimonial/add') }}" class="btn btn-info">Toevoegen</a>
                 </div>
                 <table class="table table-striped">
                     <tr>
                         <th>No</th>
-                        <th>Image</th>
-                        <th>Name</th>
-                        <th>Designation</th> 
-                        <th>Description</th> 
+                        <th>Afbeelding</th>
+                        <th>Naam</th>
+                        <th>Aanduiding</th> 
+                        <th>Beschrijving</th> 
                         @if(Auth::user()->role === 1 || Auth::user()->role === 2)
-                            <th class="text-right">Action</th>
+                            <th class="text-right">Actie</th>
                         @endif
                     </tr>
 

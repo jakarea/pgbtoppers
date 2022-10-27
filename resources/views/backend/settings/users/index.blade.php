@@ -25,10 +25,9 @@
                 <table class="table table-striped">
                     <tr>
                         <th>#</th>
-                        <th>Photo</th>
-                        <th>Name</th>
+                        <th>Foto</th>
+                        <th>Naam</th>
                         <th>Email</th>
-                        <th>Role</th>
                         <th>Action</th>
                     </tr>
 
@@ -50,20 +49,7 @@
                         </td>  
                         <td valign="middle">{{ $user->name }}</td>
                         <td valign="middle">{{ $user->email }}</td>
-                        <td valign="middle">
-                        @if($user->role === 1)
-                        {{ ('Admin') }}
-
-                        @elseif($user->role === 2)
-
-                        {{ ('Intake Team') }}
-                        @elseif($user->role === 3)
-
-                        {{ ('Healthcare Provider') }}
-                        @else
-                        {{ ('Looking for healthcare Provider') }}
-                        @endif
-                        </td>
+                        
                         <td valign="middle">
                             <a href="{{ url('admin/users/'.$user->id.'/edit') }}">
                                 <i class="fas fa-pen text-success"></i>

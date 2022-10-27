@@ -23,7 +23,7 @@
                 <img id="preview" class="img-responsive" src="https://ui-avatars.com/api/?background=random&name={{$service->user->name}}&rounded=true" alt="{{$service->user->name}}" style="width: 120px;">
                 @endif
                      <div class="zoek-media-body">
-                        <h5><strong>Name: </strong>{{ $service->user ? $service->user->name : '' }}</h5>
+                        <h5><strong>Naam: </strong>{{ $service->user ? $service->user->name : '' }}</h5>
                         <!-- <h6><strong>Email: </strong>{{ $service->user ? $service->user->email : '' }}</h6>  -->
                      </div>
                      </div>  

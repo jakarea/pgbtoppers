@@ -20,7 +20,7 @@
                 <img id="preview" class="img-responsive" src="https://ui-avatars.com/api/?background=random&name={{Auth()->user()->name}}&rounded=true" alt="{{Auth()->user()->name}}" style="width: 120px;">
                 @endif
                     <div class="media-body ml-3">
-                    <p><strong>Name: </strong> {{ Auth()->user()->name }}</p>
+                    <p><strong>Naam: </strong> {{ Auth()->user()->name }}</p>
                     <br>
                     <p><strong>Email: </strong> {{ Auth()->user()->email }}</p>
                     <p><strong>Role: </strong>

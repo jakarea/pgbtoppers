@@ -10,14 +10,6 @@
             Ik ben een zorgverlener
             </a>
         </li>
-        <!-- to remove -->
-        <!-- <li>
-            <a href="{{ route('frontend.meld') }}" class="{{ (request()->is('meld')) ? 'active' : '' }}">
-            MELD ME
-            </a>
-        </li> -->
-        <!-- to remove -->
-        
         <li>
             <a href="{{ route('frontend.onze') }}" class="{{ (request()->is('onze')) ? 'active' : '' }}">
             Onze ambitie
