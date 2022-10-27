@@ -11,10 +11,10 @@
     <section class="cta_section">
         <div class="container flex-container">
             <div class="card card-secondary" style="width: 60%; margin: 0 auto;">
-                <h2 class="h3">zoekt u een begeleider of zorgverlener</h2>
+                <h2 class="h3">Zoekt u een begeleider of zorgverlener</h2>
                 <div>
-                    <a href="{{ url('/zorgverleners') }}" class="btn btn-primary" style="margin-right: 1rem;">begeleider</a>
-                    <a href="{{ url('/huishoudelijke-hulp') }}" class="btn btn-primary">huishoudelijke hulp</a>
+                    <a href="{{ url('/zorgverleners') }}" class="btn btn-primary" style="margin-right: 1rem;">Begeleider</a>
+                    <a href="{{ url('/huishoudelijke-hulp') }}" class="btn btn-primary">Huishoudelijke hulp</a>
                 </div>
             </div>
             <!-- <div class="card card-secondary" style="width: 40%; margin: 0 auto;"> 

@@ -265,7 +265,7 @@
                             </label>     
                         </div>
                         <div class="btn_wrapper" style="justify-content: flex-start;">
-                            <button type="submit" class="btn"  style="background: #DC8742;">
+                            <button type="submit" class="btn intd"  style="background: #DC8742;">
                                 verstuur
                             </button>
                         </div>
