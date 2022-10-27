@@ -129,13 +129,13 @@
                 <table class="table table-striped">
                     <tr>
                         <th>No</th>
-                        <th>User</th>
-                        <th>Age</th>
-                        <th>Distance</th>
-                        <th>Gender</th> 
-                        <th>Days</th> 
-                        <th>Desired</th>  
-                        <th class="text-right">Action</th>
+                        <th>Gebruiker</th>
+                        <th>Leeftijd</th>
+                        <th>Afstand</th>
+                        <th>Geslacht</th> 
+                        <th>Dagen</th> 
+                        <th>Gewenst</th>  
+                        <th class="text-right">Actie</th>
                     </tr>
 
                     @php $i = 1; @endphp

@@ -28,7 +28,7 @@
                 <table class="table table-striped">
                 
                     <tr>  
-                        <th>Name</th>
+                        <th>Naam</th>
                         <td valign="middle"><input type="text" name="name" value="{{ $user->name }}" class="form-control"></td> 
                     </tr>
                     <tr>  
@@ -64,7 +64,7 @@
 							<td valign="middle"><input type="password" name="password" class="form-control"></td>
 						</tr>
                     <tr>  
-                        <th>Photo</th>
+                        <th>Foto</th>
                         <td valign="middle"><input type="file" name="photo" class="form-control"></td>
                     </tr>
 

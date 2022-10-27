@@ -24,36 +24,61 @@ class HomeController extends Controller
         return view('frontend.zoek-ben');
     }
 
-    public function  ikzoek()
+    public function  ikzoek(Request $request)
     {
-        
         $age = isset($_GET['age']) ? $_GET['age'] : ''; 
+        $days = isset($_GET['days']) ? $_GET['days'] : ''; 
         $distance = isset($_GET['distance']) ? $_GET['distance'] : ''; 
         $gender = isset($_GET['gender']) ? $_GET['gender'] : '';  
         $desired = isset($_GET['desired']) ? $_GET['desired'] : ''; 
         $license = isset($_GET['license']) ? $_GET['license'] : ''; 
         $candidate_status = isset($_GET['candidate_status']) ? $_GET['candidate_status'] : ''; 
         $experience = isset($_GET['experience']) ? $_GET['experience'] : ''; 
-          
-        $services =  Service::orderBy('id','desc')->where(['serving' => 1 , 'approved' => 1]);
+        $other = isset($_GET['other']) ? $_GET['other'] : ''; 
+        $serv = isset($_GET['services']) ? $_GET['services'] : ''; 
+
+        $services =  Service::orderBy('id','desc')->where(['serving' => '' , 'approved' => 1]);
  
         if(!empty($age)){
-            $services->where('age','like','%'.trim($age).'%');
+            foreach($age as $a){
+                $services->where('age','like','%'.trim($a).'%');
+            }
         }
+
+        if(!empty($days)){
+            foreach($days as $d){
+                $services->where('days','like','%'.trim($d).'%');
+            }
+        }
+
+        if(!empty($desired)){
+            foreach($desired as $di){
+                $services->where('desired','like','%'.trim($di).'%');
+            }
+        }
+
+        if(!empty($candidate_status)){
+            foreach($candidate_status as $cas){
+                $services->where('candidate_status','like','%'.trim($cas).'%');
+            }
+        }
+
         if(!empty($distance)){
             $services->where('distance','like','%'.trim($distance).'%');
         }
         if(!empty($gender)){
             $services->where('gender','like','%'.trim($gender).'%');
         } 
-        if(!empty($desired)){
-            $services->where('desired','like','%'.trim($desired).'%');
-        }
-        if(!empty($candidate_status)){
-            $services->where('candidate_status','like','%'.trim($candidate_status).'%');
-        }
+        
+        
         if(!empty($experience)){
             $services->where('experience','like','%'.trim($experience).'%');
+        }
+        if(!empty($other)){
+            $other->where('other','like','%'.trim($other).'%');
+        }
+        if(!empty($serv)){
+            $services->where('services','like','%'.trim($serv).'%');
         }
 
         $services = $services->paginate(20);
@@ -65,32 +90,63 @@ class HomeController extends Controller
     {
         
         $age = isset($_GET['age']) ? $_GET['age'] : ''; 
+        $days = isset($_GET['days']) ? $_GET['days'] : ''; 
         $distance = isset($_GET['distance']) ? $_GET['distance'] : ''; 
         $gender = isset($_GET['gender']) ? $_GET['gender'] : '';  
         $desired = isset($_GET['desired']) ? $_GET['desired'] : ''; 
         $license = isset($_GET['license']) ? $_GET['license'] : ''; 
         $candidate_status = isset($_GET['candidate_status']) ? $_GET['candidate_status'] : ''; 
         $experience = isset($_GET['experience']) ? $_GET['experience'] : ''; 
+        $other = isset($_GET['other']) ? $_GET['other'] : ''; 
+        $serv = isset($_GET['services']) ? $_GET['services'] : ''; 
+        $spe_exp = isset($_GET['specific_experience']) ? $_GET['specific_experience'] : ''; 
           
         $services =  Service::orderBy('id','desc')->where(['serving' => 1 , 'approved' => 1]);
  
         if(!empty($age)){
-            $services->where('age','like','%'.trim($age).'%');
+            foreach($age as $a){
+                $services->where('age','like','%'.trim($a).'%');
+            }
         }
+
+        if(!empty($days)){
+            foreach($days as $d){
+                $services->where('days','like','%'.trim($d).'%');
+            }
+        }
+
+        if(!empty($desired)){
+            foreach($desired as $di){
+                $services->where('desired','like','%'.trim($di).'%');
+            }
+        }
+
+        if(!empty($candidate_status)){
+            foreach($candidate_status as $cas){
+                $services->where('candidate_status','like','%'.trim($cas).'%');
+            }
+        }
+
         if(!empty($distance)){
             $services->where('distance','like','%'.trim($distance).'%');
         }
         if(!empty($gender)){
             $services->where('gender','like','%'.trim($gender).'%');
         } 
-        if(!empty($desired)){
-            $services->where('desired','like','%'.trim($desired).'%');
-        }
-        if(!empty($candidate_status)){
-            $services->where('candidate_status','like','%'.trim($candidate_status).'%');
-        }
+        
+        
         if(!empty($experience)){
             $services->where('experience','like','%'.trim($experience).'%');
+        }
+        if(!empty($other)){
+            $other->where('other','like','%'.trim($other).'%');
+        }
+        if(!empty($serv)){
+            $services->where('services','like','%'.trim($serv).'%');
+        }
+        
+        if(!empty($spe_exp)){
+            $services->where('specific_experience','like','%'.trim($spe_exp).'%');
         }
 
         $services = $services->paginate(20);
