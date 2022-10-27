@@ -78,11 +78,11 @@
                         <th>:</th>
                         <td>{{ $service->specific_experience ?: 'N/A'}}</td>
                     </tr> 
+                    @if(Auth()->user()->role == 1)
                     <tr>
-                        <th>Welke status dient de zorgverlener te hebben?
-</th>
+                        <th>Welke status dient de zorgverlener te hebben?</th>
                         <th>:</th>
-                        <td>
+                       <td>
                             <label>{{ $service->approved ? 'goedgekeurd' : 'afgekeurd' }}</label>
 
                             @if($service->approved)
@@ -91,12 +91,10 @@
                                 <a style="float:right" href="{{url('admin/services-provider/'.$service->id.'/approve')}}" class="btn btn-success"><i class="fas fa-check"></i> goedgekeurd</a>
                             @endif
                         </td>
+                      
                     </tr>
-                    
-                    
-                    
+                    @endif
                 </table> 
-                
             </div>
         </div> 
     </div>
